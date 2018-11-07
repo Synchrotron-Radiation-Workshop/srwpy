@@ -22,6 +22,9 @@ install:
   - pip install .
   # Install extra requirements for running tests and building docs.
   - pip install -r requirements-dev.txt
+  - pushd core/
+  - make all
+  - popd
 
 script:
   - coverage run -m pytest  # Run the tests and check for test coverage.
