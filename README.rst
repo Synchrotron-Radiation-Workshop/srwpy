@@ -9,7 +9,7 @@ srwpy
         :target: https://pypi.python.org/pypi/srwpy
 
 
-Python package for doing science.
+Synchrotron Radiation Workshop
 
 * Free software: 3-clause BSD license
 * Documentation: (COMING SOON!) https://mrakitin.github.io/srwpy.
