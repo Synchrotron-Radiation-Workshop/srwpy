@@ -4,6 +4,7 @@ python: srwlpy.so
 
 srwlpy.so:
 	python setup.py build_ext --build-lib='../gcc'
+	cp ../gcc/srwlpy*.so ../../srwpy/
 	rm -rf build
 
 clean:
