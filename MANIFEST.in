@@ -11,6 +11,7 @@ recursive-include docs *.rst conf.py Makefile make.bat
 
 include versioneer.py
 include srwpy/_version.py
+include srwpy/*.so
 
 # If including data files in the package, add them like:
 # include path/to/data_file
