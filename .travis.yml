@@ -18,7 +18,6 @@ addons:
       - fftw-dev
 
 install:
-  apt-get install fftw-dev -y
   # Install this package and the packages listed in requirements.txt.
   - pip install .
   # Install extra requirements for running tests and building docs.
