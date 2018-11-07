@@ -5,10 +5,10 @@ srwlpy = Extension(
     'srwlpy',
     define_macros=[('MAJOR_VERSION', '1'), ('MINOR_VERSION', '0')],
     include_dirs=[os.path.abspath('../src/lib')],
-    libraries=['srw', 'm', 'fftw'],
+    libraries=['srw', 'm'],
     library_dirs=[os.path.abspath('../gcc')],
     sources=[os.path.abspath('../src/clients/python/srwlpy.cpp')],
-    extra_compile_args=['-static'])
+    extra_compile_args=['-Wl,-Bstatic -lfftw'])
 
 setup(name='SRW Python interface',
       version='1.0',
