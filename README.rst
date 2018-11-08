@@ -11,7 +11,13 @@ srwpy
 
 Synchrotron Radiation Workshop
 
-Based on https://github.com/ochubar/SRW.
+Based on:
+
+* https://github.com/ochubar/SRW for the source code
+* https://github.com/NSLS-II/scientific-python-cookiecutter for the structure and features
+
+
+Licensing and documentation:
 
 * Free software: 3-clause BSD license
 * Documentation: (COMING SOON!) https://mrakitin.github.io/srwpy.
