@@ -21,14 +21,14 @@ install:
 - python setup.py sdist bdist_wheel
 
 script:
-- coverage run -m pytest
-- coverage report -m
-- codecov
-- flake8 --max-line-length=115
-- set -e
-- make -C docs html
-- pip install doctr
-- doctr deploy --built-docs docs/build/html .
+    # - coverage run -m pytest
+    # - coverage report -m
+    # - codecov
+    # - flake8 --max-line-length=115
+    # - set -e
+    # - make -C docs html
+    # - pip install doctr
+    # - doctr deploy --built-docs docs/build/html .
 
 deploy:
   provider: pypi
