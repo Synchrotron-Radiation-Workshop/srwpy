@@ -21,7 +21,7 @@ fftw:
 	rm -rf $(fftw_file) $(fftw_dir);
 
 core: 
-	pushd $(gcc_dir) && make -j8 lib
+	cd $(gcc_dir) && make -j8 lib
 
 clean:
 	rm -f $(gcc_dir)/libfftw.a $(gcc_dir)/libsrw.a && \
