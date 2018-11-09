@@ -41,7 +41,7 @@ setup(
     long_description=readme,
     author="NSLS-II, Brookhaven National Lab",
     author_email='mrakitin@bnl.gov',
-    url='https://github.com/mrakitin/srwpy',
+    url='https://github.com/srwpy/srwpy',
     packages=find_packages(exclude=['docs', 'tests']),
     entry_points={
         'console_scripts': [

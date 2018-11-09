@@ -2,8 +2,8 @@
 srwpy
 ===============================
 
-.. image:: https://img.shields.io/travis/mrakitin/srwpy.svg
-        :target: https://travis-ci.org/mrakitin/srwpy
+.. image:: https://img.shields.io/travis/srwpy/srwpy.svg
+        :target: https://travis-ci.org/srwpy/srwpy
 
 .. image:: https://img.shields.io/pypi/v/srwpy.svg
         :target: https://pypi.python.org/pypi/srwpy
@@ -20,7 +20,7 @@ Based on:
 Licensing and documentation:
 
 * Free software: 3-clause BSD license
-* Documentation: (COMING SOON!) https://mrakitin.github.io/srwpy.
+* Documentation: (COMING SOON!) https://srwpy.github.io/srwpy.
 
 Features
 --------
