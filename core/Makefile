@@ -13,6 +13,7 @@ all: clean fftw core
 fftw:
 	wget http://www.fftw.org/$(fftw_file) && \
 	tar -zxf $(fftw_file) && \
+	ls -laF . && \
 	pushd $(fftw_dir) && \
 	CFLAGS=-fPIC ./configure --enable-float --with-pic && \
 	make -j8 && \
