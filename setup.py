@@ -1,6 +1,6 @@
-from os import path
-from setuptools import setup, find_packages
+import os
 import sys
+from setuptools import setup, find_packages, Extension
 import versioneer
 
 
@@ -22,16 +22,22 @@ pip install --upgrade pip
 """.format(*sys.version_info[:2], *min_version)
     sys.exit(error)
 
-here = path.abspath(path.dirname(__file__))
+here = os.path.abspath(os.path.dirname(__file__))
 
-with open(path.join(here, 'README.rst'), encoding='utf-8') as readme_file:
+with open(os.path.join(here, 'README.rst'), encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
-with open(path.join(here, 'requirements.txt')) as requirements_file:
+with open(os.path.join(here, 'requirements.txt')) as requirements_file:
     # Parse requirements.txt, ignoring any commented-out lines.
     requirements = [line for line in requirements_file.read().splitlines()
                     if not line.startswith('#')]
 
+srwlpy = Extension(
+    'srwlpy',
+    include_dirs=['core/src/lib'],
+    libraries=['srw', 'm', 'fftw'],
+    library_dirs=['core/gcc'],
+    sources=['core/src/clients/python/srwlpy.cpp'])
 
 setup(
     name='srwpy',
@@ -66,4 +72,5 @@ setup(
         'Operating System :: POSIX',
         'Operating System :: MacOS',
     ],
+    ext_modules=[srwlpy],
 )

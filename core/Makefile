@@ -1,16 +1,31 @@
-# This Makefile is to compile SRW C++ core
+# This Makefile is to compile SRW with optional compilation of FFTW-2.1.5.
 
 root_dir = $(realpath .)
 gcc_dir = $(root_dir)/gcc
-py_dir = $(root_dir)/py
+fftw_version = fftw-2.1.5
+fftw_dir = $(fftw_version)
+fftw_file = $(fftw_version).tar.gz
 
+nofftw: core
 
-all: core pylib
+all: clean fftw core
+
+fftw:
+	wget http://www.fftw.org/$(fftw_file) && \
+	tar -zxf $(fftw_file) && \
+	pushd $(fftw_dir) && \
+	CFLAGS=-fPIC ./configure --enable-float --with-pic && \
+	make -j8 && \
+	cp fftw/.libs/libfftw.a $(gcc_dir) && \
+	popd && \
+	rm -rf $(fftw_file) $(fftw_dir);
 
 core: 
-	cd $(gcc_dir); make -j8 clean lib
+	pushd $(gcc_dir) && make -j8 lib
 
-pylib:
-	cd $(py_dir); make python
+clean:
+	rm -f $(gcc_dir)/libfftw.a $(gcc_dir)/libsrw.a && \
+	rm -f $(root_dir)/$(fftw_file) && \
+	rm -rf $(root_dir)/$(fftw_dir)/
 
-.PHONY: all core pylib
+.PHONY: all clean core fftw nofftw
