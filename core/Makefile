@@ -12,14 +12,12 @@ all: clean fftw core
 
 fftw:
 	wget http://www.fftw.org/$(fftw_file) && \
-	tar -xf $(fftw_file) && \
-	pwd && \
-	ls -laF . && \
-	pushd $(fftw_dir) && \
+	tar -xvf $(fftw_file) && \
+	cd $(fftw_dir) && \
 	CFLAGS=-fPIC ./configure --enable-float --with-pic && \
 	make -j8 && \
 	cp fftw/.libs/libfftw.a $(gcc_dir) && \
-	popd && \
+	cd $(root_dir) && \
 	rm -rf $(fftw_file) $(fftw_dir);
 
 core: 
