@@ -11,8 +11,9 @@ nofftw: core
 all: clean fftw core
 
 fftw:
-	wget http://www.fftw.org/$(fftw_file) && \
-	tar -zxf $(fftw_file) && \
+	wget -v http://www.fftw.org/$(fftw_file) && \
+	tar -zxfv $(fftw_file) && \
+	pwd && \
 	ls -laF . && \
 	pushd $(fftw_dir) && \
 	CFLAGS=-fPIC ./configure --enable-float --with-pic && \
