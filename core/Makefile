@@ -12,7 +12,7 @@ all: clean fftw core
 
 fftw:
 	wget -v http://www.fftw.org/$(fftw_file) && \
-	tar -zxfv $(fftw_file) && \
+	tar -xvf $(fftw_file) && \
 	pwd && \
 	ls -laF . && \
 	pushd $(fftw_dir) && \
