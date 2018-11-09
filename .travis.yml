@@ -13,13 +13,13 @@ env:
 
 install:
   - set -eo pipefail
+  - pushd core/
+  - make all
+  - popd
   # Install this package and the packages listed in requirements.txt.
   - pip install .
   # Install extra requirements for running tests and building docs.
   - pip install -r requirements-dev.txt
-  - pushd core/
-  - make all
-  - popd
   - python setup.py sdist bdist_wheel
 
 script:
