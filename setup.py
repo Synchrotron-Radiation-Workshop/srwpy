@@ -34,10 +34,10 @@ with open(os.path.join(here, 'requirements.txt')) as requirements_file:
 
 srwlpy = Extension(
     'srwlpy',
-    include_dirs=['core/src/lib'],
+    include_dirs=[os.path.abspath('core/src/lib')],
     libraries=['srw', 'm', 'fftw'],
-    library_dirs=['core/gcc'],
-    sources=['core/src/clients/python/srwlpy.cpp'])
+    library_dirs=[os.path.abspath('core/gcc')],
+    sources=[os.path.abspath('core/src/clients/python/srwlpy.cpp')])
 
 setup(
     name='srwpy',
