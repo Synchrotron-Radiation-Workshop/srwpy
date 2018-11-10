@@ -18,8 +18,7 @@ install:
 - popd
 - pip install .
 - pip install -r requirements-dev.txt
-- python setup.py sdist bdist_wheel
-- twine upload dist/*
+#- python setup.py sdist bdist_wheel
 
 script:
     # - coverage run -m pytest
@@ -36,3 +35,7 @@ deploy:
   user: mrakitin
   password:
     secure: sugDJeduPToyZM/EH6sKC66lVMx4mF5ckzpRrrK6Ls15IIwp3PAweLcFfdHpzbqfHLpF346pN7epQPLHwa1QDwBRYs9tp1YbQBgY1/tiv7lF3Qw8dmAHWaGsvt77in+9LUAI5GdQ4pEHy+5gopibZBmcSXbvpcj2LFNaRjn5k9644GiXJ5zPSvhyg3jQMl1USxOJ22tG18yFhUAGjeh2EaX+zB5J2ZadXckV1A5zzMFO8Ec+Sd5Pe9at4aR568vqn9hl9UNBpxpMuM9s5p1avLen9GCsXdjOtB107vbEB8uIB6TchmZk3t58KwiiUAqdNkTq8ov+jupZMik4gQXlQvlXRLLbO5VS2imnyV5aYaYeuRSGNW3qtOvAqUGIsVm3sfLHOZDjTZUmJIkkpJhlEWlk2NR9PCSXdcJjahXBtGtU9CrnywmCyrqmNzZpzYqb5wmpM2ByNKblj7Y7nC7ojQb7Mhc9GCufECvsaVAKUIPBXllE/Z1JXC4PomvP4BIVDcyKuAkAGgAo2f3cjTTOr0z53LFPDf8kkFA0ePgLMSmmPKwN59L4C7liWqDWwIIbTlTuAtEZCtdmtUrGEp2ow3lrHK/gtudNlVPTNOmh7we6kSJQ4LDG+LI2lrHUbqbMmvdaM8+PNtrFquuMRqzavtn3LwkWq3U/KLsg2ZwMcgA=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    python: 3.6
