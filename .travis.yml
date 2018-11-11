@@ -9,12 +9,14 @@ env:
   global:
   - secure: WlJkt8YmA6xu0SM7qTGOuresaEOHTWnDDZv3huNsowFxnjz/lnsNqttX3SRJP7uV1d+9kzsM1C1q5omN/6k3vlHr5HX+s+i1GKVSzPMzSau3Ez1BwcaC/8soxzHhw48E8hCfXNK7XVxCvz+ZgHP0zKEta+zEHk3bE7MNge6KqhkaWzyvtfh3qRAQ3vICAWOQUh9YLhKr5gc/oCndlf+e7Ky7qE3M8JSwYjJqbedQsv5qgp3SV9tdBsxR43RdRYfKQRcF1i2Q8wsQOKAXxkOAW4WQHAafKJVcRjmoGaKqXaHkDQhjoVSrEi8RQ1rrA4EgHeXqhHAyzhTvrNZL9e58Td+xS6Y3ZreiZ87uLbnhY0jfXAqWQ57xQNnO0wGaQlmv2dxyQjXiWMEnpL4WPU2IhkPTjwYbXSTel9n8ZqcpIr2ePwg+faXzei0AZCF2h5/SWOFXp6QDJj+azyYBXTGjFIdjLMy496J6HBhCPd0tNyksORM7KASQEqG/PRJFg1iauvqbqzeSWcNIInJNxVMnJAeRA3NdnQMLtOQNOvKtd9zgfaIUQEjnIBEgLvMiYsGT2/cNKSTlbLbBr1/poigA1m3BwGJiPV384zXBPmmI45UAONyZH58r2ZIwLYCuucLg8PfZekMbg/enGtay+MzZJu43sU67NbcPEqddWPICyYo=
 install:
-- set -eo pipefail
+- pip install -r requirements-dev.txt
 - pushd core/
 - make all
 - popd
-- pip install .
-- pip install -r requirements-dev.txt
+- python setup.py sdist bdist_wheel
+- twine upload dist/*
+# - pip install .
+# - pip install -r requirements-dev.txt
 deploy:
   provider: pypi
   user: mrakitin
