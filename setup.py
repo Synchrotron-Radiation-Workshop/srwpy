@@ -19,12 +19,12 @@ This may be due to an out-of-date pip. Make sure you have pip >= 9.0.1.
 Upgrade pip like so:
 
 pip install --upgrade pip
-""".format(*sys.version_info[:2], *min_version)
+""".format(*(list(sys.version_info[:2]) + list(min_version)))
     sys.exit(error)
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-with open(os.path.join(here, 'README.rst'), encoding='utf-8') as readme_file:
+with open(os.path.join(here, 'README.rst')) as readme_file:
     readme = readme_file.read()
 
 with open(os.path.join(here, 'requirements.txt')) as requirements_file:
