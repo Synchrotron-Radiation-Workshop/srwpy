@@ -1,23 +1,19 @@
 language: python
 python:
 - 3.6
-
 cache:
   directories:
   - "$HOME/.cache/pip"
   - "$HOME/.ccache"
-
 env:
   global:
   - secure: WlJkt8YmA6xu0SM7qTGOuresaEOHTWnDDZv3huNsowFxnjz/lnsNqttX3SRJP7uV1d+9kzsM1C1q5omN/6k3vlHr5HX+s+i1GKVSzPMzSau3Ez1BwcaC/8soxzHhw48E8hCfXNK7XVxCvz+ZgHP0zKEta+zEHk3bE7MNge6KqhkaWzyvtfh3qRAQ3vICAWOQUh9YLhKr5gc/oCndlf+e7Ky7qE3M8JSwYjJqbedQsv5qgp3SV9tdBsxR43RdRYfKQRcF1i2Q8wsQOKAXxkOAW4WQHAafKJVcRjmoGaKqXaHkDQhjoVSrEi8RQ1rrA4EgHeXqhHAyzhTvrNZL9e58Td+xS6Y3ZreiZ87uLbnhY0jfXAqWQ57xQNnO0wGaQlmv2dxyQjXiWMEnpL4WPU2IhkPTjwYbXSTel9n8ZqcpIr2ePwg+faXzei0AZCF2h5/SWOFXp6QDJj+azyYBXTGjFIdjLMy496J6HBhCPd0tNyksORM7KASQEqG/PRJFg1iauvqbqzeSWcNIInJNxVMnJAeRA3NdnQMLtOQNOvKtd9zgfaIUQEjnIBEgLvMiYsGT2/cNKSTlbLbBr1/poigA1m3BwGJiPV384zXBPmmI45UAONyZH58r2ZIwLYCuucLg8PfZekMbg/enGtay+MzZJu43sU67NbcPEqddWPICyYo=
-
 install:
 - pip install -r requirements-dev.txt
 - pushd core/
 - make all
 - popd
 - pip install .
-
 script:
 - python setup.py sdist bdist_wheel
 - pushd dist/
@@ -26,4 +22,12 @@ script:
   new=$(echo $old | sed 's/-linux_/-manylinux1_/')
   mv -v $old $new
 - popd
-- twine upload dist/*
+before_deploy: "echo 'ready?'"
+deploy:
+  on:
+    tags: true
+  provider: pypi
+  user: mrakitin
+  password:
+    secure: JVIYW16ArcdWI8uh3VC550p1K+RIQsVk8LHJbNRYRhaGLd9qFM3IzfbTbTE+di2xAzjlNaQSnPPZPocBkb7g9BhM2ZobmTORqZTjKQIucxE8zelsKKD/jle/s9ZTk1aW11ZJ2paPDAZ5Vbj4h3fbDW233RmXf64+Gde4QB/+8TM1yIvM7pJWhsbTi12nhuMnTNpMtHZemTyt0yo2FvKAGPVEhI7hHx/6Vj4rUL9RvIpntrb0uRhc6mz+I6rjnUegBYuL1RivX3PeqWXSRE2Q4UP4/vfqmSPRxDd7QHcAnRZTKJLqKRZEMK5vW+O8LzX3qwsOQAwxQwMA8SA3TCWTTlLSo4lMHzTczvWVc9hEyZosHMselykRZT3ZmjgGSfpX70WBQw2YAvSvRzSEOEMcjlWe8+kRXy0KRxdBIoocx5mBZRG81KQvTUr9hsFHvaHv/AU6x275Or3JQDshFm0iCkpCDenHUVegJrIPE6a8miGY00LQ8Otw71T77u5zPCyvd0tXwC6fA6OaU287wmF6Xfto+B2KNb55jV9W4JU3JfUOgpUlT4ekJgIpD+kM0ApK65uc4/H20PEDxPO0A+bOt2YfwDQLZylBZZSmpgeWj79ooFNoPh1PDVnZSmHEnYYoXBE2t8wkPK4oGtDD5tRk3L1fvo1A+kD5aw6cKpBLXq0=
+after_deploy: "echo 'done!'"
