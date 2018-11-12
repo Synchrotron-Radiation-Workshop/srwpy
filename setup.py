@@ -39,7 +39,7 @@ srwlpy_kwargs = {'include_dirs': ['core/src/lib'],
 
 if sys.platform == 'win32':
     srwlpy_kwargs['library_dirs'] = ['core/vc']
-    srwlpy_kwargs['extra_compile_args'] = ['/MT'])
+    srwlpy_kwargs['extra_compile_args'] = ['/MT']
 else:
     srwlpy_kwargs['library_dirs'] = ['core/gcc']
 
