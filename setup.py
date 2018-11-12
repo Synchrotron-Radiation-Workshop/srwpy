@@ -32,12 +32,19 @@ with open(os.path.join(here, 'requirements.txt')) as requirements_file:
     requirements = [line for line in requirements_file.read().splitlines()
                     if not line.startswith('#')]
 
-srwlpy = Extension(
-    'srwlpy',
-    include_dirs=['core/src/lib'],
-    libraries=['srw', 'fftw'],
-    library_dirs=['core/gcc'],
-    sources=['core/src/clients/python/srwlpy.cpp'])
+# Prepare the extension:
+srwlpy_kwargs = {'include_dirs': ['core/src/lib'],
+                 'libraries': ['srw', 'fftw'],
+                 'sources': ['core/src/clients/python/srwlpy.cpp']}
+
+if sys.platform == 'win32':
+    srwlpy_kwargs['library_dirs'] = ['core/vc']
+    srwlpy_kwargs['extra_compile_args'] = ['/MT'])
+else:
+    srwlpy_kwargs['library_dirs'] = ['core/gcc']
+
+srwlpy = Extension('srwlpy', **srwlpy_kwargs)
+
 
 setup(
     name='srwpy',
