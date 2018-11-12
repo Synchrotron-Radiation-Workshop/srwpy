@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A7E707A6-D325-42AE-A0D0-3C97C38D36A6}</ProjectGuid>
+    <RootNamespace>SRWLIB</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>srw_x64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+    <TargetName>srw_x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\Debug/SRWLIB.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\src\core;..\src\lib;..\src\ext\genmath;..\src\ext\auxparse;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_USRDLL;__VC__;SRWLIB_STATIC;_GM_WITHOUT_BASE;_CRT_SECURE_NO_WARNINGS;NON_UNIX_STDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile />
+      <AssemblerListingLocation />
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc90.pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>fftw.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>srw.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\Release/SRWLIB.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\src\lib;..\src\core;..\src\ext\genmath;..\src\ext\auxparse;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_USRDLL;__VC__;SRWLIB_STATIC;_GM_WITHOUT_BASE;_CRT_SECURE_NO_WARNINGS;NON_UNIX_STDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile />
+      <AssemblerListingLocation />
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc90.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+      <CompileAs>Default</CompileAs>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>fftw.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>srw.lib</OutputFile>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\core\srclcuti.cpp" />
+    <ClCompile Include="..\src\core\srcradint.cpp" />
+    <ClCompile Include="..\src\core\srctrjdt.cpp" />
+    <ClCompile Include="..\src\core\sremitpr.cpp" />
+    <ClCompile Include="..\src\core\srgsnbm.cpp" />
+    <ClCompile Include="..\src\core\srgtrjdt.cpp" />
+    <ClCompile Include="..\src\core\srisosrc.cpp" />
+    <ClCompile Include="..\src\core\srmagcnt.cpp" />
+    <ClCompile Include="..\src\core\srmagfld.cpp" />
+    <ClCompile Include="..\src\core\srmatsta.cpp" />
+    <ClCompile Include="..\src\core\sroptapt.cpp" />
+    <ClCompile Include="..\src\core\sroptcnt.cpp" />
+    <ClCompile Include="..\src\core\sroptcryst.cpp" />
+    <ClCompile Include="..\src\core\sroptdrf.cpp" />
+    <ClCompile Include="..\src\core\sroptel2.cpp" />
+    <ClCompile Include="..\src\core\sroptel3.cpp" />
+    <ClCompile Include="..\src\core\sroptelm.cpp" />
+    <ClCompile Include="..\src\core\sroptfoc.cpp" />
+    <ClCompile Include="..\src\core\sroptgrat.cpp" />
+    <ClCompile Include="..\src\core\sroptgtr.cpp" />
+    <ClCompile Include="..\src\core\sropthck.cpp" />
+    <ClCompile Include="..\src\core\sroptmat.cpp" />
+    <ClCompile Include="..\src\core\sroptpsh.cpp" />
+    <ClCompile Include="..\src\core\sroptshp.cpp" />
+    <ClCompile Include="..\src\core\sroptsmr.cpp" />
+    <ClCompile Include="..\src\core\sroptwgr.cpp" />
+    <ClCompile Include="..\src\core\sroptzp.cpp" />
+    <ClCompile Include="..\src\core\sroptzps.cpp" />
+    <ClCompile Include="..\src\core\srpersto.cpp" />
+    <ClCompile Include="..\src\core\srpowden.cpp" />
+    <ClCompile Include="..\src\core\srprdint.cpp" />
+    <ClCompile Include="..\src\core\srprgind.cpp" />
+    <ClCompile Include="..\src\core\srpropme.cpp" />
+    <ClCompile Include="..\src\core\srptrjdt.cpp" />
+    <ClCompile Include="..\src\core\srradinc.cpp" />
+    <ClCompile Include="..\src\core\srradint.cpp" />
+    <ClCompile Include="..\src\core\srradmnp.cpp" />
+    <ClCompile Include="..\src\core\srradstr.cpp" />
+    <ClCompile Include="..\src\core\srremflp.cpp" />
+    <ClCompile Include="..\src\core\srsase.cpp" />
+    <ClCompile Include="..\src\core\srsend.cpp" />
+    <ClCompile Include="..\src\core\srstowig.cpp" />
+    <ClCompile Include="..\src\core\srsysuti.cpp" />
+    <ClCompile Include="..\src\core\srthckbm.cpp" />
+    <ClCompile Include="..\src\core\srthckbm2.cpp" />
+    <ClCompile Include="..\src\core\srtrjaux.cpp" />
+    <ClCompile Include="..\src\core\srtrjdat.cpp" />
+    <ClCompile Include="..\src\core\srtrjdat3d.cpp" />
+    <ClCompile Include="..\src\ext\auxparse\auxparse.cpp" />
+    <ClCompile Include="..\src\ext\f2c_min\CLOSE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\DFE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\DOLIO.C" />
+    <ClCompile Include="..\src\ext\f2c_min\DUE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\D_CNJG.C" />
+    <ClCompile Include="..\src\ext\f2c_min\D_IMAG.C" />
+    <ClCompile Include="..\src\ext\f2c_min\D_MOD.C" />
+    <ClCompile Include="..\src\ext\f2c_min\D_SIGN.C" />
+    <ClCompile Include="..\src\ext\f2c_min\ENDFILE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\ERR.C" />
+    <ClCompile Include="..\src\ext\f2c_min\FMT.C" />
+    <ClCompile Include="..\src\ext\f2c_min\FMTLIB.C" />
+    <ClCompile Include="..\src\ext\f2c_min\IIO.C" />
+    <ClCompile Include="..\src\ext\f2c_min\ILNW.C" />
+    <ClCompile Include="..\src\ext\f2c_min\INQUIRE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\I_DNNT.C" />
+    <ClCompile Include="..\src\ext\f2c_min\I_INDX.C" />
+    <ClCompile Include="..\src\ext\f2c_min\I_LEN.C" />
+    <ClCompile Include="..\src\ext\f2c_min\LREAD.C" />
+    <ClCompile Include="..\src\ext\f2c_min\LWRITE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\OPEN.C" />
+    <ClCompile Include="..\src\ext\f2c_min\POW_II.C" />
+    <ClCompile Include="..\src\ext\f2c_min\POW_RI.C" />
+    <ClCompile Include="..\src\ext\f2c_min\RDFMT.C" />
+    <ClCompile Include="..\src\ext\f2c_min\REWIND.C" />
+    <ClCompile Include="..\src\ext\f2c_min\RSFE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\RSLI.C" />
+    <ClCompile Include="..\src\ext\f2c_min\RSNE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\SFE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\SIG_DIE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\S_CAT.C" />
+    <ClCompile Include="..\src\ext\f2c_min\S_CMP.C" />
+    <ClCompile Include="..\src\ext\f2c_min\S_COPY.C" />
+    <ClCompile Include="..\src\ext\f2c_min\S_STOP.C" />
+    <ClCompile Include="..\src\ext\f2c_min\TYPESIZE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\UIO.C" />
+    <ClCompile Include="..\src\ext\f2c_min\UTIL.C" />
+    <ClCompile Include="..\src\ext\f2c_min\WREF.C" />
+    <ClCompile Include="..\src\ext\f2c_min\WRTFMT.C" />
+    <ClCompile Include="..\src\ext\f2c_min\WSFE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\WSLE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\WSNE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\XWSNE.C" />
+    <ClCompile Include="..\src\ext\f2c_min\Z_DIV.C" />
+    <ClCompile Include="..\src\ext\f2c_min\Z_EXP.C" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\all_com.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\check.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\diagno.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\esource.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\field.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\incoherent.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\initrun.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\input.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\loadbeam.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\loadrad.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\magfield.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\main.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\math.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\mpi.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\output.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\partsim.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\pushp.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\rpos.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\scan.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\source.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\stepz.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\string.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\tdepend.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\timerec.c" />
+    <ClCompile Include="..\src\ext\genesis\genesis_july08\track.c" />
+    <ClCompile Include="..\src\ext\genmath\gmfft.cpp" />
+    <ClCompile Include="..\src\ext\genmath\gmfit.cpp" />
+    <ClCompile Include="..\src\ext\genmath\gminterp.cpp" />
+    <ClCompile Include="..\src\ext\genmath\gmmeth.cpp" />
+    <ClCompile Include="..\src\ext\genmath\gmtrans.cpp" />
+    <ClCompile Include="..\src\lib\srerror.cpp" />
+    <ClCompile Include="..\src\lib\srwlib.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\core\srclcuti.h" />
+    <ClInclude Include="..\src\core\srcradint.h" />
+    <ClInclude Include="..\src\core\srctrjdt.h" />
+    <ClInclude Include="..\src\core\srebmdat.h" />
+    <ClInclude Include="..\src\core\sremitpr.h" />
+    <ClInclude Include="..\src\core\srercode.h" />
+    <ClInclude Include="..\src\core\srgsnbm.h" />
+    <ClInclude Include="..\src\core\srgtrjdt.h" />
+    <ClInclude Include="..\src\core\srisosrc.h" />
+    <ClInclude Include="..\src\core\srmagcnt.h" />
+    <ClInclude Include="..\src\core\srmagelem.h" />
+    <ClInclude Include="..\src\core\srmagfld.h" />
+    <ClInclude Include="..\src\core\srmatsta.h" />
+    <ClInclude Include="..\src\core\srmemory.h" />
+    <ClInclude Include="..\src\core\srmlttsk.h" />
+    <ClInclude Include="..\src\core\srobject.h" />
+    <ClInclude Include="..\src\core\sroptang.h" />
+    <ClInclude Include="..\src\core\sroptapt.h" />
+    <ClInclude Include="..\src\core\sroptcnt.h" />
+    <ClInclude Include="..\src\core\sroptcryst.h" />
+    <ClInclude Include="..\src\core\sroptdrf.h" />
+    <ClInclude Include="..\src\core\sroptelm.h" />
+    <ClInclude Include="..\src\core\sroptfoc.h" />
+    <ClInclude Include="..\src\core\sroptgrat.h" />
+    <ClInclude Include="..\src\core\sroptgtr.h" />
+    <ClInclude Include="..\src\core\sropthck.h" />
+    <ClInclude Include="..\src\core\sroptmat.h" />
+    <ClInclude Include="..\src\core\sroptpsh.h" />
+    <ClInclude Include="..\src\core\sroptshp.h" />
+    <ClInclude Include="..\src\core\sroptsmr.h" />
+    <ClInclude Include="..\src\core\sroptwgr.h" />
+    <ClInclude Include="..\src\core\sroptzp.h" />
+    <ClInclude Include="..\src\core\sroptzps.h" />
+    <ClInclude Include="..\src\core\srpersto.h" />
+    <ClInclude Include="..\src\core\srpowden.h" />
+    <ClInclude Include="..\src\core\srprdint.h" />
+    <ClInclude Include="..\src\core\srprgind.h" />
+    <ClInclude Include="..\src\core\srpropme.h" />
+    <ClInclude Include="..\src\core\srptrjdt.h" />
+    <ClInclude Include="..\src\core\srradinc.h" />
+    <ClInclude Include="..\src\core\srradind.h" />
+    <ClInclude Include="..\src\core\srradint.h" />
+    <ClInclude Include="..\src\core\srradmnp.h" />
+    <ClInclude Include="..\src\core\srradstr.h" />
+    <ClInclude Include="..\src\core\srremflp.h" />
+    <ClInclude Include="..\src\core\srsase.h" />
+    <ClInclude Include="..\src\core\srsend.h" />
+    <ClInclude Include="..\src\core\srstowig.h" />
+    <ClInclude Include="..\src\core\srstraux.h" />
+    <ClInclude Include="..\src\core\srsysuti.h" />
+    <ClInclude Include="..\src\core\srthckbm.h" />
+    <ClInclude Include="..\src\core\srtrjaux.h" />
+    <ClInclude Include="..\src\core\srtrjdat.h" />
+    <ClInclude Include="..\src\core\srtrjdat3d.h" />
+    <ClInclude Include="..\src\core\srwfrsmp.h" />
+    <ClInclude Include="..\src\ext\auxparse\auxparse.h" />
+    <ClInclude Include="..\src\ext\auxparse\smartptr.h" />
+    <ClInclude Include="..\src\ext\auxparse\stlstart.h" />
+    <ClInclude Include="..\src\ext\genmath\cmplxd.h" />
+    <ClInclude Include="..\src\ext\genmath\gmercode.h" />
+    <ClInclude Include="..\src\ext\genmath\gmfft.h" />
+    <ClInclude Include="..\src\ext\genmath\gmfit.h" />
+    <ClInclude Include="..\src\ext\genmath\gmfunc.h" />
+    <ClInclude Include="..\src\ext\genmath\gminterp.h" />
+    <ClInclude Include="..\src\ext\genmath\gmintrk.h" />
+    <ClInclude Include="..\src\ext\genmath\gmmeth.h" />
+    <ClInclude Include="..\src\ext\genmath\gmrand.h" />
+    <ClInclude Include="..\src\ext\genmath\gmtrans.h" />
+    <ClInclude Include="..\src\ext\genmath\gmvect.h" />
+    <ClInclude Include="..\src\lib\srerror.h" />
+    <ClInclude Include="..\src\lib\srigorre.h" />
+    <ClInclude Include="..\src\lib\srwlib.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
