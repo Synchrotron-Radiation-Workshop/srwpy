@@ -5,6 +5,9 @@ srwpy
 .. image:: https://img.shields.io/travis/srwpy/srwpy.svg
         :target: https://travis-ci.org/srwpy/srwpy
 
+.. image:: https://ci.appveyor.com/api/projects/status/8e0gwxyn27ookg8s?svg=true
+        :target: https://ci.appveyor.com/project/mrakitin/srwpy
+
 .. image:: https://img.shields.io/pypi/v/srwpy.svg
         :target: https://pypi.python.org/pypi/srwpy
 
