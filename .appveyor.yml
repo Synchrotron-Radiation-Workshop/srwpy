@@ -77,7 +77,8 @@ install:
   # target Python version and architecture
   - "%CMD_IN_ENV% pip install -r requirements-dev.txt"
   - "cd core"
-  - "%CMD_IN_ENV% call make.bat"
+  - ps: "ls dist"
+  - "%CMD_IN_ENV% call .\make.bat"
   - "cd .."
 
 build_script:
