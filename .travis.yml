@@ -21,21 +21,21 @@ matrix:
 before_install:
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    docker pull quay.io/pypa/manylinux1_x86_64
-    docker images
+    docker pull quay.io/pypa/manylinux1_x86_64 && \
+    docker images && \
     docker ps -a
   fi
 - |
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    cd
-    curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda
-    rm -fv Miniconda*.sh
-    export PATH=${HOME}/conda/bin:$PATH
-    conda create -n py${PYTHON} python=${PYTHON} -y
-    conda env list
-    conda list
-    source activate py${PYTHON}
+    cd && \
+    curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh && \
+    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda && \
+    rm -fv Miniconda*.sh && \
+    export PATH=${HOME}/conda/bin:$PATH && \
+    conda create -n py${PYTHON} python=${PYTHON} -y && \
+    conda env list && \
+    conda list && \
+    source activate py${PYTHON} && \
     python --version
   fi
 
@@ -46,10 +46,10 @@ script:
   fi
 - |
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    pip install -r requirements-dev.txt
-    pushd core/
-    make all
-    popd
+    pip install -r requirements-dev.txt && \
+    pushd core/ && \
+    make all && \
+    popd && \
     python setup.py sdist bdist_wheel
   fi
 - ls -laF dist/
