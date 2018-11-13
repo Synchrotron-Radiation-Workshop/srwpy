@@ -1,10 +1,14 @@
-sudo: required
-services:
-  - docker
 
-language: python
-python:
-- 3.6
+matrix:
+  include:
+  - os: linux
+    sudo: required
+    services: docker
+    language: python
+    - python: 3.6
+  - os: osx
+    language: generic
+    env: PYTHON=3.6
 
 cache:
   directories:
@@ -15,13 +19,41 @@ env:
   global:
   - secure: WlJkt8YmA6xu0SM7qTGOuresaEOHTWnDDZv3huNsowFxnjz/lnsNqttX3SRJP7uV1d+9kzsM1C1q5omN/6k3vlHr5HX+s+i1GKVSzPMzSau3Ez1BwcaC/8soxzHhw48E8hCfXNK7XVxCvz+ZgHP0zKEta+zEHk3bE7MNge6KqhkaWzyvtfh3qRAQ3vICAWOQUh9YLhKr5gc/oCndlf+e7Ky7qE3M8JSwYjJqbedQsv5qgp3SV9tdBsxR43RdRYfKQRcF1i2Q8wsQOKAXxkOAW4WQHAafKJVcRjmoGaKqXaHkDQhjoVSrEi8RQ1rrA4EgHeXqhHAyzhTvrNZL9e58Td+xS6Y3ZreiZ87uLbnhY0jfXAqWQ57xQNnO0wGaQlmv2dxyQjXiWMEnpL4WPU2IhkPTjwYbXSTel9n8ZqcpIr2ePwg+faXzei0AZCF2h5/SWOFXp6QDJj+azyYBXTGjFIdjLMy496J6HBhCPd0tNyksORM7KASQEqG/PRJFg1iauvqbqzeSWcNIInJNxVMnJAeRA3NdnQMLtOQNOvKtd9zgfaIUQEjnIBEgLvMiYsGT2/cNKSTlbLbBr1/poigA1m3BwGJiPV384zXBPmmI45UAONyZH58r2ZIwLYCuucLg8PfZekMbg/enGtay+MzZJu43sU67NbcPEqddWPICyYo=
 
-before_install:
-- docker pull quay.io/pypa/manylinux1_x86_64
-- docker images
-- docker ps -a
+before_install: |
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    docker pull quay.io/pypa/manylinux1_x86_64
+    docker images
+    docker ps -a
+  fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    brew update
+    brew install openssl readline
+    brew outdated pyenv || brew upgrade pyenv
+    brew install pyenv-virtualenv
+    pyenv install $PYTHON
+    export PYENV_VERSION=$PYTHON
+    export PATH="/Users/travis/.pyenv/shims:${PATH}"
+    pyenv-virtualenv venv
+    source venv/bin/activate
+    python --version
+  fi
 
-script:
-- docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
+install: |
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    pip install -r requirements-dev.txt
+    pushd core/
+    make all
+    popd
+    pip install .
+  fi
+
+script: |
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
+  fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    python setup.py sdist bdist_wheel
+  fi
 - ls -laF dist/
 
 before_deploy: "echo 'ready?'"
