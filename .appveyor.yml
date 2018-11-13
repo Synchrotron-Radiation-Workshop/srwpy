@@ -5,6 +5,8 @@ environment:
     # /E:ON and /V:ON options are not enabled in the batch script intepreter
     # See: http://stackoverflow.com/a/13751649/163740
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
+  PYPI_PASSWORD:
+    secure: 1HcmDnGDFgDCnljyFUMAkw==
 
   matrix:
 
@@ -89,16 +91,9 @@ artifacts:
   # Archive the generated packages in the ci.appveyor.com build report.
   - path: dist\*
 
-#on_success:
-#  - TODO: upload the content of dist/*.whl to a public wheelhouse
-#
-
-# on_finish:
-#   # Upload test results to AppVeyor
-#   - ps: |
-#       # this uploads nosetests.xml produced in test_script step
-#       $wc = New-Object 'System.Net.WebClient'
-#       $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\nosetests.xml))
-
 on_success:
- - if "%APPVEYOR_REPO_TAG%"=="true" ( %CMD_IN_ENV% twine upload dist/* ) else ( echo "Not deploying because not a tagged commit." )
+  # Upload the content of dist/*.whl to a public wheelhouse
+  - "echo [pypi]                     > %USERPROFILE%\\.pypirc"
+  - "echo username: mrakitin        >> %USERPROFILE%\\.pypirc"
+  - "echo password: %PYPI_PASSWORD% >> %USERPROFILE%\\.pypirc"
+  - if "%APPVEYOR_REPO_TAG%"=="true" ( %CMD_IN_ENV% twine upload dist/* ) else ( echo "Not deploying because not a tagged commit." )
