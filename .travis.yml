@@ -29,9 +29,9 @@ before_install:
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     cd
     curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p /opt/conda
+    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda
     rm -fv Miniconda*.sh
-    export PATH=/opt/conda/bin:$PATH
+    export PATH=${HOME}/conda/bin:$PATH
     conda create -n py${PYTHON} python=${PYTHON} -y
     conda env list
     conda list
