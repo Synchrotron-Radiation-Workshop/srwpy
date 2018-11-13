@@ -27,14 +27,16 @@ before_install:
 - |
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     brew update
-    brew install openssl readline
-    brew outdated pyenv || brew upgrade pyenv
-    brew install pyenv-virtualenv
-    pyenv install $PYTHON
-    export PYENV_VERSION=$PYTHON
-    export PATH="/Users/travis/.pyenv/shims:${PATH}"
-    pyenv-virtualenv venv
-    source venv/bin/activate
+    brew install wget
+    cd
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh --no-verbose
+    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p /opt/conda
+    rm -fv Miniconda*.sh
+    export PATH=/opt/conda/bin:$PATH
+    conda create -n py36 python=3.6 -y
+    conda env list
+    conda list
+    source activate py36
     python --version
   fi
 
