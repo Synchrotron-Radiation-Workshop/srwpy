@@ -78,7 +78,7 @@ install:
   - "%CMD_IN_ENV% pip install -r requirements-dev.txt"
   - "cd core"
   - ps: "ls"
-  - "%CMD_IN_ENV% call .\\make.bat"
+  - "%CMD_IN_ENV% make.bat"
   - "cd .."
 
 build_script:
