@@ -16,7 +16,7 @@ done
 
 # Bundle external shared libraries into the wheels
 for whl in wheelhouse/srwpy*.whl; do
-    auditwheel repair "$whl" -w /io/wheelhouse/
+    auditwheel repair "$whl" -w /io/dist/
 done
 
 # Install packages and test
