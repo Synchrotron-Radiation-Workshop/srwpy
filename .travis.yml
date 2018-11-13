@@ -16,7 +16,19 @@ matrix:
   - os: linux
   - os: osx
     language: generic
+    env: PYTHON=2.7
+  - os: osx
+    language: generic
+    env: PYTHON=3.4
+  - os: osx
+    language: generic
+    env: PYTHON=3.5
+  - os: osx
+    language: generic
     env: PYTHON=3.6
+  - os: osx
+    language: generic
+    env: PYTHON=3.7
 
 before_install:
 - |
