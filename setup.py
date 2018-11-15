@@ -13,7 +13,7 @@ if sys.version_info < min_version:
 srwpy does not support Python {0}.{1}.
 Python {2}.{3} and above is required. Check your Python version like so:
 
-python3 --version
+python --version
 
 This may be due to an out-of-date pip. Make sure you have pip >= 9.0.1.
 Upgrade pip like so:
@@ -75,9 +75,11 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Natural Language :: English',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
-        'Operating System :: POSIX',
-        'Operating System :: MacOS',
+        'Operating System :: POSIX :: Linux',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
     ],
     ext_modules=[srwlpy],
 )
