@@ -16,11 +16,13 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import sys
+import re
+import sphinx_rtd_theme
+
+sys.path.insert(0, os.path.abspath(os.path.dirname('__file__')))
 
 # -- General configuration ------------------------------------------------
 
@@ -43,12 +45,23 @@ extensions = [
     'matplotlib.sphinxext.plot_directive',
     'numpydoc',
     'sphinx_copybutton',
+    'sphinx_gallery.gen_gallery',
 ]
 
 # Configuration options for plot_directive. See:
 # https://github.com/matplotlib/matplotlib/blob/f3ed922d935751e08494e5fb5311d3050a3b637b/lib/matplotlib/sphinxext/plot_directive.py#L81
 plot_html_show_source_link = False
 plot_html_show_formats = False
+plot_pre_code = ("from matplotlib import pyplot as plt\n")
+
+sphinx_gallery_conf = {
+    # path to your examples script
+    'examples_dirs' : '_cookbook',
+    # path where to save gallery generated examples
+    'gallery_dirs'  : 'cookbook',
+    'filename_pattern': re.escape(os.sep) + '*.py',
+    'backreferences_dir': False}
+
 
 # Generate the API documentation when building
 autosummary_generate = True
@@ -106,7 +119,6 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-import sphinx_rtd_theme
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme

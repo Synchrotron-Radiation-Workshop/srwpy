@@ -9,6 +9,7 @@ srwpy Documentation
 .. toctree::
    :maxdepth: 2
 
+   cookbook/index
    installation
    usage
    release-history
