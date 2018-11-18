@@ -37,13 +37,13 @@ matrix:
 
 before_install:
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
     docker pull quay.io/pypa/manylinux1_x86_64 && \
     docker images && \
     docker ps -a
   fi
 - |
-  if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "osx" ]; then
     pushd ${HOME}
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh && \
     bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda && \
@@ -61,11 +61,11 @@ before_install:
 script:
 - pip install -r requirements-dev.txt
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
     docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
   fi
 - |
-  if [[ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
     pushd core/ && \
     make all && \
     popd && \
