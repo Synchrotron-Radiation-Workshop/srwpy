@@ -14,6 +14,10 @@ services: docker
 matrix:
   include:
   - os: linux
+  - os: linux
+    env:
+      - NO_DOCKER=1
+      - BUILD_DOCS=1
   - os: osx
     language: generic
     env: PYTHON=2.7
@@ -27,14 +31,13 @@ matrix:
     language: generic
     env:
       - PYTHON=3.6
-      - BUILD_DOCS=1
   - os: osx
     language: generic
     env: PYTHON=3.7
 
 before_install:
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+  if [[ "$TRAVIS_OS_NAME" == "linux" -a "$NO_DOCKER" -ne 1 ]]; then
     docker pull quay.io/pypa/manylinux1_x86_64 && \
     docker images && \
     docker ps -a
@@ -58,11 +61,11 @@ before_install:
 script:
 - pip install -r requirements-dev.txt
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+  if [[ "$TRAVIS_OS_NAME" == "linux" -a "$NO_DOCKER" -ne 1 ]]; then
     docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
   fi
 - |
-  if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+  if [[ "$TRAVIS_OS_NAME" == "osx" -o "$NO_DOCKER" -eq 1 ]]; then
     pushd core/ && \
     make all && \
     popd && \
@@ -77,6 +80,7 @@ script:
 - |
   if [ "$BUILD_DOCS" ]; then
     set -e
+    cp -v /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages/srwpy/* /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages/
     make -C docs html  # Build the documentation.
     pip install doctr
     doctr deploy --built-docs docs/build/html .
