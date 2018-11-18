@@ -14,6 +14,7 @@ services: docker
 matrix:
   include:
   - os: linux
+  - env: BUILD_DOCS=1
   - os: osx
     language: generic
     env: PYTHON=2.7
@@ -54,13 +55,13 @@ before_install:
   fi
 
 script:
+- pip install -r requirements-dev.txt
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
   fi
 - |
   if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    pip install -r requirements-dev.txt && \
     pushd core/ && \
     make all && \
     popd && \
@@ -71,10 +72,13 @@ script:
 # - coverage report -m  # Generate test coverage report.
 # - codecov  # Upload the report to codecov.
 # - flake8 --max-line-length=115  # Enforce code style (but relax line length limit a bit).
-- set -e
-- make -C docs html  # Build the documentation.
-- pip install doctr
-- doctr deploy --built-docs docs/build/html .
+- |
+  if [ "$BUILD_DOCS" ]; then
+    set -e
+    make -C docs html  # Build the documentation.
+    pip install doctr
+    doctr deploy --built-docs docs/build/html .
+  fi
 
 before_deploy: "echo 'ready?'"
 
