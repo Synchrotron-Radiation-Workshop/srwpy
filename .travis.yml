@@ -37,7 +37,7 @@ matrix:
 
 before_install:
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" -a "$NO_DOCKER" -ne 1 ]]; then
+  if [[ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]]; then
     docker pull quay.io/pypa/manylinux1_x86_64 && \
     docker images && \
     docker ps -a
@@ -61,11 +61,11 @@ before_install:
 script:
 - pip install -r requirements-dev.txt
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" -a "$NO_DOCKER" -ne 1 ]]; then
+  if [[ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]]; then
     docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
   fi
 - |
-  if [[ "$TRAVIS_OS_NAME" == "osx" -o "$NO_DOCKER" -eq 1 ]]; then
+  if [[ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]]; then
     pushd core/ && \
     make all && \
     popd && \
