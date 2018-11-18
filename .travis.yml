@@ -67,6 +67,14 @@ script:
     python setup.py sdist bdist_wheel
   fi
 - ls -laF dist/
+# - coverage run -m pytest  # Run the tests and check for test coverage.
+# - coverage report -m  # Generate test coverage report.
+# - codecov  # Upload the report to codecov.
+# - flake8 --max-line-length=115  # Enforce code style (but relax line length limit a bit).
+- set -e
+- make -C docs html  # Build the documentation.
+- pip install doctr
+- doctr deploy --built-docs docs/build/html .
 
 before_deploy: "echo 'ready?'"
 
