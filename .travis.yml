@@ -80,7 +80,8 @@ script:
 - |
   if [ "$BUILD_DOCS" ]; then
     set -e
-    cp -v /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages/srwpy/* /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages/
+    which python
+    cp -v $(which python)/../lib/python3.6/site-packages/srwpy/* $(which python)/../lib/python3.6/site-packages/
     make -C docs html  # Build the documentation.
     pip install doctr
     doctr deploy --built-docs docs/build/html .
