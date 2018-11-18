@@ -15,6 +15,7 @@ matrix:
   include:
   - os: linux
   - os: linux
+    python: "3.6"
     env:
       - NO_DOCKER=1
       - BUILD_DOCS=1
