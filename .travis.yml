@@ -14,6 +14,11 @@ services: docker
 matrix:
   include:
   - os: linux
+  - os: linux
+    python: "3.6"
+    env:
+      - NO_DOCKER=1
+      - BUILD_DOCS=1
   - os: osx
     language: generic
     env: PYTHON=2.7
@@ -32,13 +37,13 @@ matrix:
 
 before_install:
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
     docker pull quay.io/pypa/manylinux1_x86_64 && \
     docker images && \
     docker ps -a
   fi
 - |
-  if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "osx" ]; then
     pushd ${HOME}
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh && \
     bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda && \
@@ -49,24 +54,40 @@ before_install:
     conda create -n py${PYTHON} python=${PYTHON} -y && \
     conda env list && \
     source activate py${PYTHON} && \
-    conda list && \
-    python --version
+    conda list
   fi
 
 script:
+- python --version
+- python -m site
+- pip install -r requirements-dev.txt
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+  if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
     docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
   fi
 - |
-  if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    pip install -r requirements-dev.txt && \
+  if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
     pushd core/ && \
     make all && \
     popd && \
     python setup.py sdist bdist_wheel
+    pip install -v .
   fi
 - ls -laF dist/
+# - coverage run -m pytest  # Run the tests and check for test coverage.
+# - coverage report -m  # Generate test coverage report.
+# - codecov  # Upload the report to codecov.
+# - flake8 --max-line-length=115  # Enforce code style (but relax line length limit a bit).
+- |
+  if [ "$BUILD_DOCS" ]; then
+    set -e
+    site_packages=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+    ls -laF ${site_packages}
+    cp -v ${site_packages}/srwpy/*.py ${site_packages}
+    make -C docs html  # Build the documentation.
+    pip install doctr
+    doctr deploy --built-docs docs/build/html .
+  fi
 
 before_deploy: "echo 'ready?'"
 

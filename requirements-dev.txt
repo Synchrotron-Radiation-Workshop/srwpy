@@ -9,7 +9,9 @@ sphinx
 ipython
 matplotlib
 numpydoc
+pillow # required by sphinx-gallery
 sphinx-copybutton
+sphinx-gallery
 sphinx_rtd_theme
 # PyPI deployment tools
 setuptools
