@@ -4,7 +4,6 @@ SRW Example #6
 
 Problem
 -------
-
 Calculating spectral flux of undulator radiation by finite-emittance electron
 beam collected through a finite aperture and power density distribution of this
 radiation (integrated over all photon energies)

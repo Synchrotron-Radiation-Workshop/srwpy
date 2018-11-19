@@ -4,7 +4,6 @@ SRW Example #1
 
 Problem
 -------
-
 Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator
 
 Example Solution

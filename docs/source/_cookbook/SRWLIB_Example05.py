@@ -4,7 +4,6 @@ SRW Example #5
 
 Problem
 -------
-
 Calculating electron trajectory and spontaneous emission from a very long
 segmented undulator (transversely-uniform magnetic field defined)
 

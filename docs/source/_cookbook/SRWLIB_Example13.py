@@ -4,7 +4,6 @@ SRW Example #13
 
 Problem
 -------
-
 Simulating emission and propagation of Bending Magnet SR through a simple
 optical scheme containing one focusing element
 

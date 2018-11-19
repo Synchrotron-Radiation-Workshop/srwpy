@@ -4,9 +4,8 @@ SRW Example #4
 
 Problem
 -------
-
-Calculating synchrotron (undulator) radiation electric field (from one electron)
-and simulating wavefront propagation through a simple optical system
+Calculating synchrotron (undulator) radiation electric field (from one
+electron) and simulating wavefront propagation through a simple optical system
 
 Example Solution
 ----------------

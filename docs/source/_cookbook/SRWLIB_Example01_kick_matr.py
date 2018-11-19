@@ -4,7 +4,6 @@ SRW Example #1 (kick matrix)
 
 Problem
 -------
-
 Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator,
 from the tabulated field and from a kick-matrix
 

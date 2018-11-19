@@ -4,8 +4,8 @@ SRW Example #7
 
 Problem
 -------
-
-Simulating propagation of a Gaussian X-ray beam through a simple optical scheme containing CRL
+Simulating propagation of a Gaussian X-ray beam through a simple optical scheme
+containing CRL
 
 Example Solution
 ----------------

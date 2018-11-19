@@ -4,8 +4,8 @@ SRW Example #2
 
 Problem
 -------
-
-Calculating electron trajectory in magnetic field of a segmented planar undulator
+Calculating electron trajectory in magnetic field of a segmented planar
+undulator
 
 Example Solution
 ----------------

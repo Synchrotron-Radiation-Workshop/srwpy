@@ -4,7 +4,6 @@ SRW Example #3
 
 Problem
 -------
-
 Calculating synchrotron (undulator) radiation emitted by an electron travelling
 in ellipsoidal undulator
 
