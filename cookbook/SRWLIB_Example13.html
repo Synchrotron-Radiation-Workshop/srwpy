@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SRW Example #13 &mdash; srwpy 0.0.2a5.post31+gd7b897f documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SRW Example #14" href="SRWLIB_Example14.html" />
+    <link rel="prev" title="SRW Example #9" href="SRWLIB_Example09.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> srwpy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.2a5.post31+gd7b897f
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cookbook (Examples)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01.html">SRW Example #1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01_kick_matr.html">SRW Example #1 (kick matrix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example02.html">SRW Example #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example03.html">SRW Example #3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example04.html">SRW Example #4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example05.html">SRW Example #5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example06.html">SRW Example #6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example07.html">SRW Example #7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example09.html">SRW Example #9</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SRW Example #13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-solution">Example Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example14.html">SRW Example #14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example15.html">SRW Example #15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example16.html">SRW Example #16</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-history.html">Release History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">srwpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Cookbook (Examples)</a> &raquo;</li>
+        
+      <li>SRW Example #13</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cookbook/SRWLIB_Example13.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example13-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="srw-example-13">
+<span id="sphx-glr-cookbook-srwlib-example13-py"></span><h1>SRW Example #13<a class="headerlink" href="#srw-example-13" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h2>
+<p>Simulating emission and propagation of Bending Magnet SR through a simple
+optical scheme containing one focusing element</p>
+</div>
+<div class="section" id="example-solution">
+<h2>Example Solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h2>
+<ul class="sphx-glr-horizontal">
+<li><img alt="../_images/sphx_glr_SRWLIB_Example13_001.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example13_001.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example13_002.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example13_002.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example13_003.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example13_003.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example13_004.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example13_004.png" />
+</li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SRWLIB Python Example # 13:
+Simulating emission and propagation of Bending Magnet Synchrotron Radiaiton wavefront through a simple beamline
+   Performing initial SR spectrum calculation ... done in 0 s
+   Extracting intensity and saving it to a file ... done in 0 s
+   Performing initial electric field wavefront calculation ... done in 14 s
+   Extracting intensity and saving it to a file ... done in 0 s
+   Simulating single-electron electric field wavefront propagation ... done in 2 s
+   Extracting intensity from calculated electric field and saving it to file(s) ... done in 0 s
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
+<span class="kn">from</span> <span class="nn">srwlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">uti_plot</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1">#required for plotting</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Python Example # 13:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Simulating emission and propagation of Bending Magnet Synchrotron Radiaiton wavefront through a simple beamline&#39;</span><span class="p">)</span>
+
+<span class="c1">#***********Data Folder and File Names</span>
+<span class="n">strExDataFolderName</span> <span class="o">=</span> <span class="s1">&#39;data_example_13&#39;</span> <span class="c1">#example data sub-folder name</span>
+<span class="n">strSpecOutFileName0</span> <span class="o">=</span> <span class="s1">&#39;ex13_res_spec.dat&#39;</span> <span class="c1">#file name for output SR spectrum vs photon energy data</span>
+<span class="n">strIntOutFileName0</span> <span class="o">=</span> <span class="s1">&#39;ex13_res_int_se.dat&#39;</span> <span class="c1">#file name for output initial single-electron SR intensity vs X and Y data</span>
+<span class="n">strIntOutFileName1</span> <span class="o">=</span> <span class="s1">&#39;ex13_res_int_prop_se.dat&#39;</span> <span class="c1">#file name for output propagated single-electron SR intensity vs X and Y data</span>
+<span class="n">strIntOutFileName2</span> <span class="o">=</span> <span class="s1">&#39;ex13_res_int_prop_me.dat&#39;</span>  <span class="c1">#file name for output propagated multi-electron SR intensity vs X and Y data</span>
+
+<span class="c1">#***********Bending Magnet</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c1">#Dipole magnetic field [T]</span>
+<span class="n">LeffBM</span> <span class="o">=</span> <span class="mf">4.</span> <span class="c1">#Magnet length [m] (exaggerated, to avoid observinng eventual &quot;edge radiation&quot;)</span>
+<span class="n">BM</span> <span class="o">=</span> <span class="n">SRWLMagFldM</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="n">LeffBM</span><span class="p">)</span>
+<span class="n">magFldCnt</span> <span class="o">=</span> <span class="n">SRWLMagFldC</span><span class="p">([</span><span class="n">BM</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#Container of magnetic field elements and their positions in 3D</span>
+
+<span class="c1">#***********Electron Beam</span>
+<span class="n">eBeam</span> <span class="o">=</span> <span class="n">SRWLPartBeam</span><span class="p">()</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">Iavg</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#Average current [A]</span>
+<span class="c1">#1st order statistical moments:</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial horizontal position of central trajectory [m]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial vertical position of central trajectory [m]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial longitudinal position of central trajectory [m]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial horizontal angle of central trajectory [rad]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">yp</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial vertical angle of central trajectory [rad]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="mf">3.</span><span class="o">/</span><span class="mf">0.51099890221e-03</span> <span class="c1">#Relative energy</span>
+<span class="c1">#2nd order statistical moments:</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">127.346e-06</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#&lt;(x-x0)^2&gt; [m^2]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">10.85e-09</span> <span class="c1">#&lt;(x-x0)*(x&#39;-x&#39;0)&gt; [m]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">92.3093e-06</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#&lt;(x&#39;-x&#39;0)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">13.4164e-06</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#&lt;(y-y0)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0072e-09</span> <span class="c1">#&lt;(y-y0)*(y&#39;-y&#39;0)&gt; [m]</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.8022e-06</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#&lt;(y&#39;-y&#39;0)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.89e-03</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#&lt;(E-E0)^2&gt;/E0^2</span>
+
+<span class="c1">#***********Radiation Sampling for the On-Axis SR Spectrum</span>
+<span class="n">wfrSp</span> <span class="o">=</span> <span class="n">SRWLWfr</span><span class="p">()</span> <span class="c1">#Wavefront structure (placeholder for data to be calculated)</span>
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#Numbers of points vs photon energy, horizontal and vertical positions (the last two will be modified in the process of calculation)</span>
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span> <span class="o">=</span> <span class="mf">5.</span> <span class="c1">#Longitudinal position for initial wavefront [m]</span>
+
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#Initial photon energy [eV]</span>
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span> <span class="o">=</span> <span class="mf">10000.</span> <span class="c1">#Final photon energy [eV]</span>
+
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial horizontal position [m]</span>
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span> <span class="o">=</span> <span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span> <span class="c1">#Final horizontal position [m]</span>
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial vertical position [m]</span>
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Final vertical position [m]</span>
+
+<span class="n">wfrSp</span><span class="o">.</span><span class="n">partBeam</span> <span class="o">=</span> <span class="n">eBeam</span> <span class="c1">#e-beam data is contained inside the wavefront struct</span>
+
+<span class="c1">#***********Radiation Sampling for the Initial Wavefront (before first optical element)</span>
+<span class="n">wfr</span> <span class="o">=</span> <span class="n">SRWLWfr</span><span class="p">()</span> <span class="c1">#Wavefront structure (placeholder for data to be calculated)</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">#Numbers of points vs photon energy, horizontal and vertical positions (the last two will be modified in the process of calculation)</span>
+
+<span class="n">distSrcLens</span> <span class="o">=</span> <span class="mf">5.</span> <span class="c1">#Distance from geometrical source point to lens [m]</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span> <span class="o">=</span> <span class="n">distSrcLens</span> <span class="c1">#Longitudinal position for initial wavefront [m]</span>
+
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span> <span class="o">=</span> <span class="mf">0.123984</span> <span class="c1">#Initial photon energy [eV]</span>
+<span class="c1">#Calculations in this script were tested for photon energies between ~0.0124 and ~0.124 eV (~100 and ~10 microns respectively)</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span> <span class="o">=</span> <span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span> <span class="c1">#Final photon energy [eV]</span>
+
+<span class="n">horAng</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1">#Horizontal angle [rad]</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">horAng</span><span class="o">*</span><span class="n">distSrcLens</span> <span class="c1">#Initial horizontal position [m]</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">horAng</span><span class="o">*</span><span class="n">distSrcLens</span> <span class="c1">#Final horizontal position [m]</span>
+<span class="n">verAng</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1">#Vertical angle [rad]</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">verAng</span><span class="o">*</span><span class="n">distSrcLens</span> <span class="c1">#Initial vertical position [m]</span>
+<span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">verAng</span><span class="o">*</span><span class="n">distSrcLens</span> <span class="c1">#Final vertical position [m]</span>
+
+<span class="n">wfr</span><span class="o">.</span><span class="n">partBeam</span> <span class="o">=</span> <span class="n">eBeam</span> <span class="c1">#e-beam data is contained inside the wavefront struct</span>
+
+<span class="c1">#***********Optical Elements and their Corresponding Propagation Parameters</span>
+<span class="n">distLensImg</span> <span class="o">=</span> <span class="n">distSrcLens</span> <span class="c1">#Distance from lens to image plane</span>
+<span class="n">focLen</span> <span class="o">=</span> <span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span><span class="o">*</span><span class="n">distLensImg</span><span class="o">/</span><span class="p">(</span><span class="n">distSrcLens</span> <span class="o">+</span> <span class="n">distLensImg</span><span class="p">)</span>
+<span class="n">optLens</span> <span class="o">=</span> <span class="n">SRWLOptL</span><span class="p">(</span><span class="n">_Fx</span><span class="o">=</span><span class="n">focLen</span><span class="p">,</span> <span class="n">_Fy</span><span class="o">=</span><span class="n">focLen</span><span class="p">)</span> <span class="c1">#Thin lens</span>
+<span class="n">optDrift</span> <span class="o">=</span> <span class="n">SRWLOptD</span><span class="p">(</span><span class="n">distLensImg</span><span class="p">)</span> <span class="c1">#Drift space from lens to image plane</span>
+
+<span class="c1">#Propagation paramaters (SRW specific)</span>
+<span class="c1">#                [0][1][2] [3][4] [5] [6] [7] [8]</span>
+<span class="n">propagParLens</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">propagParDrift</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="c1">#Wavefront Propagation Parameters:</span>
+<span class="c1">#[0]: Auto-Resize (1) or not (0) Before propagation</span>
+<span class="c1">#[1]: Auto-Resize (1) or not (0) After propagation</span>
+<span class="c1">#[2]: Relative Precision for propagation with Auto-Resizing (1. is nominal)</span>
+<span class="c1">#[3]: Allow (1) or not (0) for semi-analytical treatment of the quadratic (leading) phase terms at the propagation</span>
+<span class="c1">#[4]: Do any Resizing on Fourier side, using FFT, (1) or not (0)</span>
+<span class="c1">#[5]: Horizontal Range modification factor at Resizing (1. means no modification)</span>
+<span class="c1">#[6]: Horizontal Resolution modification factor at Resizing</span>
+<span class="c1">#[7]: Vertical Range modification factor at Resizing</span>
+<span class="c1">#[8]: Vertical Resolution modification factor at Resizing</span>
+<span class="c1">#[9]: Type of wavefront Shift before Resizing (not yet implemented)</span>
+<span class="c1">#[10]: New Horizontal wavefront Center position after Shift (not yet implemented)</span>
+<span class="c1">#[11]: New Vertical wavefront Center position after Shift (not yet implemented)</span>
+
+<span class="c1">#&quot;Beamline&quot; - Container of optical elements (together with their corresponding wavefront propagation parameters / instructions)</span>
+<span class="n">optBL</span> <span class="o">=</span> <span class="n">SRWLOptC</span><span class="p">([</span><span class="n">optLens</span><span class="p">,</span> <span class="n">optDrift</span><span class="p">],</span> <span class="p">[</span><span class="n">propagParLens</span><span class="p">,</span> <span class="n">propagParDrift</span><span class="p">])</span>
+
+<span class="c1">#***********BM SR Calculation</span>
+<span class="c1">#Precision parameters</span>
+<span class="n">meth</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#SR calculation method: 0- &quot;manual&quot;, 1- &quot;auto-undulator&quot;, 2- &quot;auto-wiggler&quot;</span>
+<span class="n">relPrec</span> <span class="o">=</span> <span class="mf">0.005</span> <span class="c1">#Relative precision</span>
+<span class="n">zStartInteg</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Longitudinal position to start integration (effective if &lt; zEndInteg)</span>
+<span class="n">zEndInteg</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Longitudinal position to finish integration (effective if &gt; zStartInteg)</span>
+<span class="n">npTraj</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1">#Number of points for trajectory calculation</span>
+<span class="n">useTermin</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Use &quot;terminating terms&quot; (i.e. asymptotic expansions at zStartInteg and zEndInteg) or not (1 or 0 respectively)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing initial SR spectrum calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">sampFactNxNyForProp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#Sampling factor for adjusting nx, ny (effective if &gt; 0)</span>
+<span class="n">arPrecSR</span> <span class="o">=</span> <span class="p">[</span><span class="n">meth</span><span class="p">,</span> <span class="n">relPrec</span><span class="p">,</span> <span class="n">zStartInteg</span><span class="p">,</span> <span class="n">zEndInteg</span><span class="p">,</span> <span class="n">npTraj</span><span class="p">,</span> <span class="n">useTermin</span><span class="p">,</span> <span class="n">sampFactNxNyForProp</span><span class="p">]</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcElecFieldSR</span><span class="p">(</span><span class="n">wfrSp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecSR</span><span class="p">)</span> <span class="c1">#Calculating electric field</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done in&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Extracting intensity and saving it to a file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">meshSp</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">wfrSp</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">arSp</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">meshSp</span><span class="o">.</span><span class="n">ne</span><span class="p">)</span> <span class="c1">#&quot;Flat&quot; array to take 1D intensity data (vs E)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arSp</span><span class="p">,</span> <span class="n">wfrSp</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">meshSp</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#Extracting intensity vs photon energy</span>
+<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">arSp</span><span class="p">,</span> <span class="n">meshSp</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strSpecOutFileName0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done in&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing initial electric field wavefront calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">sampFactNxNyForProp</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="c1">#Sampling factor for adjusting nx, ny (effective if &gt; 0)</span>
+<span class="n">arPrecSR</span> <span class="o">=</span> <span class="p">[</span><span class="n">meth</span><span class="p">,</span> <span class="n">relPrec</span><span class="p">,</span> <span class="n">zStartInteg</span><span class="p">,</span> <span class="n">zEndInteg</span><span class="p">,</span> <span class="n">npTraj</span><span class="p">,</span> <span class="n">useTermin</span><span class="p">,</span> <span class="n">sampFactNxNyForProp</span><span class="p">]</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcElecFieldSR</span><span class="p">(</span><span class="n">wfr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecSR</span><span class="p">)</span> <span class="c1">#Calculating electric field</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done in&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Extracting intensity and saving it to a file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">mesh0</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">arI0</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">mesh0</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="n">mesh0</span><span class="o">.</span><span class="n">ny</span><span class="p">)</span> <span class="c1">#&quot;Flat&quot; array to take 2D intensity data (vs X &amp; Y)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI0</span><span class="p">,</span> <span class="n">wfr</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">mesh0</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#Extracting intensity vs horizontal and vertical positions</span>
+<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">arI0</span><span class="p">,</span> <span class="n">mesh0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strIntOutFileName0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done in&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="c1">#***********Wavefront Propagation</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Simulating single-electron electric field wavefront propagation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">PropagElecField</span><span class="p">(</span><span class="n">wfr</span><span class="p">,</span> <span class="n">optBL</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done in&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Extracting intensity from calculated electric field and saving it to file(s) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">mesh1</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">wfr</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">arI1s</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">mesh1</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="n">mesh1</span><span class="o">.</span><span class="n">ny</span><span class="p">)</span> <span class="c1">#&quot;Flat&quot; array to take 2D single-electron intensity data (vs X &amp; Y)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI1s</span><span class="p">,</span> <span class="n">wfr</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#Extracting single-electron intensity vs X &amp; Y</span>
+<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">arI1s</span><span class="p">,</span> <span class="n">mesh1</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strIntOutFileName1</span><span class="p">))</span>
+
+<span class="n">arI1m</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">arI1s</span><span class="p">)</span> <span class="c1">#&quot;Flat&quot; array to take 2D multi-electron intensity data (vs X &amp; Y)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI1m</span><span class="p">,</span> <span class="n">wfr</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#Calculating multi-electron intensity vs X &amp; Y using convolution method (assuming it to be valid!)</span>
+<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">arI1m</span><span class="p">,</span> <span class="n">mesh1</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strIntOutFileName2</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done in&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">),</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="c1">#***********Plotting the Calculation Results</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">arSp</span><span class="p">,</span> <span class="p">[</span><span class="n">meshSp</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="n">meshSp</span><span class="o">.</span><span class="n">eFin</span><span class="p">,</span> <span class="n">meshSp</span><span class="o">.</span><span class="n">ne</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Photon Energy&#39;</span><span class="p">,</span> <span class="s1">&#39;Spectral Intensity&#39;</span><span class="p">,</span> <span class="s1">&#39;On-Axis SR Intensity Spectrum&#39;</span><span class="p">),</span> <span class="n">units</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eV&#39;</span><span class="p">,</span> <span class="s1">&#39;ph/s/0.1%bw/mm^2&#39;</span><span class="p">])</span>
+<span class="n">unitsIntPlot</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;ph/s/.1%bw/mm^2&#39;</span><span class="p">]</span>
+<span class="n">uti_plot2d1d</span><span class="p">(</span><span class="n">arI0</span><span class="p">,</span> <span class="p">[</span><span class="n">mesh0</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="n">mesh0</span><span class="o">.</span><span class="n">xFin</span><span class="p">,</span> <span class="n">mesh0</span><span class="o">.</span><span class="n">nx</span><span class="p">],</span> <span class="p">[</span><span class="n">mesh0</span><span class="o">.</span><span class="n">yStart</span><span class="p">,</span> <span class="n">mesh0</span><span class="o">.</span><span class="n">yFin</span><span class="p">,</span> <span class="n">mesh0</span><span class="o">.</span><span class="n">ny</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Horizontal position&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical position&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity Before Lens&#39;</span><span class="p">),</span> <span class="n">units</span><span class="o">=</span><span class="n">unitsIntPlot</span><span class="p">)</span>
+<span class="n">uti_plot2d1d</span><span class="p">(</span><span class="n">arI1s</span><span class="p">,</span> <span class="p">[</span><span class="n">mesh1</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">xFin</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">nx</span><span class="p">],</span> <span class="p">[</span><span class="n">mesh1</span><span class="o">.</span><span class="n">yStart</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">yFin</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">ny</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Horizontal position&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical position&#39;</span><span class="p">,</span> <span class="s1">&#39;Single-E Intensity in Image Plane&#39;</span><span class="p">),</span> <span class="n">units</span><span class="o">=</span><span class="n">unitsIntPlot</span><span class="p">)</span>
+<span class="n">uti_plot2d1d</span><span class="p">(</span><span class="n">arI1m</span><span class="p">,</span> <span class="p">[</span><span class="n">mesh1</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">xFin</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">nx</span><span class="p">],</span> <span class="p">[</span><span class="n">mesh1</span><span class="o">.</span><span class="n">yStart</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">yFin</span><span class="p">,</span> <span class="n">mesh1</span><span class="o">.</span><span class="n">ny</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Horizontal position&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical position&#39;</span><span class="p">,</span> <span class="s1">&#39;Multi-E Intensity in Image Plane&#39;</span><span class="p">),</span> <span class="n">units</span><span class="o">=</span><span class="n">unitsIntPlot</span><span class="p">)</span>
+<span class="n">uti_plot_show</span><span class="p">()</span> <span class="c1">#show all graphs (blocks script execution; close all graph windows to proceed)</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  17.487 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-cookbook-srwlib-example13-py">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/a93b4410c346d736c9e8429da3f9187d/SRWLIB_Example13.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example13.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/8e3a8838474ed58e042f3dded23f0236/SRWLIB_Example13.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example13.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SRWLIB_Example14.html" class="btn btn-neutral float-right" title="SRW Example #14" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SRWLIB_Example09.html" class="btn btn-neutral" title="SRW Example #9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Synchrotron Radiation Workshop, NSLS-II, Brookhaven National Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

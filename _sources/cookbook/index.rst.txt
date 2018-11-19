@@ -1,0 +1,301 @@
+:orphan:
+
+.. _cookbook-index:
+
+Cookbook (Examples)
+===================
+
+Each recipe is a complete, runnable example. See the individual project
+documentation, linked in the menu at left, for detailed prose documentation and
+API specification.
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example01_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example01.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example01
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator, ...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example01_kick_matr_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example01_kick_matr.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example01_kick_matr
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory in magnetic field of a segmented planar undulat...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example02_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example02.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example02
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating synchrotron (undulator) radiation emitted by an electron travelling...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example03_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example03.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example03
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating synchrotron (undulator) radiation electric field (from one electron...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example04_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example04.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example04
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory and spontaneous emission from a very long segme...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example05_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example05.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example05
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating spectral flux of undulator radiation by finite-emittance electron b...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example06_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example06.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example06
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating propagation of a Gaussian X-ray beam through a simple optical scheme...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example07_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example07.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example07
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating propagation of a Gaussian X-ray beam through a Beamline containing I...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example09_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example09.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example09
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating emission and propagation of Bending Magnet SR through a simple optic...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example13_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example13.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example13
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating propagation of a Gaussian X-ray beam through a simple optical scheme...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example14_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example14.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example14
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- The example was created by Timur Shaftan (BNL) for RadTrack project (https://gi...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example15_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example15.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example15
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Problem ------- The example was created by Timur Shaftan (BNL) for RadTrack project (https://gi...">
+
+.. only:: html
+
+    .. figure:: /cookbook/images/thumb/sphx_glr_SRWLIB_Example16_thumb.png
+
+        :ref:`sphx_glr_cookbook_SRWLIB_Example16.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /cookbook/SRWLIB_Example16
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-gallery
+
+
+  .. container:: sphx-glr-download
+
+    :download:`Download all examples in Python source code: cookbook_python.zip <//home/travis/build/srwpy/srwpy/docs/source/cookbook/cookbook_python.zip>`
+
+
+
+  .. container:: sphx-glr-download
+
+    :download:`Download all examples in Jupyter notebooks: cookbook_jupyter.zip <//home/travis/build/srwpy/srwpy/docs/source/cookbook/cookbook_jupyter.zip>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

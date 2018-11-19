@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SRW Example #5 &mdash; srwpy 0.0.2a5.post31+gd7b897f documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SRW Example #6" href="SRWLIB_Example06.html" />
+    <link rel="prev" title="SRW Example #4" href="SRWLIB_Example04.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> srwpy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.2a5.post31+gd7b897f
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cookbook (Examples)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01.html">SRW Example #1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01_kick_matr.html">SRW Example #1 (kick matrix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example02.html">SRW Example #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example03.html">SRW Example #3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example04.html">SRW Example #4</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SRW Example #5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-solution">Example Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example06.html">SRW Example #6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example07.html">SRW Example #7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example09.html">SRW Example #9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example13.html">SRW Example #13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example14.html">SRW Example #14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example15.html">SRW Example #15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example16.html">SRW Example #16</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-history.html">Release History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">srwpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Cookbook (Examples)</a> &raquo;</li>
+        
+      <li>SRW Example #5</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cookbook/SRWLIB_Example05.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example05-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="srw-example-5">
+<span id="sphx-glr-cookbook-srwlib-example05-py"></span><h1>SRW Example #5<a class="headerlink" href="#srw-example-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h2>
+<p>Calculating electron trajectory and spontaneous emission from a very long
+segmented undulator (transversely-uniform magnetic field defined)</p>
+</div>
+<div class="section" id="example-solution">
+<h2>Example Solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h2>
+<ul class="sphx-glr-horizontal">
+<li><img alt="../_images/sphx_glr_SRWLIB_Example05_001.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example05_001.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example05_002.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example05_002.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example05_003.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example05_003.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example05_004.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example05_004.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example05_005.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example05_005.png" />
+</li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SRWLIB Python Example # 5:
+Calculating electron trajectory in long segmented undulator, and the corresponding single-electron on-axis spectrum and intensity distribution at fundamental harmonic
+   Reading magnetic field data from file ... done
+   Performing Trajectory calculation ... done
+   Saving Trajectory data to a file ... done
+   Performing Electric Field calculation ... done
+   Extracting Intensity from calculated Electric Field ... done
+   Performing Electric Field calculation ... done
+   Extracting Intensity from calculated Electric Field ... done
+   Saving intensity data to files ... done
+   Plotting the results (blocks script execution; close any graph windows to proceed) ... done
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
+<span class="kn">from</span> <span class="nn">srwlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">uti_plot</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Python Example # 5:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calculating electron trajectory in long segmented undulator, and the corresponding single-electron on-axis spectrum and intensity distribution at fundamental harmonic&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Input Parameters:</span>
+<span class="n">strExDataFolderName</span> <span class="o">=</span> <span class="s1">&#39;data_example_05&#39;</span> <span class="c1">#example data sub-folder name</span>
+<span class="n">arFldInFileName</span> <span class="o">=</span> <span class="s1">&#39;segmented.dat&#39;</span> <span class="c1">#3D Magnetic Field data file names</span>
+<span class="n">strTrajOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex05_res_traj.dat&#39;</span> <span class="c1">#file name for output trajectory data</span>
+<span class="n">strIntOutFileName1</span> <span class="o">=</span> <span class="s1">&#39;ex05_res_int1.dat&#39;</span> <span class="c1">#file name for output SR intensity data</span>
+<span class="n">strIntOutFileName2</span> <span class="o">=</span> <span class="s1">&#39;ex05_res_int2.dat&#39;</span> <span class="c1">#file name for output SR intensity data</span>
+
+<span class="c1">#**********************Auxiliary function to read tabulated 3D Magnetic Field data from ASCII file:</span>
+<span class="k">def</span> <span class="nf">AuxReadInMagFld3D</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">sCom</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1">#1st line: just pass</span>
+    <span class="n">xStart</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#2nd line: initial X position [m]; it will not actually be used</span>
+    <span class="n">xStep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#3rd line: step vs X [m]</span>
+    <span class="n">xNp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#4th line: number of points vs X</span>
+    <span class="n">yStart</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#5th line: initial Y position [m]; it will not actually be used</span>
+    <span class="n">yStep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#6th line: step vs Y [m]</span>
+    <span class="n">yNp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#7th line: number of points vs Y</span>
+    <span class="n">zStart</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#8th line: initial Z position [m]; it will not actually be used</span>
+    <span class="n">zStep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#9th line: step vs Z [m]</span>
+    <span class="n">zNp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#10th line: number of points vs Z</span>
+    <span class="n">totNp</span> <span class="o">=</span> <span class="n">xNp</span><span class="o">*</span><span class="n">yNp</span><span class="o">*</span><span class="n">zNp</span>
+    <span class="n">locArBx</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
+    <span class="n">locArBy</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
+    <span class="n">locArBz</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">totNp</span><span class="p">):</span>
+        <span class="n">curLineParts</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">locArBx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">locArBy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">locArBz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">xRange</span> <span class="o">=</span> <span class="n">xStep</span>
+    <span class="k">if</span> <span class="n">xNp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">xRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">xNp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">xStep</span>
+    <span class="n">yRange</span> <span class="o">=</span> <span class="n">yStep</span>
+    <span class="k">if</span> <span class="n">yNp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">yRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">yNp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">yStep</span>
+    <span class="n">zRange</span> <span class="o">=</span> <span class="n">zStep</span>
+    <span class="k">if</span> <span class="n">zNp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">zRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">zNp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">zStep</span>
+    <span class="k">return</span> <span class="n">SRWLMagFld3D</span><span class="p">(</span><span class="n">locArBx</span><span class="p">,</span> <span class="n">locArBy</span><span class="p">,</span> <span class="n">locArBz</span><span class="p">,</span> <span class="n">xNp</span><span class="p">,</span> <span class="n">yNp</span><span class="p">,</span> <span class="n">zNp</span><span class="p">,</span> <span class="n">xRange</span><span class="p">,</span> <span class="n">yRange</span><span class="p">,</span> <span class="n">zRange</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#**********************Auxiliary function to write tabulated resulting Trajectory data to ASCII file:</span>
+<span class="k">def</span> <span class="nf">AuxSaveTrajData</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">filePath</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">resStr</span> <span class="o">=</span> <span class="s1">&#39;#ct [m], X [m], BetaX [rad], Y [m], BetaY [rad], Z [m], BetaZ [rad]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBx&#39;</span><span class="p">)):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, Bx [T]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBy&#39;</span><span class="p">)):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, By [T]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBz&#39;</span><span class="p">)):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, Bz [T]&#39;</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resStr</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctStep</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">traj</span><span class="o">.</span><span class="n">np</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ctStep</span> <span class="o">=</span> <span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">ctEnd</span> <span class="o">-</span> <span class="n">traj</span><span class="o">.</span><span class="n">ctStart</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">np</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">ctStart</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">np</span><span class="p">):</span>
+        <span class="n">resStr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arX</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arXp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arYp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arZ</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arZp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBx&#39;</span><span class="p">)):</span>
+            <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arBx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBy&#39;</span><span class="p">)):</span>
+            <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arBy</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBz&#39;</span><span class="p">)):</span>
+            <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arBz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resStr</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">ct</span> <span class="o">+=</span> <span class="n">ctStep</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#**********************Auxiliary function to write tabulated resulting Intensity data to ASCII file:</span>
+<span class="c1">#replaced by srwlib.srwl_uti_save_intens_ascii</span>
+<span class="c1">#def AuxSaveIntData(arI, mesh, filePath):</span>
+<span class="c1">#    f = open(filePath, &#39;w&#39;)</span>
+<span class="c1">#    f.write(&#39;#C-aligned Intensity (inner loop is vs photon energy, outer loop vs vertical position)\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.eStart) + &#39; #Initial Photon Energy [eV]\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.eFin) + &#39; #Final Photon Energy [eV]\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.ne) + &#39; #Number of points vs Photon Energy\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.xStart) + &#39; #Initial Horizontal Position [m]\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.xFin) + &#39; #Final Horizontal Position [m]\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.nx) + &#39; #Number of points vs Horizontal Position\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.yStart) + &#39; #Initial Vertical Position [m]\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.yFin) + &#39; #Final Vertical Position [m]\n&#39;)</span>
+<span class="c1">#    f.write(&#39;#&#39; + repr(mesh.ny) + &#39; #Number of points vs Vertical Position\n&#39;)</span>
+<span class="c1">#    for i in range(mesh.ne*mesh.nx*mesh.ny): #write all data into one column using &quot;C-alignment&quot; as a &quot;flat&quot; 1D array</span>
+<span class="c1">#        f.write(&#39; &#39; + repr(arI[i]) + &#39;\n&#39;)</span>
+<span class="c1">#    f.close()</span>
+
+<span class="c1">#**********************Defining Magnetic Field:</span>
+<span class="n">xcID</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Transverse Coordinates of ID Center [m]</span>
+<span class="n">ycID</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">zcID</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Longitudinal Coordinate of ID Center [m]</span>
+
+<span class="n">magFldCnt</span> <span class="o">=</span> <span class="n">SRWLMagFldC</span><span class="p">()</span> <span class="c1">#Container</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#Magnetic Field consists of 1 part</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Reading magnetic field data from file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">filePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">arFldInFileName</span><span class="p">)</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">AuxReadInMagFld3D</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arXc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">xcID</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arYc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ycID</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arZc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">zcID</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nRep</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Entire ID</span>
+
+<span class="c1">#**********************Trajectory structure (where the results will be stored)</span>
+<span class="n">part</span> <span class="o">=</span> <span class="n">SRWLParticle</span><span class="p">()</span>
+<span class="n">part</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1">#Initial Transverse Coordinates (initial Longitudinal Coordinate will be defined later on) [m]</span>
+<span class="n">part</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">part</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">129.027</span> <span class="c1">#Initial Longitudinal Coordinate (set before the ID)</span>
+<span class="n">part</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Initial Transverse Velocities</span>
+<span class="n">part</span><span class="o">.</span><span class="n">yp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">part</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="mf">17.5</span><span class="o">/</span><span class="mf">0.51099890221e-03</span> <span class="c1">#Relative Energy</span>
+<span class="n">part</span><span class="o">.</span><span class="n">relE0</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Electron Rest Mass</span>
+<span class="n">part</span><span class="o">.</span><span class="n">nq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#Electron Charge</span>
+
+<span class="n">partTraj</span> <span class="o">=</span> <span class="n">SRWLPrtTrj</span><span class="p">()</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">partInitCond</span> <span class="o">=</span> <span class="n">part</span>
+<span class="n">npTraj</span> <span class="o">=</span> <span class="mi">537001</span> <span class="c1">#Number of Points for Trajectory calculation</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">npTraj</span><span class="p">)</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1">#Start Time for the calculation</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span> <span class="o">=</span> <span class="mf">270.0</span>  <span class="c1">#End Time</span>
+
+<span class="c1">#**********************Calculation (SRWLIB function call)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing Trajectory calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">partTraj</span> <span class="o">=</span> <span class="n">srwl</span><span class="o">.</span><span class="n">CalcPartTraj</span><span class="p">(</span><span class="n">partTraj</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Saving trajectory results</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Saving Trajectory data to a file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">AuxSaveTrajData</span><span class="p">(</span><span class="n">partTraj</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strTrajOutFileName</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Electron Beam</span>
+<span class="n">elecBeam</span> <span class="o">=</span> <span class="n">SRWLPartBeam</span><span class="p">()</span>
+<span class="n">elecBeam</span><span class="o">.</span><span class="n">Iavg</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#Average Current [A]</span>
+<span class="n">elecBeam</span><span class="o">.</span><span class="n">partStatMom1</span> <span class="o">=</span> <span class="n">part</span>
+
+<span class="c1">#**********************Precision parameters for SR calculation</span>
+<span class="n">meth</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#SR calculation method: 0- &quot;manual&quot;, 1- &quot;auto-undulator&quot;, 2- &quot;auto-wiggler&quot;</span>
+<span class="n">relPrec</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1">#relative precision</span>
+<span class="n">zStartInteg</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#-129.029 #part.z - 0.1 #longitudinal position to start integration (effective if &lt; zEndInteg)</span>
+<span class="n">zEndInteg</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#129.029 #part.z + 5.3 #longitudinal position to finish integration (effective if &gt; zStartInteg)</span>
+<span class="c1">#* Already specified before : npTraj</span>
+<span class="n">useTermin</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Use &quot;terminating terms&quot; (i.e. asymptotic expansions at zStartInteg and zEndInteg) or not (1 or 0 respectively)</span>
+<span class="n">sampFactNxNyForProp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#sampling factor for adjusting nx, ny (effective if &gt; 0)</span>
+<span class="n">arPrecPar</span> <span class="o">=</span> <span class="p">[</span><span class="n">meth</span><span class="p">,</span> <span class="n">relPrec</span><span class="p">,</span> <span class="n">zStartInteg</span><span class="p">,</span> <span class="n">zEndInteg</span><span class="p">,</span> <span class="n">npTraj</span><span class="p">,</span> <span class="n">useTermin</span><span class="p">,</span> <span class="n">sampFactNxNyForProp</span><span class="p">]</span>
+
+<span class="c1">#**********************Wavefront</span>
+<span class="n">wfr1</span> <span class="o">=</span> <span class="n">SRWLWfr</span><span class="p">()</span> <span class="c1">#For spectrum vs photon energy</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#Numbers of points vs Photon Energy, Horizontal and Vertical Positions</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span> <span class="o">=</span> <span class="mf">300.</span> <span class="c1">#Longitudinal Position [m] at which SR has to be calculated</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span> <span class="o">=</span> <span class="mf">5700.0</span> <span class="c1">#Initial Photon Energy [eV]</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span> <span class="o">=</span> <span class="mf">6100.0</span> <span class="c1">#Final Photon Energy [eV]</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#Initial Horizontal Position [m]</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Final Horizontal Position [m]</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Initial Vertical Position [m]</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Final Vertical Position [m]</span>
+<span class="n">wfr1</span><span class="o">.</span><span class="n">partBeam</span> <span class="o">=</span> <span class="n">elecBeam</span>
+
+<span class="n">wfr2</span> <span class="o">=</span> <span class="n">SRWLWfr</span><span class="p">()</span> <span class="c1">#For intensity distribution at fixed photon energy</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span> <span class="c1">#Numbers of points vs Photon Energy, Horizontal and Vertical Positions</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span> <span class="o">=</span> <span class="mf">300.</span> <span class="c1">#Longitudinal Position [m] at which SR has to be calculated</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span> <span class="o">=</span> <span class="mf">5915.5</span> <span class="c1">#Initial Photon Energy [eV]</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span> <span class="o">=</span> <span class="mf">5915.5</span> <span class="c1">#Final Photon Energy [eV]</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.0006</span> <span class="c1">#Initial Horizontal Position [m]</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span> <span class="o">=</span> <span class="mf">0.0006</span> <span class="c1">#Final Horizontal Position [m]</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.0006</span> <span class="c1">#Initial Vertical Position [m]</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span> <span class="o">=</span> <span class="mf">0.0006</span> <span class="c1">#Final Vertical Position [m]</span>
+<span class="n">wfr2</span><span class="o">.</span><span class="n">partBeam</span> <span class="o">=</span> <span class="n">elecBeam</span>
+
+<span class="c1">#**********************Calculation (SRWLIB function calls)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing Electric Field calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1">#srwl.CalcElecFieldSR(wfr1, partTraj, magFldCnt, arPrecPar)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcElecFieldSR</span><span class="p">(</span><span class="n">wfr1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecPar</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Extracting Intensity from calculated Electric Field ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">arI1</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ne</span><span class="p">)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI1</span><span class="p">,</span> <span class="n">wfr1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing Electric Field calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcElecFieldSR</span><span class="p">(</span><span class="n">wfr2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecPar</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Extracting Intensity from calculated Electric Field ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">arI2</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">)</span> <span class="c1">#&quot;flat&quot; array to take 2D intensity data</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI2</span><span class="p">,</span> <span class="n">wfr2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Saving results</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Saving intensity data to files ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="c1">#AuxSaveIntData(arI1, wfr1.mesh, os.path.join(os.getcwd(), strExDataFolderName, strIntOutFileName1))</span>
+<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">arI1</span><span class="p">,</span> <span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strIntOutFileName1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">#AuxSaveIntData(arI2, wfr2.mesh, os.path.join(os.getcwd(), strExDataFolderName, strIntOutFileName2))</span>
+<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">arI2</span><span class="p">,</span> <span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strIntOutFileName2</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Plotting results (requires 3rd party graphics package)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Plotting the results (blocks script execution; close any graph windows to proceed) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ctMesh</span> <span class="o">=</span> <span class="p">[</span><span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">):</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Electron Trajectory&#39;</span><span class="p">])</span>
+
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">arI1</span><span class="p">,</span> <span class="p">[</span><span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span><span class="p">,</span> <span class="n">wfr1</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ne</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Photon Energy [eV]&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity [ph/s/.1%bw/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;On-Axis Spectrum&#39;</span><span class="p">])</span>
+
+<span class="n">plotMeshX</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span><span class="p">,</span> <span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">]</span>
+<span class="n">plotMeshY</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span><span class="p">,</span> <span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">]</span>
+<span class="n">uti_plot2d</span><span class="p">(</span><span class="n">arI2</span><span class="p">,</span> <span class="n">plotMeshX</span><span class="p">,</span> <span class="n">plotMeshY</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; eV&#39;</span><span class="p">])</span>
+
+<span class="n">arI2x</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">)</span> <span class="c1">#array to take 1D intensity data</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI2x</span><span class="p">,</span> <span class="n">wfr2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">arI2x</span><span class="p">,</span> <span class="n">plotMeshX</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity [ph/s/.1%bw/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; eV</span><span class="se">\n</span><span class="s1">(horizontal cut at y = 0)&#39;</span><span class="p">])</span>
+
+<span class="n">arI2y</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">)</span> <span class="c1">#array to take 1D intensity data</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcIntFromElecField</span><span class="p">(</span><span class="n">arI2y</span><span class="p">,</span> <span class="n">wfr2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">arI2y</span><span class="p">,</span> <span class="n">plotMeshY</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity [ph/s/.1%bw/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;Intensity at &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wfr2</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; eV</span><span class="se">\n</span><span class="s1">(vertical cut at x = 0)&#39;</span><span class="p">])</span>
+
+<span class="n">uti_plot_show</span><span class="p">()</span> <span class="c1">#show all graphs (blocks script execution; close all graph windows to proceed)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  52.970 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-cookbook-srwlib-example05-py">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/ec119f21c6e6c9e47fced232b9cdb76c/SRWLIB_Example05.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example05.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/aba83834efc6969da5695fd5fc39fd2c/SRWLIB_Example05.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example05.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SRWLIB_Example06.html" class="btn btn-neutral float-right" title="SRW Example #6" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SRWLIB_Example04.html" class="btn btn-neutral" title="SRW Example #4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Synchrotron Radiation Workshop, NSLS-II, Brookhaven National Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

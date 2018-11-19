@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cookbook (Examples) &mdash; srwpy 0.0.2a5.post31+gd7b897f documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SRW Example #1" href="SRWLIB_Example01.html" />
+    <link rel="prev" title="srwpy Documentation" href="../index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> srwpy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.2a5.post31+gd7b897f
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cookbook (Examples)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01.html">SRW Example #1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01_kick_matr.html">SRW Example #1 (kick matrix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example02.html">SRW Example #2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example03.html">SRW Example #3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example04.html">SRW Example #4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example05.html">SRW Example #5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example06.html">SRW Example #6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example07.html">SRW Example #7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example09.html">SRW Example #9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example13.html">SRW Example #13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example14.html">SRW Example #14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example15.html">SRW Example #15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example16.html">SRW Example #16</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-history.html">Release History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">srwpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Cookbook (Examples)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cookbook/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cookbook-examples">
+<span id="cookbook-index"></span><h1>Cookbook (Examples)<a class="headerlink" href="#cookbook-examples" title="Permalink to this headline">¶</a></h1>
+<p>Each recipe is a complete, runnable example. See the individual project
+documentation, linked in the menu at left, for detailed prose documentation and
+API specification.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator"><div class="figure" id="id1">
+<img alt="../_images/sphx_glr_SRWLIB_Example01_thumb.png" src="../_images/sphx_glr_SRWLIB_Example01_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example01.html#sphx-glr-cookbook-srwlib-example01-py"><span class="std std-ref">SRW Example #1</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator, ..."><div class="figure" id="id2">
+<img alt="../_images/sphx_glr_SRWLIB_Example01_kick_matr_thumb.png" src="../_images/sphx_glr_SRWLIB_Example01_kick_matr_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example01_kick_matr.html#sphx-glr-cookbook-srwlib-example01-kick-matr-py"><span class="std std-ref">SRW Example #1 (kick matrix)</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory in magnetic field of a segmented planar undulat..."><div class="figure" id="id3">
+<img alt="../_images/sphx_glr_SRWLIB_Example02_thumb.png" src="../_images/sphx_glr_SRWLIB_Example02_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example02.html#sphx-glr-cookbook-srwlib-example02-py"><span class="std std-ref">SRW Example #2</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating synchrotron (undulator) radiation emitted by an electron travelling..."><div class="figure" id="id4">
+<img alt="../_images/sphx_glr_SRWLIB_Example03_thumb.png" src="../_images/sphx_glr_SRWLIB_Example03_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example03.html#sphx-glr-cookbook-srwlib-example03-py"><span class="std std-ref">SRW Example #3</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating synchrotron (undulator) radiation electric field (from one electron..."><div class="figure" id="id5">
+<img alt="../_images/sphx_glr_SRWLIB_Example04_thumb.png" src="../_images/sphx_glr_SRWLIB_Example04_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example04.html#sphx-glr-cookbook-srwlib-example04-py"><span class="std std-ref">SRW Example #4</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating electron trajectory and spontaneous emission from a very long segme..."><div class="figure" id="id6">
+<img alt="../_images/sphx_glr_SRWLIB_Example05_thumb.png" src="../_images/sphx_glr_SRWLIB_Example05_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example05.html#sphx-glr-cookbook-srwlib-example05-py"><span class="std std-ref">SRW Example #5</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Calculating spectral flux of undulator radiation by finite-emittance electron b..."><div class="figure" id="id7">
+<img alt="../_images/sphx_glr_SRWLIB_Example06_thumb.png" src="../_images/sphx_glr_SRWLIB_Example06_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example06.html#sphx-glr-cookbook-srwlib-example06-py"><span class="std std-ref">SRW Example #6</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating propagation of a Gaussian X-ray beam through a simple optical scheme..."><div class="figure" id="id8">
+<img alt="../_images/sphx_glr_SRWLIB_Example07_thumb.png" src="../_images/sphx_glr_SRWLIB_Example07_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example07.html#sphx-glr-cookbook-srwlib-example07-py"><span class="std std-ref">SRW Example #7</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating propagation of a Gaussian X-ray beam through a Beamline containing I..."><div class="figure" id="id9">
+<img alt="../_images/sphx_glr_SRWLIB_Example09_thumb.png" src="../_images/sphx_glr_SRWLIB_Example09_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example09.html#sphx-glr-cookbook-srwlib-example09-py"><span class="std std-ref">SRW Example #9</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating emission and propagation of Bending Magnet SR through a simple optic..."><div class="figure" id="id10">
+<img alt="../_images/sphx_glr_SRWLIB_Example13_thumb.png" src="../_images/sphx_glr_SRWLIB_Example13_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example13.html#sphx-glr-cookbook-srwlib-example13-py"><span class="std std-ref">SRW Example #13</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- Simulating propagation of a Gaussian X-ray beam through a simple optical scheme..."><div class="figure" id="id11">
+<img alt="../_images/sphx_glr_SRWLIB_Example14_thumb.png" src="../_images/sphx_glr_SRWLIB_Example14_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example14.html#sphx-glr-cookbook-srwlib-example14-py"><span class="std std-ref">SRW Example #14</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- The example was created by Timur Shaftan (BNL) for RadTrack project (https://gi..."><div class="figure" id="id12">
+<img alt="../_images/sphx_glr_SRWLIB_Example15_thumb.png" src="../_images/sphx_glr_SRWLIB_Example15_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example15.html#sphx-glr-cookbook-srwlib-example15-py"><span class="std std-ref">SRW Example #15</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Problem ------- The example was created by Timur Shaftan (BNL) for RadTrack project (https://gi..."><div class="figure" id="id13">
+<img alt="../_images/sphx_glr_SRWLIB_Example16_thumb.png" src="../_images/sphx_glr_SRWLIB_Example16_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="SRWLIB_Example16.html#sphx-glr-cookbook-srwlib-example16-py"><span class="std std-ref">SRW Example #16</span></a></span></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div style='clear:both'></div><div class="sphx-glr-footer class sphx-glr-footer-gallery docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/3844ee011b92835d44dee1f34c0b1706/cookbook_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">cookbook_python.zip</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/9d1382abc8f550bfbc006a6304fed233/cookbook_jupyter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Jupyter</span> <span class="pre">notebooks:</span> <span class="pre">cookbook_jupyter.zip</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SRWLIB_Example01.html" class="btn btn-neutral float-right" title="SRW Example #1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="srwpy Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Synchrotron Radiation Workshop, NSLS-II, Brookhaven National Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SRW Example #2 &mdash; srwpy 0.0.2a5.post31+gd7b897f documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SRW Example #3" href="SRWLIB_Example03.html" />
+    <link rel="prev" title="SRW Example #1 (kick matrix)" href="SRWLIB_Example01_kick_matr.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> srwpy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.2a5.post31+gd7b897f
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cookbook (Examples)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01.html">SRW Example #1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example01_kick_matr.html">SRW Example #1 (kick matrix)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SRW Example #2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-solution">Example Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example03.html">SRW Example #3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example04.html">SRW Example #4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example05.html">SRW Example #5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example06.html">SRW Example #6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example07.html">SRW Example #7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example09.html">SRW Example #9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example13.html">SRW Example #13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example14.html">SRW Example #14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example15.html">SRW Example #15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRWLIB_Example16.html">SRW Example #16</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-history.html">Release History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">srwpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Cookbook (Examples)</a> &raquo;</li>
+        
+      <li>SRW Example #2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cookbook/SRWLIB_Example02.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example02-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="srw-example-2">
+<span id="sphx-glr-cookbook-srwlib-example02-py"></span><h1>SRW Example #2<a class="headerlink" href="#srw-example-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h2>
+<p>Calculating electron trajectory in magnetic field of a segmented planar
+undulator</p>
+</div>
+<div class="section" id="example-solution">
+<h2>Example Solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h2>
+<ul class="sphx-glr-horizontal">
+<li><img alt="../_images/sphx_glr_SRWLIB_Example02_001.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example02_001.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example02_002.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example02_002.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example02_003.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example02_003.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example02_004.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example02_004.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example02_005.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example02_005.png" />
+</li>
+<li><img alt="../_images/sphx_glr_SRWLIB_Example02_006.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example02_006.png" />
+</li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SRWLIB Python Example # 2:
+Calculating electron trajectory in magnetic field of a segmented planar undulator with FODO lattice
+   Tabulating Magnetic Field for display ... done
+   Performing calculation ... done
+   Saving trajectory data to a file ... done
+   Plotting the results (close all graph windows to proceed with the script execution) ... done
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
+<span class="kn">from</span> <span class="nn">srwlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">uti_plot</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Python Example # 2:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calculating electron trajectory in magnetic field of a segmented planar undulator with FODO lattice&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Input Parameters</span>
+<span class="c1">#**********************Folder and File names</span>
+<span class="n">strExDataFolderName</span> <span class="o">=</span> <span class="s1">&#39;data_example_02&#39;</span> <span class="c1">#example data sub-folder name</span>
+<span class="n">strFldOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex02_res_fld.dat&#39;</span> <span class="c1">#file name for output (tabulated) magnetic field data</span>
+<span class="n">strTrajOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex02_res_traj.dat&#39;</span> <span class="c1">#file name for output trajectory data</span>
+
+<span class="c1">#**********************Initial Conditions for Particle Trajectory Calculation</span>
+<span class="n">part</span> <span class="o">=</span> <span class="n">SRWLParticle</span><span class="p">()</span>
+<span class="n">part</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0001</span> <span class="c1">#Initial Transverse Coordinates (initial Longitudinal Coordinate will be defined later on) [m]</span>
+<span class="n">part</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">part</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Initial Transverse Velocities</span>
+<span class="n">part</span><span class="o">.</span><span class="n">yp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">part</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mf">0.51099890221e-03</span> <span class="c1">#Relative Energy</span>
+<span class="n">part</span><span class="o">.</span><span class="n">relE0</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Electron Rest Mass</span>
+<span class="n">part</span><span class="o">.</span><span class="n">nq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#Electron Charge</span>
+
+<span class="n">npTraj</span> <span class="o">=</span> <span class="mi">20001</span> <span class="c1">#Number of Points for Trajectory calculation</span>
+
+<span class="n">arPrecPar</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#General Precision parameters for Trajectory calculation:</span>
+<span class="c1">#[0]: integration method No:</span>
+    <span class="c1">#1- fourth-order Runge-Kutta (precision is driven by number of points)</span>
+    <span class="c1">#2- fifth-order Runge-Kutta</span>
+<span class="c1">#[1],[2],[3],[4],[5]: absolute precision values for X[m],X&#39;[rad],Y[m],Y&#39;[rad],Z[m] (yet to be tested!!) - to be taken into account only for R-K fifth order or higher</span>
+<span class="c1">#[6]: tolerance (default = 1) for R-K fifth order or higher</span>
+<span class="c1">#[7]: max. number of auto-steps for R-K fifth order or higher (default = 5000)</span>
+
+<span class="c1">#**********************Magnetic Field</span>
+<span class="n">numSegm</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#Number of ID Segments</span>
+<span class="n">numPer</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">#Number of Periods in one Segment (without counting for terminations)</span>
+<span class="n">undPer</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1">#Period Length [m]</span>
+<span class="n">xcID</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Transverse Coordinates of ID Center [m]</span>
+<span class="n">ycID</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">zcID</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Longitudinal Coordinate of ID Center [m]</span>
+
+<span class="n">und</span> <span class="o">=</span> <span class="n">SRWLMagFldU</span><span class="p">([</span><span class="n">SRWLMagFldH</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span> <span class="n">undPer</span><span class="p">,</span> <span class="n">numPer</span><span class="p">)</span> <span class="c1">#Undulator Segment</span>
+<span class="n">qf</span> <span class="o">=</span> <span class="n">SRWLMagFldM</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> <span class="c1">#Focusing Quad</span>
+<span class="n">qd</span> <span class="o">=</span> <span class="n">SRWLMagFldM</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> <span class="c1">#Defocusing Quad</span>
+
+<span class="n">arZero</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">undLen</span> <span class="o">=</span> <span class="p">(</span><span class="n">numPer</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">undPer</span>
+<span class="n">distBwSegm</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c1">#Distance between Undulator Segments</span>
+<span class="n">undLenExt</span> <span class="o">=</span> <span class="n">undLen</span> <span class="o">+</span> <span class="n">distBwSegm</span>
+<span class="n">arZc</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">,</span> <span class="o">-</span><span class="n">undLenExt</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">,</span> <span class="n">undLenExt</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">])</span>
+<span class="n">magFldCnt</span> <span class="o">=</span> <span class="n">SRWLMagFldC</span><span class="p">([</span><span class="n">und</span><span class="p">,</span> <span class="n">qf</span><span class="p">,</span> <span class="n">und</span><span class="p">,</span> <span class="n">qd</span><span class="p">,</span> <span class="n">und</span><span class="p">,</span> <span class="n">qf</span><span class="p">,</span> <span class="n">und</span><span class="p">,</span> <span class="n">qd</span><span class="p">,</span> <span class="n">und</span><span class="p">],</span> <span class="n">arZero</span><span class="p">,</span> <span class="n">arZero</span><span class="p">,</span> <span class="n">arZc</span><span class="p">)</span> <span class="c1">#Container of all Field Elements</span>
+
+<span class="n">part</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">arZc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">undLenExt</span> <span class="c1">#Initial Longitudinal Coordinate (set before the ID)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Tabulating Magnetic Field for display ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">dispBy</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">npTraj</span><span class="p">)</span>
+<span class="n">dispMagFld3D</span> <span class="o">=</span> <span class="n">SRWLMagFld3D</span><span class="p">(</span><span class="n">_arBy</span><span class="o">=</span><span class="n">dispBy</span><span class="p">,</span> <span class="n">_nx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">_ny</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">_nz</span><span class="o">=</span><span class="n">npTraj</span><span class="p">,</span> <span class="n">_rz</span><span class="o">=</span><span class="mi">5</span><span class="o">*</span><span class="n">undLenExt</span><span class="p">)</span>
+<span class="n">xDisp</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">x</span>
+<span class="n">yDisp</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">y</span>
+<span class="n">dispMagFldCnt</span> <span class="o">=</span> <span class="n">SRWLMagFldC</span><span class="p">([</span><span class="n">dispMagFld3D</span><span class="p">],</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">xDisp</span><span class="p">]),</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">yDisp</span><span class="p">]),</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcMagnField</span><span class="p">(</span><span class="n">dispMagFldCnt</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Trajectory structure, where the results will be stored</span>
+<span class="n">partTraj</span> <span class="o">=</span> <span class="n">SRWLPrtTrj</span><span class="p">()</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">partInitCond</span> <span class="o">=</span> <span class="n">part</span>
+<span class="c1">#partTraj.allocate(npTraj)</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">npTraj</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span> <span class="c1">#True ensures that field along trajectory will also be extracted</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#&quot;Start Time&quot; (c*t) for the calculation (0 corresponds to the time moment for which the initial conditions are defined)</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span> <span class="o">=</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">undLenExt</span> <span class="c1">#End Time</span>
+
+<span class="c1">#**********************Trajectory Calculation (SRWLIB function call)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">partTraj</span> <span class="o">=</span> <span class="n">srwl</span><span class="o">.</span><span class="n">CalcPartTraj</span><span class="p">(</span><span class="n">partTraj</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecPar</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Saving results</span>
+<span class="c1">#Auxiliary function to write tabulated Magnetic Field data to ASCII file:</span>
+<span class="k">def</span> <span class="nf">AuxSaveMagFldData</span><span class="p">(</span><span class="n">dispFld3D</span><span class="p">,</span> <span class="n">xc</span><span class="p">,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">zc</span><span class="p">,</span> <span class="n">filePath</span><span class="p">):</span>
+
+    <span class="n">hx</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nx</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">rx</span><span class="o">/</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">hy</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">ny</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">ry</span><span class="o">/</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">ny</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">hz</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nz</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">rz</span><span class="o">/</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nz</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">arXdef</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arX</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arX</span><span class="p">)</span> <span class="o">==</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">nx</span><span class="p">)):</span>
+        <span class="n">arXdef</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">arYdef</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arY</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arY</span><span class="p">)</span> <span class="o">==</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">ny</span><span class="p">)):</span>
+        <span class="n">arYdef</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">arZdef</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arZ</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arZ</span><span class="p">)</span> <span class="o">==</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">nz</span><span class="p">)):</span>
+        <span class="n">arZdef</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">nTot</span> <span class="o">=</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">ny</span><span class="o">*</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nz</span>
+    <span class="n">arBxDef</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBx</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBx</span><span class="p">)</span> <span class="o">==</span> <span class="n">nTot</span><span class="p">)):</span>
+        <span class="n">arBxDef</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">arByDef</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBy</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBy</span><span class="p">)</span> <span class="o">==</span> <span class="n">nTot</span><span class="p">)):</span>
+        <span class="n">arByDef</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">arBzDef</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBz</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBz</span><span class="p">)</span> <span class="o">==</span> <span class="n">nTot</span><span class="p">)):</span>
+        <span class="n">arBzDef</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">resStr</span> <span class="o">=</span> <span class="s1">&#39;#X [m], Y [m], Z [m]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">arBxDef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, Bx [T]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">arByDef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, By [T]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">arBzDef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, Bz [T]&#39;</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resStr</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">zc</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">rz</span>
+    <span class="k">for</span> <span class="n">iz</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nz</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arZdef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">arZ</span><span class="p">[</span><span class="n">iz</span><span class="p">]</span> <span class="o">+</span> <span class="n">zc</span>
+        <span class="c1">#print(z)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">yc</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">ry</span>
+        <span class="k">for</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">ny</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">arYdef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><span class="n">iy</span><span class="p">]</span> <span class="o">+</span> <span class="n">yc</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">xc</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">rx</span>
+            <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">nx</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">arXdef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="n">dispFld3D</span><span class="o">.</span><span class="n">arX</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="o">+</span> <span class="n">xc</span>
+                <span class="n">resStr</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">arBxDef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+                    <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">arByDef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+                    <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBy</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">arBzDef</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
+                    <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">dispFld3D</span><span class="o">.</span><span class="n">arBz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resStr</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">x</span> <span class="o">+=</span> <span class="n">hx</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="n">hy</span>
+        <span class="n">z</span> <span class="o">+=</span> <span class="n">hz</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#Auxiliary function to write tabulated resulting Trajectory data to ASCII file:</span>
+<span class="k">def</span> <span class="nf">AuxSaveTrajData</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">filePath</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">resStr</span> <span class="o">=</span> <span class="s1">&#39;#ct [m], X [m], BetaX [rad], Y [m], BetaY [rad], Z [m], BetaZ [rad]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBx&#39;</span><span class="p">)):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, Bx [T]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBy&#39;</span><span class="p">)):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, By [T]&#39;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBz&#39;</span><span class="p">)):</span>
+        <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;, Bz [T]&#39;</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resStr</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctStep</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">traj</span><span class="o">.</span><span class="n">np</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ctStep</span> <span class="o">=</span> <span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">ctEnd</span> <span class="o">-</span> <span class="n">traj</span><span class="o">.</span><span class="n">ctStart</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">np</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">ctStart</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">np</span><span class="p">):</span>
+        <span class="n">resStr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arX</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arXp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arYp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arZ</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arZp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBx&#39;</span><span class="p">)):</span>
+            <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arBx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBy&#39;</span><span class="p">)):</span>
+            <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arBy</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="s1">&#39;arBz&#39;</span><span class="p">)):</span>
+            <span class="n">resStr</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">traj</span><span class="o">.</span><span class="n">arBz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resStr</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">ct</span> <span class="o">+=</span> <span class="n">ctStep</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Saving trajectory data to a file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">AuxSaveMagFldData</span><span class="p">(</span><span class="n">dispMagFld3D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strFldOutFileName</span><span class="p">))</span>
+<span class="n">AuxSaveTrajData</span><span class="p">(</span><span class="n">partTraj</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strTrajOutFileName</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+<span class="c1">#**********************Plotting results</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Plotting the results (close all graph windows to proceed with the script execution) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ctMesh</span> <span class="o">=</span> <span class="p">[</span><span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">):</span> <span class="c1">#converting from [m] to [mm] and from [rad] to [mrad]</span>
+    <span class="n">partTraj</span><span class="o">.</span><span class="n">arXp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+    <span class="n">partTraj</span><span class="o">.</span><span class="n">arX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+    <span class="n">partTraj</span><span class="o">.</span><span class="n">arYp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+    <span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arBy</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Magnetic Field [T]&#39;</span><span class="p">])</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arXp</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Angle [mrad]&#39;</span><span class="p">])</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arX</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">])</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arBx</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Magnetic Field [T]&#39;</span><span class="p">])</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arYp</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Angle [mrad]&#39;</span><span class="p">])</span>
+<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">])</span>
+<span class="n">uti_plot_show</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  1.284 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-cookbook-srwlib-example02-py">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/d00824bc90f82e3c69dd0912a6926b37/SRWLIB_Example02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example02.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" download="" href="../_downloads/8bfd33092d6f7015fa79c8e146617ea3/SRWLIB_Example02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example02.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SRWLIB_Example03.html" class="btn btn-neutral float-right" title="SRW Example #3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SRWLIB_Example01_kick_matr.html" class="btn btn-neutral" title="SRW Example #1 (kick matrix)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Synchrotron Radiation Workshop, NSLS-II, Brookhaven National Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script type="text/javascript" src="../_static/copybutton.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
