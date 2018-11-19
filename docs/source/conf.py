@@ -21,6 +21,7 @@ import os
 import sys
 import re
 import sphinx_rtd_theme
+from sphinx_gallery.sorting import FileNameSortKey
 
 sys.path.insert(0, os.path.abspath(os.path.dirname('__file__')))
 
@@ -60,7 +61,8 @@ sphinx_gallery_conf = {
     # path where to save gallery generated examples
     'gallery_dirs'  : 'cookbook',
     'filename_pattern': re.escape(os.sep) + '*.py',
-    'backreferences_dir': False}
+    'backreferences_dir': False,
+    'within_subsection_order': FileNameSortKey}
 
 
 # Generate the API documentation when building
