@@ -1,15 +1,15 @@
 import os
 import sys
+from subprocess import run as sub_run
+from distutils.command.build import build
 from setuptools import setup, find_packages, Extension
-import versioneer
-
 
 # NOTE: This file must remain Python 2 compatible for the foreseeable future,
 # to ensure that we error out properly for people with outdated setuptools
 # and/or pip.
 min_version = (2, 7)
 if sys.version_info < min_version:
-    error = """
+    error = '''
 srwpy does not support Python {0}.{1}.
 Python {2}.{3} and above is required. Check your Python version like so:
 
@@ -19,7 +19,7 @@ This may be due to an out-of-date pip. Make sure you have pip >= 9.0.1.
 Upgrade pip like so:
 
 pip install --upgrade pip
-""".format(*(list(sys.version_info[:2]) + list(min_version)))
+'''.format(*(list(sys.version_info[:2]) + list(min_version)))
     sys.exit(error)
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -45,14 +45,23 @@ else:
 
 srwlpy = Extension('srwlpy', **srwlpy_kwargs)
 
+class SRWPyBuild(build):
+    '''
+    This class is a wrapper around the classic build to run the makefile on srw
+    before to create librairies
+    '''
+    def run(self):
+        sub_run(['make', '-C', os.path.join(here, 'core'), 'all'])
+        super().run()
+        sub_run(['make', '-C', os.path.join(here, 'core'), 'clean'])
 
 setup(
     name='srwpy',
-    version=versioneer.get_version(),
-    cmdclass=versioneer.get_cmdclass(),
-    description="Synchrotron Radiation Workshop",
+    version='1.0.0',
+    cmdclass={'build': SRWPyBuild},
+    description='Synchrotron Radiation Workshop',
     long_description=readme,
-    author="NSLS-II, Brookhaven National Lab",
+    author='NSLS-II, Brookhaven National Lab',
     author_email='mrakitin@bnl.gov',
     url='https://github.com/srwpy/srwpy',
     packages=find_packages(exclude=['docs', 'tests']),
@@ -62,16 +71,8 @@ setup(
             ],
         },
     include_package_data=True,
-    package_data={
-        'srwpy': [
-            # When adding files here, remember to update MANIFEST.in as well,
-            # or else they will not be included in the distribution on PyPI!
-            # 'path/to/data_file',
-            '*.so'
-            ]
-        },
     install_requires=requirements,
-    license="BSD (3-clause)",
+    license='BSD (3-clause)',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Natural Language :: English',
