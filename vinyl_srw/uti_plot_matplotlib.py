@@ -6,12 +6,11 @@ import os
 import sys
 import subprocess
 import platform
-from array import *
-from math import *
 import numpy as np
-import uti_plot_com
-import uti_math
-import uti_plot
+from array import array
+from vinyl_srw.uti_plot_com import file_load, rescale_range
+from vinyl_srw.uti_math import interp_2d
+from vinyl_srw.uti_plot import DEFAULT_BACKEND
 
 class Backend(object):
     def __init__(self, backend, fname_format):
@@ -28,7 +27,7 @@ class Backend(object):
             import matplotlib.pyplot
             self._pl = matplotlib.pyplot
         else:
-            if backend == uti_plot.DEFAULT_BACKEND:
+            if backend == DEFAULT_BACKEND:
                 (backend, fname_format) = self._default_backend(fname_format)
             matplotlib.use(backend)
             import matplotlib.pyplot
@@ -89,7 +88,7 @@ class Backend(object):
         arCutX = array('d', [0]*nx)
         xx = x0
         for ix in range(nx):
-            arCutX[ix] = uti_math.interp_2d(xx, yc, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
+            arCutX[ix] = interp_2d(xx, yc, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
             xx += xStep
         if _graphs_joined: self._plot_1D(arCutX, x_range, label1H, fig, 132) #OC150814
         else: self.uti_plot1d(arCutX, x_range, label1H)
@@ -99,7 +98,7 @@ class Backend(object):
         yy = y0
         for iy in range(ny):
             #arCutY[iy] = _interp_2d(xc, yy, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
-            arCutY[iy] = uti_math.interp_2d(xc, yy, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
+            arCutY[iy] = interp_2d(xc, yy, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
             yy += yStep
         if _graphs_joined: self._plot_1D(arCutY, y_range, label1V, fig, 133)
         else: self.uti_plot1d(arCutY, y_range, label1V)
@@ -146,12 +145,12 @@ class Backend(object):
         #        print('Cannot resize the image - scipy.ndimage.zoom() cannot be imported.')
         #        pass
 
-        data, mode, allrange, arLabels, arUnits = uti_plot_com.file_load(_fname, _read_labels, _multicolumn_data) #MR31102017
+        data, mode, allrange, arLabels, arUnits = file_load(_fname, _read_labels, _multicolumn_data) #MR31102017
         if not _multicolumn_data:
             data = np.array(data)
         #if mode == 3: #OC17112017 (commented-out)
         #    try:
-        #        fwhm_dict = uti_math.fwhm(np.linspace(allrange[0], allrange[1], allrange[2]), data, return_as_dict=True)
+        #        fwhm_dict = fwhm(np.linspace(allrange[0], allrange[1], allrange[2]), data, return_as_dict=True)
         #    except:
         #        fwhm_dict = {'fwhm': -1}
         #    print('FWHM: {:.5f} [{}]'.format(fwhm_dict['fwhm'], arUnits[0]))
@@ -291,7 +290,7 @@ class Backend(object):
     def __mode_T(self, data, allrange, _ar_labels, _ar_units, _ec=0, _xc=0, _yc=0):
         #allrange, units = _rescale_range(allrange)
         #allrange, units = _rescale_range(allrange, _ar_units, _ec, _xc, _yc)
-        allrange, units = uti_plot_com.rescale_range(allrange, _ar_units, _ec, _xc, _yc)
+        allrange, units = rescale_range(allrange, _ar_units, _ec, _xc, _yc)
 
         #e0, e1, ne, x0, x1, nx, y0, y1, ny = allrange
         e0, e1, ne, x0, x1, nx, y0, y1, ny, ec, xc, yc = allrange
@@ -304,7 +303,7 @@ class Backend(object):
     def __mode_V(self, data, allrange, _ar_labels, _ar_units):
         #allrange, units = _rescale_range(allrange)
         #allrange, units = _rescale_range(allrange, _ar_units)
-        allrange, units = uti_plot_com.rescale_range(allrange, _ar_units)
+        allrange, units = rescale_range(allrange, _ar_units)
 
         #e0, e1, ne, x0, x1, nx, y0, y1, ny = allrange
         e0, e1, ne, x0, x1, nx, y0, y1, ny, ec, xc, yc = allrange
@@ -318,7 +317,7 @@ class Backend(object):
     def __mode_H(self, data, allrange, _ar_labels, _ar_units):
         #allrange, units = _rescale_range(allrange)
         #allrange, units = _rescale_range(allrange, _ar_units)
-        allrange, units = uti_plot_com.rescale_range(allrange, _ar_units)
+        allrange, units = rescale_range(allrange, _ar_units)
 
         #e0, e1, ne, x0, x1, nx, y0, y1, ny = allrange
         e0, e1, ne, x0, x1, nx, y0, y1, ny, ec, xc, yc = allrange
@@ -332,7 +331,7 @@ class Backend(object):
     def __mode_E(self, data, allrange, _ar_labels, _ar_units):
         #allrange, units = _rescale_range(allrange)
         #allrange, units = _rescale_range(allrange, _ar_units)
-        allrange, units = uti_plot_com.rescale_range(allrange, _ar_units)
+        allrange, units = rescale_range(allrange, _ar_units)
 
         e0, e1, ne, x0, x1, nx, y0, y1, ny, ec, xc, yc = allrange
         range_e = e0, e1, ne
@@ -347,7 +346,7 @@ class Backend(object):
         #Could be moved to uti_plot_com.py (since there is not Matplotlib-specific content)
         #allrange, units = _rescale_range(allrange)
         #allrange, units = _rescale_range(allrange, _ar_units, 0, _xc, _yc)
-        allrange, units = uti_plot_com.rescale_range(allrange, _ar_units, 0, _xc, _yc)
+        allrange, units = rescale_range(allrange, _ar_units, 0, _xc, _yc)
 
         e0, e1, ne, x0, x1, nx, y0, y1, ny, ec, xc, yc = allrange
         range_x = x0, x1, nx
@@ -394,7 +393,7 @@ class Backend(object):
     ##    xx = x0
     ##    for ix in range(nx):
     ##        #arCutX[ix] = _interp_2d(xx, yc, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
-    ##        arCutX[ix] = uti_math.interp_2d(xx, yc, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
+    ##        arCutX[ix] = interp_2d(xx, yc, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
     ##        xx += xStep
     ##    if _graphs_joined: _plot_1D(arCutX, range_x, label1H, fig, 132)
     ##    else: uti_plot1d(arCutX, range_x, label1H)
@@ -404,7 +403,7 @@ class Backend(object):
     ##    yy = y0
     ##    for iy in range(ny):
     ##        #arCutY[iy] = _interp_2d(xc, yy, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
-    ##        arCutY[iy] = uti_math.interp_2d(xc, yy, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
+    ##        arCutY[iy] = interp_2d(xc, yy, x0, xStep, nx, y0, yStep, ny, data, inperpOrd, 1, 0)
     ##        yy += yStep
     ##    if _graphs_joined: _plot_1D(arCutY, range_y, label1V, fig, 133)
     ##    else: uti_plot1d(arCutY, range_y, label1V)

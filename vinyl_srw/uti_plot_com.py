@@ -2,21 +2,17 @@
 
 .. moduleauthor:: 
 """
-from copy import *
-from array import *
-import traceback
-#import sys
-#import numpy as np
+from copy import deepcopy
 
-import uti_math
-import uti_io
+from vinyl_srw.uti_math import num_round
+from vinyl_srw.uti_io import read_ascii_data_cols
 
 #****************************************************************************
 def _multicolumn_file_load(fname): #MR31102017
     with open(fname, 'r') as f:
         header = f.readline().split(',')
         header = [x.replace('#', '').strip() for x in header]
-    data = uti_io.read_ascii_data_cols(fname, '\t', _i_col_start=0, _i_col_end=-1, _n_line_skip=1)
+    data = read_ascii_data_cols(fname, '\t', _i_col_start=0, _i_col_end=-1, _n_line_skip=1)
     d = {}
     for i, k in enumerate(header):
         k_no_units = k.split('[')[0].strip()
@@ -38,7 +34,7 @@ def _traj_file_load(fname, traj_axis='x'):  #MR20160725
         for i in range(nLinesHead):
             hlp.append(f.readline())
 
-    data = uti_io.read_ascii_data_cols(fname, '\t', _i_col_start=0, _i_col_end=10, _n_line_skip=nLinesHead)
+    data = read_ascii_data_cols(fname, '\t', _i_col_start=0, _i_col_end=10, _n_line_skip=nLinesHead)
 
     mode = 3
     allrange = [
@@ -87,7 +83,7 @@ def _file_load(_fname, _read_labels=1): #MR20160725
     e0,e1,x0,x1,y0,y1 = [float(hlp[i].replace('#','').split()[0]) for i in [1,2,4,5,7,8]]
 
     #data = np.squeeze(np.loadtxt(_fname, dtype=np.float64)) #get data from file (C-aligned flat)
-    data = uti_io.read_ascii_data_cols(_fname, '\t', _i_col_start=0, _i_col_end=0, _n_line_skip=nLinesHead)[0]
+    data = read_ascii_data_cols(_fname, '\t', _i_col_start=0, _i_col_end=0, _n_line_skip=nLinesHead)[0]
 
     allrange = e0, e1, ne, x0, x1, nx, y0, y1, ny
 
@@ -209,15 +205,15 @@ def rescale_range(allrange, _ar_units, _ec=0, _xc=0, _yc=0):
     mult_x, str_x = rescale(xm, _ar_units[1])
     mult_y, str_y = rescale(ym, _ar_units[2])
 
-    e0s = uti_math.num_round(e0*mult_e) #this is done to avoid in the labels numbers like "12.700000000001"
-    e1s = uti_math.num_round(e1*mult_e)
-    x0s = uti_math.num_round(x0*mult_x)
-    x1s = uti_math.num_round(x1*mult_x)
-    y0s = uti_math.num_round(y0*mult_y)
-    y1s = uti_math.num_round(y1*mult_y)
-    ecs = uti_math.num_round(_ec*mult_e)
-    xcs = uti_math.num_round(_xc*mult_x)
-    ycs = uti_math.num_round(_yc*mult_y)
+    e0s = num_round(e0*mult_e) #this is done to avoid in the labels numbers like "12.700000000001"
+    e1s = num_round(e1*mult_e)
+    x0s = num_round(x0*mult_x)
+    x1s = num_round(x1*mult_x)
+    y0s = num_round(y0*mult_y)
+    y1s = num_round(y1*mult_y)
+    ecs = num_round(_ec*mult_e)
+    xcs = num_round(_xc*mult_x)
+    ycs = num_round(_yc*mult_y)
     
     #allnewrange = e0*mult_e, e1*mult_e, ne, x0*mult_x, x1*mult_x, nx, y0*mult_y, y1*mult_y, ny, _ec*mult_e, _xc*mult_x, _yc*mult_y
     allnewrange = e0s, e1s, ne, x0s, x1s, nx, y0s, y1s, ny, ecs, xcs, ycs

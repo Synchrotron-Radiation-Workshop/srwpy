@@ -3,22 +3,22 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-import srwlpy as srwl
-from array import *
-from math import *
-from copy import *
-
 import datetime
 import json
 import random
 import sys
 import os
 import traceback
-import uti_math
 import errno
 import tempfile
 import shutil
 import time
+import srwlpy as srwl
+from array import *
+from math import *
+from copy import *
+
+from uti_math import *
 
 from srwl_uti_cryst import * 
 #try:

@@ -56,20 +56,15 @@ class SRWPyBuild(build):
         sub_run(['make', '-C', os.path.join(here, 'core'), 'clean'])
 
 setup(
-    name='srwpy',
+    name='oy-srwpy',
     version='1.0.0',
     cmdclass={'build': SRWPyBuild},
     description='Synchrotron Radiation Workshop',
     long_description=readme,
     author='NSLS-II, Brookhaven National Lab',
     author_email='mrakitin@bnl.gov',
-    url='https://github.com/srwpy/srwpy',
+    url='https://github.com/PaNOSC-ViNYL/srwpy',
     packages=find_packages(exclude=['docs', 'tests']),
-    entry_points={
-        'console_scripts': [
-            # 'some.module:some_function',
-            ],
-        },
     include_package_data=True,
     install_requires=requirements,
     license='BSD (3-clause)',

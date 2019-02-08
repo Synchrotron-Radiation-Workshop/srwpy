@@ -5,12 +5,25 @@
 # October 26, 2016
 # October 27, 2017
 #############################################################################
-
 import math
 import os
 
-import srwlib
-import uti_io
+from vinyl_srw.srwlib import SRWLOptT
+from vinyl_srw.uti_io import read_image
+import_err_msg = '"{}" library cannot be imported. Please install it first with "pip install {}".'
+
+try:
+    from PIL import Image
+except ImportError:
+    raise ImportError(import_err_msg.format('PIL', 'pillow'))
+try:
+    import numpy as np
+except ImportError:
+    raise ImportError(import_err_msg.format('NumPy', 'numpy'))
+try:
+    from scipy.ndimage.interpolation import rotate
+except ImportError:
+    raise ImportError(import_err_msg.format('SciPy', 'scipy'))
 
 
 # ********************** The class for Samples:
@@ -87,21 +100,7 @@ class SRWLUtiSmp:
             self.save_images()
 
     def get_data_from_image(self):
-        import_err_msg = '"{}" library cannot be imported. Please install it first with "pip install {}".'
-        try:
-            import numpy as np
-        except ImportError:
-            raise ImportError(import_err_msg.format('NumPy', 'numpy'))
-        try:
-            from PIL import Image
-        except ImportError:
-            raise ImportError(import_err_msg.format('PIL', 'pillow'))
-        try:
-            from scipy.ndimage.interpolation import rotate
-        except ImportError:
-            raise ImportError(import_err_msg.format('SciPy', 'scipy'))
-
-        d = uti_io.read_image(image_path=self.file_path)
+        d = read_image(image_path=self.file_path)
         self.data = d['data']
         self.raw_image = d['raw_image']
         self.limit_value = d['limit_value']
@@ -299,9 +298,9 @@ def srwl_opt_setup_transm_from_file(
     rx = nx * resolution
     ry = ny * resolution
 
-    opT = srwlib.SRWLOptT(_nx=nx, _ny=ny, _rx=rx, _ry=ry,
-                          _arTr=arTr, _extTr=extTr, _Fx=fx, _Fy=fy,
-                          _x=xc, _y=yc, _ne=ne, _eStart=e_start, _eFin=e_fin)
+    opT = SRWLOptT(_nx=nx, _ny=ny, _rx=rx, _ry=ry,
+                   _arTr=arTr, _extTr=extTr, _Fx=fx, _Fy=fy,
+                   _x=xc, _y=yc, _ne=ne, _eStart=e_start, _eFin=e_fin)
 
     data = s.data
 
@@ -309,7 +308,7 @@ def srwl_opt_setup_transm_from_file(
     offset = 0
     for iy in range(ny):
         for ix in range(nx):
-            for ie in range(ne):
+            for _ in range(ne):
                 # In images Y=0 corresponds from upper-left corner, in SRW it's lower-left corner:
                 pathInBody = thickness * data[ny - iy - 1, ix] / s.limit_value
                 opT.arTr[offset] = math.exp(-0.5 * pathInBody / atten_len)  # amplitude transmission
