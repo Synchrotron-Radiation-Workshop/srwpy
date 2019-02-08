@@ -45,7 +45,7 @@ else:
 
 srwlpy = Extension('srwlpy', **srwlpy_kwargs)
 
-class SRWPyBuild(build):
+class VinylSRWBuild(build):
     '''
     This class is a wrapper around the classic build to run the makefile on srw
     before to create librairies
@@ -56,9 +56,9 @@ class SRWPyBuild(build):
         sub_run(['make', '-C', os.path.join(here, 'core'), 'clean'])
 
 setup(
-    name='oy-srwpy',
+    name='vinyl_srw',
     version='1.0.0',
-    cmdclass={'build': SRWPyBuild},
+    cmdclass={'build': VinylSRWBuild},
     description='Synchrotron Radiation Workshop',
     long_description=readme,
     author='NSLS-II, Brookhaven National Lab',
