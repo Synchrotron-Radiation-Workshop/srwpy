@@ -18,9 +18,9 @@ from array import *
 from math import *
 from copy import *
 
-from uti_math import *
+from vinyl_srw.uti_math import *
 
-from srwl_uti_cryst import * 
+from vinyl_srw.srwl_uti_cryst import * 
 #try:
 #    from uti_plot import * #universal simple plotting module distributed together with SRWLib
 #except:
