@@ -1,6 +1,7 @@
 import os
 import sys
 from subprocess import run as sub_run
+from subprocess import Popen
 from distutils.command.build import build
 from setuptools import setup, find_packages, Extension
 
@@ -47,13 +48,24 @@ srwlpy = Extension('srwlpy', **srwlpy_kwargs)
 
 class VinylSRWBuild(build):
     '''
-    This class is a wrapper around the classic build to run the makefile on srw
-    before to create librairies
+    This class is a wrapper to build SRW before making link before SRW and VinylSRW
     '''
     def run(self):
-        sub_run(['make', '-C', os.path.join(here, 'core'), 'all'])
-        super().run()
-        sub_run(['make', '-C', os.path.join(here, 'core'), 'clean'])
+        if sys.platform == 'win32':
+            path_to_bat = os.path.join(here, 'core')
+            bat_name = "make.bat"
+            try:
+                batch_process = Popen(bat_name, cwd=path_to_bat, shell=True)
+                stdout, stderr = batch_process.communicate()
+                if stderr:
+                    raise Exception('An error occur during srw compilation. Message: {}'.format(stderr))
+            except OSError as err:
+                raise OSError('{} should be located on core. Current path: {}'.format(bat_name, path_to_bat))
+            super().run()
+        else:
+            sub_run(['make', '-C', os.path.join(here, 'core'), 'all'])
+            super().run()
+            sub_run(['make', '-C', os.path.join(here, 'core'), 'clean'])
 
 setup(
     name='vinyl_srw',
