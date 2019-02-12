@@ -9,7 +9,7 @@ recursive-exclude * *.py[co]
 
 recursive-include docs *.rst conf.py Makefile make.bat
 
-graft core/
+graft core
 
 # If including data files in the package, add them like:
 # include path/to/data_file
