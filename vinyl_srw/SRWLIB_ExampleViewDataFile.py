@@ -4,10 +4,9 @@
 # v 0.04
 # Authors: O.C., Maksim Rakitin
 #############################################################################
-
+from __future__ import print_function #Python 2.7 compatibility
 import optparse
 import os
-from __future__ import print_function #Python 2.7 compatibility
 from vinyl_srw.uti_plot import uti_plot_init, uti_plot_data_file, uti_plot_show
 
 if __name__=='__main__':
