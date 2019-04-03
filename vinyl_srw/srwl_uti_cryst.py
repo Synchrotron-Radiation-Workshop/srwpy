@@ -4,7 +4,7 @@
 # v 0.01
 #############################################################################
 
-from math import *
+from math import exp, sqrt, pi
 import cmath
 
 strMatDataNotDefined = 'The data for this crystal material is not defined (yet).'

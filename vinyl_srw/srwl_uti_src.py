@@ -4,7 +4,7 @@
 # v 0.02
 #############################################################################
 
-from srwlib import *
+from vinyl_srw.srwlib import SRWLPartBeam, cos, sin, sqrt
 
 #****************************************************************************
 #def srwl_uti_src_e_beams_predef():
@@ -61,17 +61,28 @@ def srwl_uti_src_e_beam(_nm, _Iavg=None, _e=None, _sig_e=None, _emit_x=None, _be
         curStr = curStr.capitalize()
         if sTest == curStr:
             ar = curInf[1]
-            if(_Iavg is not None): ar[0] = _Iavg
-            if(_e is not None): ar[1] = _e
-            if(_sig_e is not None): ar[2] = _sig_e
-            if(_emit_x is not None): ar[3] = _emit_x
-            if(_beta_x is not None): ar[4] = _beta_x
-            if(_alpha_x is not None): ar[5] = _alpha_x
-            if(_eta_x is not None): ar[6] = _eta_x
-            if(_eta_x_pr is not None): ar[7] = _eta_x_pr
-            if(_emit_y is not None): ar[8] = _emit_y
-            if(_beta_y is not None): ar[9] = _beta_y
-            if(_alpha_y is not None): ar[10] = _alpha_y
+            if _Iavg is not None:
+                ar[0] = _Iavg
+            if _e is not None:
+                ar[1] = _e
+            if _sig_e is not None:
+                ar[2] = _sig_e
+            if _emit_x is not None:
+                ar[3] = _emit_x
+            if _beta_x is not None:
+                ar[4] = _beta_x
+            if _alpha_x is not None:
+                ar[5] = _alpha_x
+            if _eta_x is not None:
+                ar[6] = _eta_x
+            if _eta_x_pr is not None:
+                ar[7] = _eta_x_pr
+            if _emit_y is not None:
+                ar[8] = _emit_y
+            if _beta_y is not None:
+                ar[9] = _beta_y
+            if _alpha_y is not None:
+                ar[10] = _alpha_y
             resBeam.from_Twiss(_Iavg=ar[0], _e=ar[1], _sig_e=ar[2], _emit_x=ar[3], _beta_x=ar[4], _alpha_x=ar[5], _eta_x=ar[6], _eta_x_pr=ar[7], _emit_y=ar[8], _beta_y=ar[9], _alpha_y=ar[10])
             return resBeam
     return None
@@ -89,28 +100,27 @@ def srwl_uti_src_sph_wave(_wfr, _pol, _norm=1): #Move it to different place (C p
     arE = _wfr.arEx if(_pol == 0) else _wfr.arEy
 
     multE = _norm #to update, assuming _norm defining power of the source
-    
+
     eStep = 0 if(_wfr.mesh.ne <= 1) else (_wfr.mesh.eFin - _wfr.mesh.eStart)/(_wfr.mesh.ne - 1)
     xStep = (_wfr.mesh.xFin - _wfr.mesh.xStart)/(_wfr.mesh.nx - 1)
     yStep = (_wfr.mesh.yFin - _wfr.mesh.yStart)/(_wfr.mesh.ny - 1)
 
     i = 0
     y = _wfr.mesh.yStart - yStep - _wfr.yc
-    for iy in range(_wfr.mesh.ny):
+    for _ in range(_wfr.mesh.ny):
         y += yStep
         ye2 = y*y
         x = _wfr.mesh.xStart - xStep - _wfr.xc
-        for ix in range(_wfr.mesh.nx):
+        for _ in range(_wfr.mesh.nx):
             x += xStep
             xe2 = x*x
             curR = sqrt(Re2 + xe2 + ye2)
             mult = multE/curR
             phEn = _wfr.mesh.eFin - eStep
-            for ie in range(_wfr.mesh.ne):
+            for _ in range(_wfr.mesh.ne):
                 phEn += eStep
                 k = (5.067730652e+06)*phEn
                 ph = k*curR
                 arE[i] = mult*cos(ph)
                 arE[i + 1] = mult*sin(ph)
                 i += 2
-        

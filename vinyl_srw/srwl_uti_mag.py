@@ -2,8 +2,7 @@
 # SRWLib for Python: Magnet Utilities v 0.02
 #############################################################################
 
-from srwlib import *
-#from copy import *
+from vinyl_srw.srwlib import SRWLMagFldM, array, SRWLMagFld3D, SRWLMagFldC, sqrt, SRWLPrtTrj, random, srwl
 
 #****************************************************************************
 def srwl_mag_kick(_el_en=3., _ang=1., _x_or_y='x', _len=1., _led=0):
@@ -17,18 +16,22 @@ def srwl_mag_kick(_el_en=3., _ang=1., _x_or_y='x', _len=1., _led=0):
     :param _add: add (=1) or reset (=0) the new magnet structure to the existing approximate magnetic field container
     """
 
-    if(_el_en <= 0): raise Exception('Electron Beam structure is not defined (it is required for defining kick magnet parameters from angle)')
-    if(_len <= 0): raise Exception('Inconsistent input magnet parameters: effective length can not be negative')
+    if _el_en <= 0:
+        raise Exception('Electron Beam structure is not defined (it is required for defining kick magnet parameters from angle)')
+    if _len <= 0:
+        raise Exception('Inconsistent input magnet parameters: effective length can not be negative')
 
-    if(_led > 0.):
+    if _led > 0.:
         d = 0.8078259211948791*_led #d parameter in G/(1 + ((z-zc)/d)^2)^2
         L0 = _len - 1.5707963267948966*d #length of const. magnetic field part
-        if(L0 < 0.): raise Exception('Inconsistent input magnet parameters: magnet edge length if too large for given effective length')
+        if L0 < 0.:
+            raise Exception('Inconsistent input magnet parameters: magnet edge length if too large for given effective length')
 
     B = -3.33564095*_ang*_el_en/_len #sign to be checked!
     n_or_s = 'n'
-    if(_x_or_y == 'y'): n_or_s = 's' #to check
-    
+    if _x_or_y == 'y':
+        n_or_s = 's' #to check
+
     return SRWLMagFldM(_G=B, _m=1, _n_or_s=n_or_s, _Leff=_len, _Ledge=_led)
 
 #****************************************************************************
@@ -51,7 +54,6 @@ def srwl_mag_extrap_grad_off_mid_plane(_mag_mid, _ry, _ny, _grad_mult=1):
     arBz_mid = fld3d_mid.arBz
 
     xc = _mag_mid.arXc[0]
-    xStart = xc - 0.5*fld3d_mid.rx
     nx = fld3d_mid.nx
     xStep = fld3d_mid.rx/(nx - 1)
 
@@ -61,28 +63,29 @@ def srwl_mag_extrap_grad_off_mid_plane(_mag_mid, _ry, _ny, _grad_mult=1):
     yStep = _ry/(ny - 1)
 
     zc = _mag_mid.arZc[0]
-    zStart = zc - 0.5*fld3d_mid.rz
     nz = fld3d_mid.nz
-    zStep = fld3d_mid.rz/(nz - 1)
 
     nTotRes = int(nx*ny*nz)
     arBxRes = array('d', [0]*nTotRes)
     arByRes = array('d', [0]*nTotRes)
     arBzRes = None if(arBz_mid is None) else array('d', [0]*nTotRes)
-    
+
     nx_mi_1 = nx - 1
     #print(nx, xStart, xStep, ny, yStart, yStep, nz, zStart, zStep)
-    
+
     for iz in range(nz):
         iz_nx = iz*nx
         iz_nx_ny = iz*nx*ny
         for ix in range(nx):
-            b1y = 0; b2y = 0; b0y = 0; dx = xStep
-            if(ix == 0):
+            b1y = 0
+            b2y = 0
+            b0y = 0
+            dx = xStep
+            if ix == 0:
                 b1y = arBy_mid[iz_nx]
                 b2y = arBy_mid[iz_nx + 1]
                 b0y = b1y
-            elif(ix == nx_mi_1):
+            elif ix == nx_mi_1:
                 b1y = arBy_mid[iz_nx + nx_mi_1 - 1]
                 b2y = arBy_mid[iz_nx + nx_mi_1]
                 b0y = b2y
@@ -91,7 +94,7 @@ def srwl_mag_extrap_grad_off_mid_plane(_mag_mid, _ry, _ny, _grad_mult=1):
                 b0y = arBy_mid[iz_nx + ix]
                 b2y = arBy_mid[iz_nx + ix + 1]
                 dx = 2*xStep
-                
+
             curGrad = _grad_mult*(b2y - b1y)/dx
             y = yStart
             for iy in range(ny):
@@ -139,14 +142,12 @@ def srwl_mag_track_e_beam_mom(_e_beam, _mag, _z_or_ct, _ct_start=0, _ct_end=0, _
     #absEnSpr = en0GeV*relEnSpr
 
     multX = 0.5/(sigXe2*sigXpe2 - mXXp*mXXp)
-    BX = sigXe2*multX
     GX = sigXpe2*multX
     AX = mXXp*multX
     sigPX = 1/sqrt(2*GX)
     sigQX = sqrt(sigXpe2)
 
     multY = 0.5/(sigYe2*sigYpe2 - mYYp*mYYp)
-    BY = sigYe2*multY
     GY = sigYpe2*multY
     AY = mYYp*multY
     sigPY = 1/sqrt(2*GY)
@@ -160,21 +161,26 @@ def srwl_mag_track_e_beam_mom(_e_beam, _mag, _z_or_ct, _ct_start=0, _ct_end=0, _
     ctStep = 0
     treatCT = False
     np_in_trj_mi_1 = _np_in_trj - 1
-    if(_ct_start != _ct_end): #treat _z_or_ct as ct
+    if _ct_start != _ct_end: #treat _z_or_ct as ct
         ctStep = (_ct_end - _ct_start)/np_in_trj_mi_1
         ind0 = int((_z_or_ct - _ct_start)/ctStep)
-        if((ind0 >= 0) and (ind0 < np_in_trj_mi_1)): 
+        if((ind0 >= 0) and (ind0 < np_in_trj_mi_1)):
             r0 = (_z_or_ct - (_ct_start + ind0*ctStep))/ctStep
             treatCT = True
-        if(treatCT is not True):
+        if treatCT is not True:
             raise Exception("Trajectory point corresponding to given time moment was not found")
 
-    xSum = 0; ySum = 0
-    xpSum = 0; ypSum = 0
-    xe2Sum = 0; ye2Sum = 0
-    xpe2Sum = 0; ype2Sum = 0
-    xxpSum = 0; yypSum = 0
-    for i in range(_npart):
+    xSum = 0
+    ySum = 0
+    xpSum = 0
+    ypSum = 0
+    xe2Sum = 0
+    ye2Sum = 0
+    xpe2Sum = 0
+    ype2Sum = 0
+    xxpSum = 0
+    yypSum = 0
+    for _ in range(_npart):
 
         for ir in range(5):
             randAr[ir] = random.gauss(0, 1)
@@ -196,14 +202,15 @@ def srwl_mag_track_e_beam_mom(_e_beam, _mag, _z_or_ct, _ct_start=0, _ct_end=0, _
             iz = ind0
             dZprev = 1.e+23
             newIndFound = False
-            while(iz >= 0):
-                if(iz < np_in_trj_mi_1):
+            while iz >= 0:
+                if iz < np_in_trj_mi_1:
                     if((partTraj.arZ[iz] <= _z_or_ct) and (_z_or_ct < partTraj.arZ[iz + 1])):
                         ind0 = iz
                         newIndFound = True
                         break
                 dZ = abs(_z_or_ct - partTraj.arZ[iz])
-                if(dZ > dZprev): break
+                if dZ > dZprev:
+                    break
 
                 dZprev = dZ
                 iz -= 1
@@ -211,47 +218,65 @@ def srwl_mag_track_e_beam_mom(_e_beam, _mag, _z_or_ct, _ct_start=0, _ct_end=0, _
             if newIndFound is False:
                 iz = ind0
                 dZprev = 1.e+23
-                while(iz < np_in_trj_mi_1):
+                while iz < np_in_trj_mi_1:
                     if((partTraj.arZ[iz] <= _z_or_ct) and (_z_or_ct < partTraj.arZ[iz + 1])):
                         ind0 = iz
                         newIndFound = True
                         break
                     dZ = abs(_z_or_ct - partTraj.arZ[iz])
-                    if(dZ > dZprev): break
+                    if dZ > dZprev:
+                        break
 
                     dZprev = dZ
                     iz += 1
 
-            if(newIndFound is False):
+            if newIndFound is False:
                 raise Exception("Trajectory point corresponding to given longitudinal position was not found")
 
             r0 = (_z_or_ct - partTraj.arZ[ind0])/(partTraj.arZ[ind0 + 1] - partTraj.arZ[ind0])
 
-        x1 = partTraj.arX[ind0]; x2 = partTraj.arX[ind0 + 1]
+        x1 = partTraj.arX[ind0]
+        x2 = partTraj.arX[ind0 + 1]
         x = x1 + r0*(x2 - x1)
-        xp1 = partTraj.arXp[ind0]; xp2 = partTraj.arXp[ind0 + 1]
+        xp1 = partTraj.arXp[ind0]
+        xp2 = partTraj.arXp[ind0 + 1]
         xp = xp1 + r0*(xp2 - xp1)
-        y1 = partTraj.arY[ind0]; y2 = partTraj.arY[ind0 + 1]
+        y1 = partTraj.arY[ind0]
+        y2 = partTraj.arY[ind0 + 1]
         y = y1 + r0*(y2 - y1)
-        yp1 = partTraj.arYp[ind0]; yp2 = partTraj.arYp[ind0 + 1]
+        yp1 = partTraj.arYp[ind0]
+        yp2 = partTraj.arYp[ind0 + 1]
         yp = yp1 + r0*(yp2 - yp1)
 
-        xSum += x; ySum += y
-        xpSum += xp; ypSum += yp
-        xe2Sum += x*x; ye2Sum += y*y
-        xpe2Sum += xp*xp; ype2Sum += yp*yp
-        xxpSum += x*xp; yypSum += y*yp
-    
-    invN = 1./_npart
-    xAvg = xSum*invN; yAvg = ySum*invN
-    xpAvg = xpSum*invN; ypAvg = ypSum*invN
-    xe2Avg = xe2Sum*invN; ye2Avg = ye2Sum*invN
-    xpe2Avg = xpe2Sum*invN; ype2Avg = ype2Sum*invN
-    xxpAvg = xxpSum*invN; yypAvg = yypSum*invN
+        xSum += x
+        ySum += y
+        xpSum += xp
+        ypSum += yp
+        xe2Sum += x*x
+        ye2Sum += y*y
+        xpe2Sum += xp*xp
+        ype2Sum += yp*yp
+        xxpSum += x*xp
+        yypSum += y*yp
 
-    sigXe2 = xe2Avg - xAvg*xAvg; sigYe2 = ye2Avg - yAvg*yAvg
-    mXXp = xxpAvg - xAvg*xpAvg; mYYp = yypAvg - yAvg*ypAvg
-    sigXpe2 = xpe2Avg - xpAvg*xpAvg; sigYpe2 = ype2Avg - ypAvg*ypAvg
+    invN = 1./_npart
+    xAvg = xSum*invN
+    yAvg = ySum*invN
+    xpAvg = xpSum*invN
+    ypAvg = ypSum*invN
+    xe2Avg = xe2Sum*invN
+    ye2Avg = ye2Sum*invN
+    xpe2Avg = xpe2Sum*invN
+    ype2Avg = ype2Sum*invN
+    xxpAvg = xxpSum*invN
+    yypAvg = yypSum*invN
+
+    sigXe2 = xe2Avg - xAvg*xAvg
+    sigYe2 = ye2Avg - yAvg*yAvg
+    mXXp = xxpAvg - xAvg*xpAvg
+    mYYp = yypAvg - yAvg*ypAvg
+    sigXpe2 = xpe2Avg - xpAvg*xpAvg
+    sigYpe2 = ype2Avg - ypAvg*ypAvg
 
     return [[xAvg, xpAvg, sigXe2, mXXp, sigXpe2], [yAvg, ypAvg, sigYe2, mYYp, sigYpe2]]
 

@@ -30,8 +30,8 @@ Modules:
 .. moduleauthor:: Rob Nagler <nagler@radiasoft.net>
 """
 import sys
-import uti_plot_com
 import traceback
+from vinyl_srw.uti_plot_com import rescale_dim
 
 _backend = None
 
@@ -79,7 +79,7 @@ def uti_plot1d(ar1d, x_range, labels=('Photon Energy [eV]', 'ph/s/0.1%bw'), unit
     #if '_backend' not in locals(): uti_plot_init() #?
     
     if(units is not None):
-        x_range, x_unit = uti_plot_com.rescale_dim(x_range, units[0])
+        x_range, x_unit = rescale_dim(x_range, units[0])
         units = [x_unit, units[1]]
         strTitle = '' if(len(labels) < 3) else labels[2]
         labels = (labels[0] + ' [' + units[0] + ']', labels[1] + ' [' + units[1] + ']', strTitle)
@@ -97,7 +97,7 @@ def uti_plot1d_ir(ary, arx, labels=('Longitudinal Position [m]', 'Horizontal Pos
     
     if(units is not None):
         #x_range = [min(arx), max(arx), len(arx)]
-        #x_range, x_unit = uti_plot_com.rescale_dim(x_range, units[0])
+        #x_range, x_unit = rescale_dim(x_range, units[0])
         #units = [x_unit, units[1]]
         strTitle = '' if(len(labels) < 3) else labels[2]
         labels = (labels[0] + ' [' + units[0] + ']', labels[1] + ' [' + units[1] + ']', strTitle)
@@ -114,8 +114,8 @@ def uti_plot2d(ar2d, x_range, y_range, labels=('Horizontal Position [m]','Vertic
     """
     #if '_backend' not in locals(): uti_plot_init() #?
     if(units is not None):
-        x_range, x_unit = uti_plot_com.rescale_dim(x_range, units[0])
-        y_range, y_unit = uti_plot_com.rescale_dim(y_range, units[1])
+        x_range, x_unit = rescale_dim(x_range, units[0])
+        y_range, y_unit = rescale_dim(y_range, units[1])
         units = [x_unit, y_unit,  units[2]]
         strTitle = '' if(len(labels) < 3) else labels[2]
         labels = (labels[0] + ' [' + units[0]+ ']', labels[1] + ' [' + units[1] + ']', strTitle)
@@ -136,8 +136,8 @@ def uti_plot2d1d(ar2d, x_range, y_range, x=0, y=0, labels=('Horizontal Position'
     """
     #if '_backend' not in locals(): uti_plot_init() #?
     if(units is not None): #checking / re-scaling x, y
-        x_range, x_unit = uti_plot_com.rescale_dim(x_range, units[0])
-        y_range, y_unit = uti_plot_com.rescale_dim(y_range, units[1])
+        x_range, x_unit = rescale_dim(x_range, units[0])
+        y_range, y_unit = rescale_dim(y_range, units[1])
         units = [x_unit, y_unit,  units[2]]
 
         strTitle = labels[2]
@@ -228,7 +228,7 @@ class _BackendMissing(_BackendBase):
         return func(*args)
 
 class _BackendNone(_BackendBase):
-    def _backend_call(*args, **kwargs):
+    def _backend_call(self, *args, **kwargs):
         pass
 
 _backend = _BackendMissing()

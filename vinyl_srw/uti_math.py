@@ -5,12 +5,7 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-from array import *
-from math import *
-from copy import *
-#import random
-#import sys
-#import os
+from math import trunc
 
 #****************************************************************************
 def interp_1d(_x, _x_min, _x_step, _nx, _ar_f, _ord=3, _ix_per=1, _ix_ofst=0):

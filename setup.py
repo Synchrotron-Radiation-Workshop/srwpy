@@ -1,15 +1,17 @@
 import os
 import sys
+from subprocess import run as sub_run
+from subprocess import Popen
+from distutils.command.build import build
 from setuptools import setup, find_packages, Extension
-import versioneer
-
+from shutil import which
 
 # NOTE: This file must remain Python 2 compatible for the foreseeable future,
 # to ensure that we error out properly for people with outdated setuptools
 # and/or pip.
 min_version = (2, 7)
 if sys.version_info < min_version:
-    error = """
+    error = '''
 srwpy does not support Python {0}.{1}.
 Python {2}.{3} and above is required. Check your Python version like so:
 
@@ -19,7 +21,7 @@ This may be due to an out-of-date pip. Make sure you have pip >= 9.0.1.
 Upgrade pip like so:
 
 pip install --upgrade pip
-""".format(*(list(sys.version_info[:2]) + list(min_version)))
+'''.format(*(list(sys.version_info[:2]) + list(min_version)))
     sys.exit(error)
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -45,33 +47,54 @@ else:
 
 srwlpy = Extension('srwlpy', **srwlpy_kwargs)
 
+def check_dependencies():
+    '''
+    Check dependencies for Windows (msbuild) and Unix (make).
+    :raises Exception: if one is missing, an exception is raised.
+    '''
+    if sys.platform == 'win32':
+        if not which("msbuild"):
+            # TODO: We need to find a better approach here.
+            raise Exception("You need to install the SDK Windows 8.1 with Visual Studio Utils and set msbuild.exe path in global environment")
+    else:
+        if not which("make"):
+            raise Exception("You need to install make in order to execute the makefile to build SRW")
+
+class VinylSRWBuild(build):
+    '''
+    This class is a wrapper to build SRW before making link before SRW and VinylSRW
+    '''
+    def run(self):
+        check_dependencies()
+        if sys.platform == 'win32':
+            path_to_bat = os.path.join(here, 'core')
+            bat_name = "make.bat"
+            try:
+                batch_process = Popen(bat_name, cwd=path_to_bat, shell=True)
+                stdout, stderr = batch_process.communicate()
+                if stderr:
+                    raise Exception('An error occur during srw compilation. Message: {}'.format(stderr))
+            except OSError as err:
+                raise OSError('{} should be located on core. Current path: {}'.format(bat_name, path_to_bat))
+            super().run()
+        else:
+            sub_run(['make', '-C', os.path.join(here, 'core'), 'all'])
+            super().run()
+            sub_run(['make', '-C', os.path.join(here, 'core'), 'clean'])
 
 setup(
-    name='srwpy',
-    version=versioneer.get_version(),
-    cmdclass=versioneer.get_cmdclass(),
-    description="Synchrotron Radiation Workshop",
+    name='vinyl_srw',
+    version='1.0.1',
+    cmdclass={'build': VinylSRWBuild},
+    description='Synchrotron Radiation Workshop',
     long_description=readme,
-    author="NSLS-II, Brookhaven National Lab",
-    author_email='mrakitin@bnl.gov',
-    url='https://github.com/srwpy/srwpy',
+    author='European Synchrotron Radiation Facility',
+    author_email='thibault.vallois@esrf.fr',
+    url='https://github.com/PaNOSC-ViNYL/srwpy',
     packages=find_packages(exclude=['docs', 'tests']),
-    entry_points={
-        'console_scripts': [
-            # 'some.module:some_function',
-            ],
-        },
     include_package_data=True,
-    package_data={
-        'srwpy': [
-            # When adding files here, remember to update MANIFEST.in as well,
-            # or else they will not be included in the distribution on PyPI!
-            # 'path/to/data_file',
-            '*.so'
-            ]
-        },
     install_requires=requirements,
-    license="BSD (3-clause)",
+    license='BSD (3-clause)',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Natural Language :: English',

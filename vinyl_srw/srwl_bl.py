@@ -9,12 +9,12 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-from srwlib import *
-from srwl_uti_mag import *
-from srwl_uti_und import *
-from uti_plot import *
-import uti_math
-#import optparse #MR081032016 #Consider placing import argparse here
+from vinyl_srw.srwl_uti_cryst import srwl_uti_cryst_ASF
+from vinyl_srw.srwlib import *
+from vinyl_srw.srwl_uti_mag import *
+from vinyl_srw.srwl_uti_und import *
+from vinyl_srw.uti_plot import *
+import vinyl_srw.uti_math
 import time
 
 try: #OC05042018

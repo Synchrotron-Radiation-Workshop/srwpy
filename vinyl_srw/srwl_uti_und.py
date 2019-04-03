@@ -2,9 +2,9 @@
 # SRWLib for Python: Undulator Utilities v 0.02
 #############################################################################
 
-from srwlib import *
-import uti_parse
-import uti_io
+from vinyl_srw.srwlib import *
+from vinyl_srw.uti_parse import str_to_list_of_pairs
+from vinyl_srw.uti_io import write_text
 
 #****************************************************************************
 def srwl_und_cor_fld_int(_mag3d, _dist_bw_kicks, _rms_len_kicks=0.05, _zc=0, _zcMesh=0, _zRange=0, _dupl=False):
@@ -1033,10 +1033,10 @@ if __name__=="__main__":
     #python srwl_uti_und.py --cnvm --ifn="data_ISR\FieldC" --ofn="data_ISR\magn_meas" --ofnc="ivu23_isr" --cor --ozc=0 --zk=0 --dbwk=2.7 --prfg=X0_Y0_gap --psfg=.txt --igmp=g
     #In this case opt.ifn, opt.ofn are used for folder names!
 
-        lstPrefPostfGap = uti_parse.str_to_pair_of_lists(opt.pref_gap, opt.postf_gap)
-        lstPrefPostfMode = uti_parse.str_to_pair_of_lists(opt.pref_mode, opt.postf_mode)
-        lstPrefPostfPhase = uti_parse.str_to_pair_of_lists(opt.pref_phase, opt.postf_phase)
-        lstModeDict = uti_parse.str_to_list_of_pairs(opt.in_phase_mode, opt.out_phase_mode)
+        lstPrefPostfGap = str_to_pair_of_lists(opt.pref_gap, opt.postf_gap)
+        lstPrefPostfMode = str_to_pair_of_lists(opt.pref_mode, opt.postf_mode)
+        lstPrefPostfPhase = str_to_pair_of_lists(opt.pref_phase, opt.postf_phase)
+        lstModeDict = str_to_list_of_pairs(opt.in_phase_mode, opt.out_phase_mode)
         #print(lstPrefPostfGap, lstPrefPostfMode, lstPrefPostfPhase, lstModeDict)
 
         lstParamFileNames = srwl_uti_und_gen_file_names_for_conv(opt.ifn, _ofn_core=opt.out_file_name_core, _pref_gap=lstPrefPostfGap, _pref_mode=lstPrefPostfMode, _pref_phase=lstPrefPostfPhase, _dict_mode=lstModeDict, _order_gmp=opt.ord_gmp_inp)
