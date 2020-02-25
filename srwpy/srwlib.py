@@ -3,7 +3,7 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-import srwpy.srwlpy as srwl
+from srwpy import srwlpy as srwl
 from array import *
 from math import *
 from copy import *

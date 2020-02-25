@@ -9,10 +9,9 @@ cache:
   - "$HOME/.cache/pip"
   - "$HOME/.ccache"
 
-sudo: required
 services: docker
 
-matrix:
+jobs:
   include:
   - os: linux
   - os: linux
@@ -22,12 +21,6 @@ matrix:
       - BUILD_DOCS=1
   - os: osx
     language: generic
-    env: PYTHON=2.7
-  - os: osx
-    language: generic
-    env: PYTHON=3.4
-  - os: osx
-    language: generic
     env: PYTHON=3.5
   - os: osx
     language: generic
@@ -35,6 +28,9 @@ matrix:
   - os: osx
     language: generic
     env: PYTHON=3.7
+  - os: osx
+    language: generic
+    env: PYTHON=3.8
 
 before_install:
 - |
