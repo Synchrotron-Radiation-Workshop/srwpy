@@ -15,9 +15,9 @@ Example Solution
 """
 
 from __future__ import print_function
-import uti_plot
-from srwlib import *
-from uti_math import matr_prod, fwhm
+import srwpy.uti_plot as uti_plot
+from srwpy.srwlib import *
+from srwpy.uti_math import matr_prod, fwhm
 
 print('SRWLIB Python Example # 15:')
 print('Calculating propagation of a gaussian beam through a drift and comparison with the analytical calculation.')

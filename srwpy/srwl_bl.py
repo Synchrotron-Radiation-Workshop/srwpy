@@ -9,11 +9,11 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-from srwlib import *
-from srwl_uti_mag import *
-from srwl_uti_und import *
-from uti_plot import *
-import uti_math
+from srwpy.srwlib import *
+from srwpy.srwl_uti_mag import *
+from srwpy.srwl_uti_und import *
+from srwpy.uti_plot import *
+import srwpy.uti_math as uti_math
 #import optparse #MR081032016 #Consider placing import argparse here
 import time
 

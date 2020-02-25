@@ -2,9 +2,9 @@
 # SRWLib for Python: Undulator Utilities v 0.02
 #############################################################################
 
-from srwlib import *
-import uti_parse
-import uti_io
+from srwpy.srwlib import *
+import srwpy.uti_parse as uti_parse
+import srwpy.uti_io as uti_io
 
 #****************************************************************************
 def srwl_und_cor_fld_int(_mag3d, _dist_bw_kicks, _rms_len_kicks=0.05, _zc=0, _zcMesh=0, _zRange=0, _dupl=False):

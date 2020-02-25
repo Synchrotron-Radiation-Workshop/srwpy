@@ -9,10 +9,9 @@ cache:
   - "$HOME/.cache/pip"
   - "$HOME/.ccache"
 
-sudo: required
 services: docker
 
-matrix:
+jobs:
   include:
   - os: linux
   - os: linux
@@ -22,12 +21,6 @@ matrix:
       - BUILD_DOCS=1
   - os: osx
     language: generic
-    env: PYTHON=2.7
-  - os: osx
-    language: generic
-    env: PYTHON=3.4
-  - os: osx
-    language: generic
     env: PYTHON=3.5
   - os: osx
     language: generic
@@ -35,6 +28,9 @@ matrix:
   - os: osx
     language: generic
     env: PYTHON=3.7
+  - os: osx
+    language: generic
+    env: PYTHON=3.8
 
 before_install:
 - |
@@ -82,9 +78,9 @@ script:
 - |
   if [ "$BUILD_DOCS" ]; then
     set -e
-    site_packages=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
-    ls -laF ${site_packages}
-    cp -v ${site_packages}/srwpy/*.py ${site_packages}
+    # site_packages=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+    # ls -laF ${site_packages}
+    # cp -v ${site_packages}/srwpy/*.py ${site_packages}
     make -C docs html  # Build the documentation.
     pip install doctr
     doctr deploy --built-docs docs/build/html .
@@ -94,10 +90,10 @@ before_deploy: "echo 'ready?'"
 
 deploy:
   provider: pypi
-  user: mrakitin
+  username: mrakitin
   password:
     secure: JVIYW16ArcdWI8uh3VC550p1K+RIQsVk8LHJbNRYRhaGLd9qFM3IzfbTbTE+di2xAzjlNaQSnPPZPocBkb7g9BhM2ZobmTORqZTjKQIucxE8zelsKKD/jle/s9ZTk1aW11ZJ2paPDAZ5Vbj4h3fbDW233RmXf64+Gde4QB/+8TM1yIvM7pJWhsbTi12nhuMnTNpMtHZemTyt0yo2FvKAGPVEhI7hHx/6Vj4rUL9RvIpntrb0uRhc6mz+I6rjnUegBYuL1RivX3PeqWXSRE2Q4UP4/vfqmSPRxDd7QHcAnRZTKJLqKRZEMK5vW+O8LzX3qwsOQAwxQwMA8SA3TCWTTlLSo4lMHzTczvWVc9hEyZosHMselykRZT3ZmjgGSfpX70WBQw2YAvSvRzSEOEMcjlWe8+kRXy0KRxdBIoocx5mBZRG81KQvTUr9hsFHvaHv/AU6x275Or3JQDshFm0iCkpCDenHUVegJrIPE6a8miGY00LQ8Otw71T77u5zPCyvd0tXwC6fA6OaU287wmF6Xfto+B2KNb55jV9W4JU3JfUOgpUlT4ekJgIpD+kM0ApK65uc4/H20PEDxPO0A+bOt2YfwDQLZylBZZSmpgeWj79ooFNoPh1PDVnZSmHEnYYoXBE2t8wkPK4oGtDD5tRk3L1fvo1A+kD5aw6cKpBLXq0=
-  skip_cleanup: true
+  cleanup: false
   distributions: sdist
   on:
     tags: true

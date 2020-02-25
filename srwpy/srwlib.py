@@ -3,6 +3,8 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
+# MR20200225: this is a special case then the generated .so library is at the
+# same directory level as srwpy/ with .py files inside.
 import srwlpy as srwl
 from array import *
 from math import *
@@ -14,13 +16,13 @@ import random
 import sys
 import os
 import traceback
-import uti_math
 import errno
 import tempfile
 import shutil
 import time
 
-from srwl_uti_cryst import * 
+import srwpy.uti_math as uti_math
+from srwpy.srwl_uti_cryst import * 
 #try:
 #    from uti_plot import * #universal simple plotting module distributed together with SRWLib
 #except:
@@ -7135,7 +7137,7 @@ def srwl_wfr_emit_prop_multi_e(_e_beam, _mag, _mesh, _sr_meth, _sr_rel_prec, _n_
 #Import of modules requiring classes defined in this smodule
 #****************************************************************************
 #****************************************************************************
-from srwl_uti_src import *
+from srwpy.srwl_uti_src import *
 
 #****************************************************************************
 #****************************************************************************
