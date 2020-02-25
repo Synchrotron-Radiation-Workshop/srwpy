@@ -16,12 +16,12 @@ import random
 import sys
 import os
 import traceback
-import uti_math
 import errno
 import tempfile
 import shutil
 import time
 
+import srwpy.uti_math as uti_math
 from srwpy.srwl_uti_cryst import * 
 #try:
 #    from uti_plot import * #universal simple plotting module distributed together with SRWLib

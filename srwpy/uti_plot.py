@@ -9,7 +9,7 @@ SRW program.
 
 Usage:
 
-    import uti_plot as up
+    import srwpy.uti_plot as up
 
     up.uti_plot_init()
     uti_plot1d(...)
