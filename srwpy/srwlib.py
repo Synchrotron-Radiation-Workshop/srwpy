@@ -3,7 +3,7 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-import srwlpy as srwl
+import srwpy.srwlpy as srwl
 from array import *
 from math import *
 from copy import *
@@ -20,7 +20,7 @@ import tempfile
 import shutil
 import time
 
-from srwl_uti_cryst import * 
+from srwpy.srwl_uti_cryst import * 
 #try:
 #    from uti_plot import * #universal simple plotting module distributed together with SRWLib
 #except:
@@ -7135,7 +7135,7 @@ def srwl_wfr_emit_prop_multi_e(_e_beam, _mag, _mesh, _sr_meth, _sr_rel_prec, _n_
 #Import of modules requiring classes defined in this smodule
 #****************************************************************************
 #****************************************************************************
-from srwl_uti_src import *
+from srwpy.srwl_uti_src import *
 
 #****************************************************************************
 #****************************************************************************

@@ -17,9 +17,9 @@ Example Solution
 """
 
 from __future__ import print_function  # Python 2.7 compatibility
-import uti_plot
-from srwlib import *
-from uti_math import fwhm
+import srwpy.uti_plot as uti_plot
+from srwpy.srwlib import *
+from srwpy.uti_math import fwhm
 
 print('SRWLIB Python Example # 16:')
 print('Calculation of intensity distribution due to diffraction on a circular aperture.')

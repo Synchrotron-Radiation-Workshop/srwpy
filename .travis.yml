@@ -82,9 +82,9 @@ script:
 - |
   if [ "$BUILD_DOCS" ]; then
     set -e
-    site_packages=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
-    ls -laF ${site_packages}
-    cp -v ${site_packages}/srwpy/*.py ${site_packages}
+    # site_packages=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+    # ls -laF ${site_packages}
+    # cp -v ${site_packages}/srwpy/*.py ${site_packages}
     make -C docs html  # Build the documentation.
     pip install doctr
     doctr deploy --built-docs docs/build/html .

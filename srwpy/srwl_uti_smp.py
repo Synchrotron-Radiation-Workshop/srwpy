@@ -9,8 +9,8 @@
 import math
 import os
 
-import srwlib
-import uti_io
+import srwpy.srwlib as srwlib
+import srwpy.uti_io as uti_io
 
 
 # ********************** The class for Samples:
