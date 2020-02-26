@@ -54,16 +54,27 @@ before_install:
     if [ "$TRAVIS_OS_NAME" == "osx" ]; then
         # set -e
         pushd ${HOME}
+        echo $?
         wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+        echo $?
         bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda
+        echo $?
         rm -fv Miniconda*.sh
+        echo $?
         popd
+        echo $?
         export PATH=${HOME}/conda/bin:$PATH
+        echo $?
         conda info
+        echo $?
         conda create -n py${PYTHON} python=${PYTHON} -y
+        echo $?
         conda env list
+        echo $?
         source activate py${PYTHON}
+        echo $?
         conda list
+        echo $?
     fi
 
 script:
@@ -76,16 +87,23 @@ script:
     fi
   - |
     if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
-        set -e
+        # set -e
+        echo $?
         pushd core/
+        echo $?
         make all
+        echo $?
         popd
+        echo $?
         python setup.py bdist_wheel
+        echo $?
         if [ ! -z "$NO_DOCKER" ]; then
             # Generate source distribution only once
             python setup.py sdist
+            echo $?
         fi
         pip install -v .
+        echo $?
     fi
   - ls -laF dist/
 # - coverage run -m pytest  # Run the tests and check for test coverage.
