@@ -99,15 +99,16 @@ script:
     if [ "$BUILD_DOCS" ]; then
         set -e
         make -C docs html  # Build the documentation.
-        if [ "$DEPLOY_DOCS" ]; then
-            pip install doctr
-            doctr deploy --built-docs docs/build/html .
-        fi
     fi
 
 after_install:
   - |
     if [ ! -z "$TRAVIS_TAG" ]; then
+        # Build docs on tag only
+        if [ "$DEPLOY_DOCS" ]; then
+            pip install doctr
+            doctr deploy --built-docs docs/build/html .
+        fi
         # Upload the content of dist/*.whl to a public wheelhouse
         pip install twine
         echo "[pypi]" > $HOME/.pypirc
