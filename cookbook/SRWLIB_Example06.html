@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SRW Example #6 &mdash; srwpy 0.0.2a5.post31+gd7b897f documentation</title>
+  <title>SRW Example #6 &mdash; srwpy 0.0.4a3 documentation</title>
   
 
   
@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script >var copybuttonSkipText = '>>> ';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -32,21 +42,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SRW Example #7" href="SRWLIB_Example07.html" />
     <link rel="prev" title="SRW Example #5" href="SRWLIB_Example05.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -60,7 +65,7 @@
             
             
               <div class="version">
-                0.0.2a5.post31+gd7b897f
+                0.0.4a3
               </div>
             
           
@@ -175,8 +180,8 @@
            <div itemprop="articleBody">
             
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example06-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example06-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="srw-example-6">
 <span id="sphx-glr-cookbook-srwlib-example06-py"></span><h1>SRW Example #6<a class="headerlink" href="#srw-example-6" title="Permalink to this headline">¶</a></h1>
@@ -189,13 +194,13 @@ radiation (integrated over all photon energies)</p>
 <div class="section" id="example-solution">
 <h2>Example Solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h2>
 <ul class="sphx-glr-horizontal">
-<li><img alt="../_images/sphx_glr_SRWLIB_Example06_001.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example06_001.png" />
+<li><img alt="../_images/sphx_glr_SRWLIB_Example06_001.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_SRWLIB_Example06_001.png" />
 </li>
-<li><img alt="../_images/sphx_glr_SRWLIB_Example06_002.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example06_002.png" />
+<li><img alt="../_images/sphx_glr_SRWLIB_Example06_002.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_SRWLIB_Example06_002.png" />
 </li>
-<li><img alt="../_images/sphx_glr_SRWLIB_Example06_003.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example06_003.png" />
+<li><img alt="../_images/sphx_glr_SRWLIB_Example06_003.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_SRWLIB_Example06_003.png" />
 </li>
-<li><img alt="../_images/sphx_glr_SRWLIB_Example06_004.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example06_004.png" />
+<li><img alt="../_images/sphx_glr_SRWLIB_Example06_004.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_SRWLIB_Example06_004.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
@@ -210,33 +215,33 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
-<span class="kn">from</span> <span class="nn">srwlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">uti_plot</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
+<span class="kn">from</span> <span class="nn">srwpy.srwlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">srwpy.uti_plot</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Extended Example # 6:&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calculating spectral flux of undulator radiation by finite-emittance electron beam collected through a finite aperture and power density distribution of this radiation (integrated over all photon energies)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Extended Example # 6:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calculating spectral flux of undulator radiation by finite-emittance electron beam collected through a finite aperture and power density distribution of this radiation (integrated over all photon energies)&#39;</span><span class="p">)</span>
 
 <span class="c1">#**********************Input Parameters:</span>
-<span class="n">strExDataFolderName</span> <span class="o">=</span> <span class="s1">&#39;data_example_06&#39;</span> <span class="c1">#example data sub-folder name</span>
-<span class="n">strFluxOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex06_res_flux.dat&#39;</span> <span class="c1">#file name for output UR flux data</span>
-<span class="n">strPowOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex06_res_pow.dat&#39;</span> <span class="c1">#file name for output power density data</span>
-<span class="n">strTrjOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex06_res_trj.dat&#39;</span> <span class="c1">#file name for output trajectory data</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strExDataFolderName</span></a> <span class="o">=</span> <span class="s1">&#39;data_example_06&#39;</span> <span class="c1">#example data sub-folder name</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strFluxOutFileName</span></a> <span class="o">=</span> <span class="s1">&#39;ex06_res_flux.dat&#39;</span> <span class="c1">#file name for output UR flux data</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strPowOutFileName</span></a> <span class="o">=</span> <span class="s1">&#39;ex06_res_pow.dat&#39;</span> <span class="c1">#file name for output power density data</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strTrjOutFileName</span></a> <span class="o">=</span> <span class="s1">&#39;ex06_res_trj.dat&#39;</span> <span class="c1">#file name for output trajectory data</span>
 
 <span class="c1">#***********Undulator</span>
-<span class="n">harmB</span> <span class="o">=</span> <span class="n">SRWLMagFldH</span><span class="p">()</span> <span class="c1">#magnetic field harmonic</span>
+<span class="n">harmB</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLMagFldH</span></a><span class="p">()</span> <span class="c1">#magnetic field harmonic</span>
 <span class="n">harmB</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#harmonic number</span>
 <span class="n">harmB</span><span class="o">.</span><span class="n">h_or_v</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span> <span class="c1">#magnetic field plane: horzontal (&#39;h&#39;) or vertical (&#39;v&#39;)</span>
 <span class="n">harmB</span><span class="o">.</span><span class="n">B</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1">#magnetic field amplitude [T]</span>
-<span class="n">und</span> <span class="o">=</span> <span class="n">SRWLMagFldU</span><span class="p">([</span><span class="n">harmB</span><span class="p">])</span>
+<span class="n">und</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLMagFldU</span></a><span class="p">([</span><span class="n">harmB</span><span class="p">])</span>
 <span class="n">und</span><span class="o">.</span><span class="n">per</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1">#period length [m]</span>
 <span class="n">und</span><span class="o">.</span><span class="n">nPer</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1">#number of periods (will be rounded to integer)</span>
-<span class="n">magFldCnt</span> <span class="o">=</span> <span class="n">SRWLMagFldC</span><span class="p">([</span><span class="n">und</span><span class="p">],</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">#Container of all magnetic field elements</span>
+<span class="n">magFldCnt</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLMagFldC</span></a><span class="p">([</span><span class="n">und</span><span class="p">],</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">#Container of all magnetic field elements</span>
 
 <span class="c1">#***********Electron Beam</span>
-<span class="n">eBeam</span> <span class="o">=</span> <span class="n">SRWLPartBeam</span><span class="p">()</span>
+<span class="n">eBeam</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLPartBeam</span></a><span class="p">()</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">Iavg</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#average current [A]</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1">#initial transverse positions [m]</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.</span>
@@ -244,37 +249,37 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
 <span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#initial relative transverse velocities</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">yp</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">partStatMom1</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="mf">3.</span><span class="o">/</span><span class="mf">0.51099890221e-03</span> <span class="c1">#relative energy</span>
-<span class="n">sigEperE</span> <span class="o">=</span> <span class="mf">0.00089</span> <span class="c1">#relative RMS energy spread</span>
-<span class="n">sigX</span> <span class="o">=</span> <span class="mf">33.33e-06</span> <span class="c1">#horizontal RMS size of e-beam [m]</span>
-<span class="n">sigXp</span> <span class="o">=</span> <span class="mf">16.5e-06</span> <span class="c1">#horizontal RMS angular divergence [rad]</span>
-<span class="n">sigY</span> <span class="o">=</span> <span class="mf">2.912e-06</span> <span class="c1">#vertical RMS size of e-beam [m]</span>
-<span class="n">sigYp</span> <span class="o">=</span> <span class="mf">2.7472e-06</span> <span class="c1">#vertical RMS angular divergence [rad]</span>
+<a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigEperE</span></a> <span class="o">=</span> <span class="mf">0.00089</span> <span class="c1">#relative RMS energy spread</span>
+<a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigX</span></a> <span class="o">=</span> <span class="mf">33.33e-06</span> <span class="c1">#horizontal RMS size of e-beam [m]</span>
+<a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigXp</span></a> <span class="o">=</span> <span class="mf">16.5e-06</span> <span class="c1">#horizontal RMS angular divergence [rad]</span>
+<a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigY</span></a> <span class="o">=</span> <span class="mf">2.912e-06</span> <span class="c1">#vertical RMS size of e-beam [m]</span>
+<a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigYp</span></a> <span class="o">=</span> <span class="mf">2.7472e-06</span> <span class="c1">#vertical RMS angular divergence [rad]</span>
 <span class="c1">#2nd order stat. moments:</span>
-<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigX</span><span class="o">*</span><span class="n">sigX</span> <span class="c1">#&lt;(x-&lt;x&gt;)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigX</span></a><span class="o">*</span><a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigX</span></a> <span class="c1">#&lt;(x-&lt;x&gt;)^2&gt;</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#&lt;(x-&lt;x&gt;)(x&#39;-&lt;x&#39;&gt;)&gt;</span>
-<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigXp</span><span class="o">*</span><span class="n">sigXp</span> <span class="c1">#&lt;(x&#39;-&lt;x&#39;&gt;)^2&gt;</span>
-<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigY</span><span class="o">*</span><span class="n">sigY</span> <span class="c1">#&lt;(y-&lt;y&gt;)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigXp</span></a><span class="o">*</span><a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigXp</span></a> <span class="c1">#&lt;(x&#39;-&lt;x&#39;&gt;)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigY</span></a><span class="o">*</span><a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigY</span></a> <span class="c1">#&lt;(y-&lt;y&gt;)^2&gt;</span>
 <span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#&lt;(y-&lt;y&gt;)(y&#39;-&lt;y&#39;&gt;)&gt;</span>
-<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigYp</span><span class="o">*</span><span class="n">sigYp</span> <span class="c1">#&lt;(y&#39;-&lt;y&#39;&gt;)^2&gt;</span>
-<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigEperE</span><span class="o">*</span><span class="n">sigEperE</span> <span class="c1">#&lt;(E-&lt;E&gt;)^2&gt;/&lt;E&gt;^2</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigYp</span></a><span class="o">*</span><a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigYp</span></a> <span class="c1">#&lt;(y&#39;-&lt;y&#39;&gt;)^2&gt;</span>
+<span class="n">eBeam</span><span class="o">.</span><span class="n">arStatMom2</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigEperE</span></a><span class="o">*</span><a href="https://docs.python.org/3/library/functions.html#float" title="View documentation for builtins.float"><span class="n">sigEperE</span></a> <span class="c1">#&lt;(E-&lt;E&gt;)^2&gt;/&lt;E&gt;^2</span>
 
 <span class="c1">#***********Precision Parameters</span>
-<span class="n">arPrecF</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#for spectral flux vs photon energy</span>
-<span class="n">arPrecF</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#initial UR harmonic to take into account</span>
-<span class="n">arPrecF</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">21</span> <span class="c1">#final UR harmonic to take into account</span>
-<span class="n">arPrecF</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1">#longitudinal integration precision parameter</span>
-<span class="n">arPrecF</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1">#azimuthal integration precision parameter</span>
-<span class="n">arPrecF</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#calculate flux (1) or flux per unit surface (2)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#for spectral flux vs photon energy</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#initial UR harmonic to take into account</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">21</span> <span class="c1">#final UR harmonic to take into account</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1">#longitudinal integration precision parameter</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1">#azimuthal integration precision parameter</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#calculate flux (1) or flux per unit surface (2)</span>
 
-<span class="n">arPrecP</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#for power density</span>
-<span class="n">arPrecP</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1">#precision factor</span>
-<span class="n">arPrecP</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#power density computation method (1- &quot;near field&quot;, 2- &quot;far field&quot;)</span>
-<span class="n">arPrecP</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#initial longitudinal position (effective if arPrecP[2] &lt; arPrecP[3])</span>
-<span class="n">arPrecP</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#final longitudinal position (effective if arPrecP[2] &lt; arPrecP[3])</span>
-<span class="n">arPrecP</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1">#number of points for (intermediate) trajectory calculation</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#for power density</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1">#precision factor</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#power density computation method (1- &quot;near field&quot;, 2- &quot;far field&quot;)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#initial longitudinal position (effective if arPrecP[2] &lt; arPrecP[3])</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#final longitudinal position (effective if arPrecP[2] &lt; arPrecP[3])</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1">#number of points for (intermediate) trajectory calculation</span>
 
 <span class="c1">#***********UR Stokes Parameters (mesh) for Spectral Flux</span>
-<span class="n">stkF</span> <span class="o">=</span> <span class="n">SRWLStokes</span><span class="p">()</span> <span class="c1">#for spectral flux vs photon energy</span>
+<span class="n">stkF</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLStokes</span></a><span class="p">()</span> <span class="c1">#for spectral flux vs photon energy</span>
 <span class="n">stkF</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#numbers of points vs photon energy, horizontal and vertical positions</span>
 <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span> <span class="o">=</span> <span class="mf">30.</span> <span class="c1">#longitudinal position [m] at which UR has to be calculated</span>
 <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span> <span class="o">=</span> <span class="mf">10.</span> <span class="c1">#initial photon energy [eV]</span>
@@ -284,7 +289,7 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
 <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.00075</span> <span class="c1">#initial vertical position [m]</span>
 <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span> <span class="o">=</span> <span class="mf">0.00075</span> <span class="c1">#final vertical position [m]</span>
 
-<span class="n">stkP</span> <span class="o">=</span> <span class="n">SRWLStokes</span><span class="p">()</span> <span class="c1">#for power density</span>
+<span class="n">stkP</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLStokes</span></a><span class="p">()</span> <span class="c1">#for power density</span>
 <span class="n">stkP</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span> <span class="c1">#numbers of points vs horizontal and vertical positions (photon energy is not taken into account)</span>
 <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">zStart</span> <span class="o">=</span> <span class="mf">30.</span> <span class="c1">#longitudinal position [m] at which power density has to be calculated</span>
 <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span> <span class="c1">#initial horizontal position [m]</span>
@@ -311,9 +316,9 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
 <span class="c1">#sys.exit(0)</span>
 
 <span class="c1">#**********************Calculation (SRWLIB function calls)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing Spectral Flux (Stokes parameters) calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">srwl</span><span class="o">.</span><span class="n">CalcStokesUR</span><span class="p">(</span><span class="n">stkF</span><span class="p">,</span> <span class="n">eBeam</span><span class="p">,</span> <span class="n">und</span><span class="p">,</span> <span class="n">arPrecF</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Performing Spectral Flux (Stokes parameters) calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcStokesUR</span><span class="p">(</span><span class="n">stkF</span><span class="p">,</span> <span class="n">eBeam</span><span class="p">,</span> <span class="n">und</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecF</span></a><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 
 <span class="c1">#partTraj = SRWLPrtTrj() #defining auxiliary trajectory structure</span>
 <span class="c1">#partTraj.partInitCond = eBeam.partStatMom1</span>
@@ -326,53 +331,55 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
 <span class="c1">#srwl.CalcPowDenSR(stkP, eBeam, partTraj, 0, arPrecP)</span>
 <span class="c1">#print(&#39;done&#39;)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing Power Density calculation (from field) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">srwl</span><span class="o">.</span><span class="n">CalcPowDenSR</span><span class="p">(</span><span class="n">stkP</span><span class="p">,</span> <span class="n">eBeam</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Performing Power Density calculation (from field) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">srwl</span><span class="o">.</span><span class="n">CalcPowDenSR</span><span class="p">(</span><span class="n">stkP</span><span class="p">,</span> <span class="n">eBeam</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecP</span></a><span class="p">)</span>
 <span class="c1">#srwl.CalcPowDenSR(stkPx, eBeam, 0, magFldCnt, arPrecP)</span>
 <span class="c1">#srwl.CalcPowDenSR(stkPy, eBeam, 0, magFldCnt, arPrecP)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 
 <span class="c1">#**********************Saving results</span>
 <span class="c1">#print(&#39;   Saving trajectory data to file ... &#39;, end=&#39;&#39;)</span>
 <span class="c1">#partTraj.save_ascii(os.path.join(os.getcwd(), strExDataFolderName, strTrjOutFileName))</span>
 <span class="c1">#print(&#39;done&#39;)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Saving intensity data to file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">stkF</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strFluxOutFileName</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Photon Energy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Flux&#39;</span><span class="p">],</span> <span class="n">_arUnits</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eV&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ph/s/.1%bw&#39;</span><span class="p">])</span>
-<span class="n">srwl_uti_save_intens_ascii</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strPowOutFileName</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density&#39;</span><span class="p">],</span> <span class="n">_arUnits</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;W/mm^2&#39;</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Saving intensity data to file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">srwl_uti_save_intens_ascii</span></a><span class="p">(</span><span class="n">stkF</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="View documentation for os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/os.html#os.getcwd" title="View documentation for os.getcwd"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strExDataFolderName</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strFluxOutFileName</span></a><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Photon Energy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Flux&#39;</span><span class="p">],</span> <span class="n">_arUnits</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eV&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ph/s/.1%bw&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">srwl_uti_save_intens_ascii</span></a><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="View documentation for os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/os.html#os.getcwd" title="View documentation for os.getcwd"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strExDataFolderName</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strPowOutFileName</span></a><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density&#39;</span><span class="p">],</span> <span class="n">_arUnits</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;W/mm^2&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 
 <span class="c1">#**********************Plotting results (requires 3rd party graphics package)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Plotting the results (blocks script execution; close any graph windows to proceed) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Plotting the results (blocks script execution; close any graph windows to proceed) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
-<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">stkF</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="p">[</span><span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span><span class="p">,</span> <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ne</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Photon Energy [eV]&#39;</span><span class="p">,</span> <span class="s1">&#39;Flux [ph/s/.1%bw]&#39;</span><span class="p">,</span> <span class="s1">&#39;Flux through Finite Aperture&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot1d</span></a><span class="p">(</span><span class="n">stkF</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="p">[</span><span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eStart</span><span class="p">,</span> <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">eFin</span><span class="p">,</span> <span class="n">stkF</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ne</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Photon Energy [eV]&#39;</span><span class="p">,</span> <span class="s1">&#39;Flux [ph/s/.1%bw]&#39;</span><span class="p">,</span> <span class="s1">&#39;Flux through Finite Aperture&#39;</span><span class="p">])</span>
 
-<span class="n">plotMeshX</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span><span class="p">,</span> <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">]</span>
-<span class="n">plotMeshY</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span><span class="p">,</span> <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">]</span>
-<span class="n">uti_plot2d</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <span class="n">plotMeshX</span><span class="p">,</span> <span class="n">plotMeshY</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">plotMeshX</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xStart</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">xFin</span><span class="p">,</span> <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">plotMeshY</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yStart</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">yFin</span><span class="p">,</span> <span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot2d</span></a><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">plotMeshX</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">plotMeshY</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density&#39;</span><span class="p">])</span>
 <span class="c1">#uti_plot1d(stkPx.arS, plotMeshX, [&#39;Horizontal Position [mm]&#39;, &#39;Power Density [W/mm^2]&#39;, &#39;Power Density cut at y = 0&#39;])</span>
 <span class="c1">#uti_plot1d(stkPy.arS, plotMeshY, [&#39;Vertical Position [mm]&#39;, &#39;Power Density [W/mm^2]&#39;, &#39;Power Density cut at x = 0&#39;])</span>
 
-<span class="n">powDenVsX</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">):</span> <span class="n">powDenVsX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">[</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span>
-<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">powDenVsX</span><span class="p">,</span> <span class="n">plotMeshX</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density [W/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density</span><span class="se">\n</span><span class="s1">(horizontal cut at y = 0)&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/array.html#array.array" title="View documentation for array.array"><span class="n">powDenVsX</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">)</span>
+<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="p">):</span> <a href="https://docs.python.org/3/library/array.html#array.array" title="View documentation for array.array"><span class="n">powDenVsX</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">[</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot1d</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/array.html#array.array" title="View documentation for array.array"><span class="n">powDenVsX</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">plotMeshX</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density [W/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density</span><span class="se">\n</span><span class="s1">(horizontal cut at y = 0)&#39;</span><span class="p">])</span>
 
-<span class="n">powDenVsY</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">):</span> <span class="n">powDenVsY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">]</span>
-<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">powDenVsY</span><span class="p">,</span> <span class="n">plotMeshY</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density [W/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density</span><span class="se">\n</span><span class="s1">(vertical cut at x = 0)&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/array.html#array.array" title="View documentation for array.array"><span class="n">powDenVsY</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">)</span>
+<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">):</span> <a href="https://docs.python.org/3/library/array.html#array.array" title="View documentation for array.array"><span class="n">powDenVsY</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <span class="n">stkP</span><span class="o">.</span><span class="n">arS</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="o">*</span><span class="n">stkP</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ny</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot1d</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/array.html#array.array" title="View documentation for array.array"><span class="n">powDenVsY</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">plotMeshY</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density [W/mm^2]&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Density</span><span class="se">\n</span><span class="s1">(vertical cut at x = 0)&#39;</span><span class="p">])</span>
 
-<span class="n">uti_plot_show</span><span class="p">()</span> <span class="c1">#show all graphs (blocks script execution; close all graph windows to proceed)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot_show</span></a><span class="p">()</span> <span class="c1">#show all graphs (blocks script execution; close all graph windows to proceed)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  6.449 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.563 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-cookbook-srwlib-example06-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/b696c149236a15bf7be88eca6482533c/SRWLIB_Example06.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example06.py</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/aba0f8b0bda878e33f0f18bbbcc0796a/SRWLIB_Example06.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example06.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../_downloads/7c6cc14447ccf9d5a536bce5a7f0dbbb/SRWLIB_Example06.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example06.py</span></code></a></p>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/dc2dd6dfd9b0e665a64ec14eefaafb8b/SRWLIB_Example06.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example06.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -387,7 +394,7 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
         <a href="SRWLIB_Example07.html" class="btn btn-neutral float-right" title="SRW Example #7" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="SRWLIB_Example05.html" class="btn btn-neutral" title="SRW Example #5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="SRWLIB_Example05.html" class="btn btn-neutral float-left" title="SRW Example #5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -413,27 +420,16 @@ Calculating spectral flux of undulator radiation by finite-emittance electron be
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-        <script type="text/javascript" src="../_static/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

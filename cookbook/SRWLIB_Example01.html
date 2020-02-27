@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SRW Example #1 &mdash; srwpy 0.0.2a5.post31+gd7b897f documentation</title>
+  <title>SRW Example #1 &mdash; srwpy 0.0.4a3 documentation</title>
   
 
   
@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script >var copybuttonSkipText = '>>> ';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -32,21 +42,16 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SRW Example #1 (kick matrix)" href="SRWLIB_Example01_kick_matr.html" />
     <link rel="prev" title="Cookbook (Examples)" href="index.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -60,7 +65,7 @@
             
             
               <div class="version">
-                0.0.2a5.post31+gd7b897f
+                0.0.4a3
               </div>
             
           
@@ -175,8 +180,8 @@
            <div itemprop="articleBody">
             
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example01-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-cookbook-srwlib-example01-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="srw-example-1">
 <span id="sphx-glr-cookbook-srwlib-example01-py"></span><h1>SRW Example #1<a class="headerlink" href="#srw-example-1" title="Permalink to this headline">¶</a></h1>
@@ -187,9 +192,9 @@
 <div class="section" id="example-solution">
 <h2>Example Solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h2>
 <ul class="sphx-glr-horizontal">
-<li><img alt="../_images/sphx_glr_SRWLIB_Example01_001.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example01_001.png" />
+<li><img alt="../_images/sphx_glr_SRWLIB_Example01_001.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_SRWLIB_Example01_001.png" />
 </li>
-<li><img alt="../_images/sphx_glr_SRWLIB_Example01_002.png" class="sphx-glr-multi-img first" src="../_images/sphx_glr_SRWLIB_Example01_002.png" />
+<li><img alt="../_images/sphx_glr_SRWLIB_Example01_002.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_SRWLIB_Example01_002.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
@@ -205,26 +210,26 @@ done
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
-<span class="kn">from</span> <span class="nn">srwlib</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">uti_plot</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span> <span class="c1">#Python 2.7 compatibility</span>
+<span class="kn">from</span> <span class="nn">srwpy.srwlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">srwpy.uti_plot</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Python Example # 1:&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SRWLIB Python Example # 1:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calculating electron trajectory in 3D magnetic field of an APPLE-II undulator&#39;</span><span class="p">)</span>
 
 <span class="c1">#**********************Input Parameters:</span>
-<span class="n">strExDataFolderName</span> <span class="o">=</span> <span class="s1">&#39;data_example_01&#39;</span> <span class="c1">#example data sub-folder name</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strExDataFolderName</span></a> <span class="o">=</span> <span class="s1">&#39;data_example_01&#39;</span> <span class="c1">#example data sub-folder name</span>
 <span class="c1">#arFldInFileNames = [&#39;epu49term1.dat&#39;, &#39;epu49cen.dat&#39;, &#39;epu49term2.dat&#39;] #3D Magnetic Field data file names</span>
-<span class="n">arFldInFileNames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;epu49HEtot.dat&#39;</span><span class="p">]</span> <span class="c1">#3D Magnetic Field data file names</span>
-<span class="n">strTrajOutFileName</span> <span class="o">=</span> <span class="s1">&#39;ex01_res_traj_off.dat&#39;</span> <span class="c1">#file name for output trajectory data</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arFldInFileNames</span></a> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;epu49HEtot.dat&#39;</span><span class="p">]</span> <span class="c1">#3D Magnetic Field data file names</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strTrajOutFileName</span></a> <span class="o">=</span> <span class="s1">&#39;ex01_res_traj_off.dat&#39;</span> <span class="c1">#file name for output trajectory data</span>
 
-<span class="n">numPer</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1">#Number of ID Periods (without counting for terminations)</span>
-<span class="n">xcID</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Transverse Coordinates of ID Center [m]</span>
-<span class="n">ycID</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">zcID</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Longitudinal Coordinate of ID Center [m]</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">numPer</span></a> <span class="o">=</span> <span class="mi">40</span> <span class="c1">#Number of ID Periods (without counting for terminations)</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">xcID</span></a> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Transverse Coordinates of ID Center [m]</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">ycID</span></a> <span class="o">=</span> <span class="mi">0</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">zcID</span></a> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Longitudinal Coordinate of ID Center [m]</span>
 
-<span class="n">part</span> <span class="o">=</span> <span class="n">SRWLParticle</span><span class="p">()</span>
+<span class="n">part</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLParticle</span></a><span class="p">()</span>
 <span class="n">part</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.004</span> <span class="c1">#Initial Transverse Coordinates (initial Longitudinal Coordinate will be defined later on) [m]</span>
 <span class="n">part</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.0005</span>
 <span class="n">part</span><span class="o">.</span><span class="n">xp</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Initial Transverse Velocities</span>
@@ -233,10 +238,10 @@ done
 <span class="n">part</span><span class="o">.</span><span class="n">relE0</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Electron Rest Mass</span>
 <span class="n">part</span><span class="o">.</span><span class="n">nq</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#Electron Charge</span>
 
-<span class="n">npTraj</span> <span class="o">=</span> <span class="mi">10001</span> <span class="c1">#Number of Points for Trajectory calculation</span>
-<span class="n">fieldInterpMeth</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#2 #Magnetic Field Interpolation Method, to be entered into 3D field structures below (to be used e.g. for trajectory calculation):</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">npTraj</span></a> <span class="o">=</span> <span class="mi">10001</span> <span class="c1">#Number of Points for Trajectory calculation</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">fieldInterpMeth</span></a> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#2 #Magnetic Field Interpolation Method, to be entered into 3D field structures below (to be used e.g. for trajectory calculation):</span>
 <span class="c1">#1- bi-linear (3D), 2- bi-quadratic (3D), 3- bi-cubic (3D), 4- 1D cubic spline (longitudinal) + 2D bi-cubic</span>
-<span class="n">arPrecPar</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#General Precision parameters for Trajectory calculation:</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecPar</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#General Precision parameters for Trajectory calculation:</span>
 <span class="c1">#[0]: integration method No:</span>
     <span class="c1">#1- fourth-order Runge-Kutta (precision is driven by number of points)</span>
     <span class="c1">#2- fifth-order Runge-Kutta</span>
@@ -245,8 +250,8 @@ done
 <span class="c1">#[7]: max. number of auto-steps for R-K fifth order or higher (default = 5000)</span>
 
 <span class="c1">#**********************Auxiliary function to read tabulated 3D Magnetic Field data from ASCII file:</span>
-<span class="k">def</span> <span class="nf">AuxReadInMagFld3D</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">sCom</span><span class="p">):</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">AuxReadInMagFld3D</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">filePath</span></a><span class="p">,</span> <span class="n">sCom</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">filePath</span></a><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1">#1st line: just pass</span>
     <span class="n">xStart</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#2nd line: initial X position [m]; it will not actually be used</span>
     <span class="n">xStep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#3rd line: step vs X [m]</span>
@@ -258,14 +263,14 @@ done
     <span class="n">zStep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#9th line: step vs Z [m]</span>
     <span class="n">zNp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sCom</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#10th line: number of points vs Z</span>
     <span class="n">totNp</span> <span class="o">=</span> <span class="n">xNp</span><span class="o">*</span><span class="n">yNp</span><span class="o">*</span><span class="n">zNp</span>
-    <span class="n">locArBx</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
-    <span class="n">locArBy</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
-    <span class="n">locArBz</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">totNp</span><span class="p">):</span>
+    <span class="n">locArBx</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
+    <span class="n">locArBy</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
+    <span class="n">locArBz</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">array</span></a><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">totNp</span><span class="p">)</span>
+    <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">totNp</span><span class="p">):</span>
         <span class="n">curLineParts</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">locArBx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">locArBy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">locArBz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">locArBx</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">locArBy</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">locArBz</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">curLineParts</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">xRange</span> <span class="o">=</span> <span class="n">xStep</span>
     <span class="k">if</span> <span class="n">xNp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">xRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">xNp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">xStep</span>
@@ -273,22 +278,22 @@ done
     <span class="k">if</span> <span class="n">yNp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">yRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">yNp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">yStep</span>
     <span class="n">zRange</span> <span class="o">=</span> <span class="n">zStep</span>
     <span class="k">if</span> <span class="n">zNp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">zRange</span> <span class="o">=</span> <span class="p">(</span><span class="n">zNp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">zStep</span>
-    <span class="k">return</span> <span class="n">SRWLMagFld3D</span><span class="p">(</span><span class="n">locArBx</span><span class="p">,</span> <span class="n">locArBy</span><span class="p">,</span> <span class="n">locArBz</span><span class="p">,</span> <span class="n">xNp</span><span class="p">,</span> <span class="n">yNp</span><span class="p">,</span> <span class="n">zNp</span><span class="p">,</span> <span class="n">xRange</span><span class="p">,</span> <span class="n">yRange</span><span class="p">,</span> <span class="n">zRange</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLMagFld3D</span></a><span class="p">(</span><span class="n">locArBx</span><span class="p">,</span> <span class="n">locArBy</span><span class="p">,</span> <span class="n">locArBz</span><span class="p">,</span> <span class="n">xNp</span><span class="p">,</span> <span class="n">yNp</span><span class="p">,</span> <span class="n">zNp</span><span class="p">,</span> <span class="n">xRange</span><span class="p">,</span> <span class="n">yRange</span><span class="p">,</span> <span class="n">zRange</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#**********************Defining Magnetic Field:</span>
-<span class="n">magFldCnt</span> <span class="o">=</span> <span class="n">SRWLMagFldC</span><span class="p">()</span> <span class="c1">#Container</span>
+<span class="n">magFldCnt</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLMagFldC</span></a><span class="p">()</span> <span class="c1">#Container</span>
 <span class="c1">#magFldCnt.allocate(3) #Magnetic Field consists of 3 parts</span>
 <span class="n">magFldCnt</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#Magnetic Field consists of 1 part</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Reading magnetic field data from files ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Reading magnetic field data from files ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="c1">#for i in range(3):</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">filePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">arFldInFileNames</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">AuxReadInMagFld3D</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">)</span>
-    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">interp</span> <span class="o">=</span> <span class="n">fieldInterpMeth</span>
-    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arXc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xcID</span>
-    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arYc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ycID</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">filePath</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="View documentation for os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/os.html#os.getcwd" title="View documentation for os.getcwd"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strExDataFolderName</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arFldInFileNames</span></a><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">])</span>
+    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">AuxReadInMagFld3D</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">filePath</span></a><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">)</span>
+    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span><span class="o">.</span><span class="n">interp</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">fieldInterpMeth</span></a>
+    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arXc</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">xcID</span></a>
+    <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arYc</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">ycID</span></a>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 
 <span class="c1">#magFldCnt.arMagFld[1].nRep = numPer #Central part of ID</span>
 <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nRep</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Central part of ID</span>
@@ -297,50 +302,52 @@ done
 <span class="c1">#magFldCnt.arZc = array(&#39;d&#39;, [zcID - 0.5*numPer*per - 0.5*(magFldCnt.arMagFld[0].rz), zcID, zcID + 0.5*numPer*per + 0.5*(magFldCnt.arMagFld[2].rz)])</span>
 <span class="c1">#part.z = zcID - (0.5*numPer + 1)*per - magFldCnt.arMagFld[0].rz #Initial Longitudinal Coordinate (set before the ID)</span>
 
-<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arZc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">zcID</span>
-<span class="n">part</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">zcID</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rz</span>
+<span class="n">magFldCnt</span><span class="o">.</span><span class="n">arZc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">zcID</span></a>
+<span class="n">part</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">zcID</span></a> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rz</span>
 
 <span class="c1">#**********************Trajectory structure, where the results will be stored</span>
-<span class="n">partTraj</span> <span class="o">=</span> <span class="n">SRWLPrtTrj</span><span class="p">()</span>
+<span class="n">partTraj</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#type" title="View documentation for builtins.type"><span class="n">SRWLPrtTrj</span></a><span class="p">()</span>
 <span class="n">partTraj</span><span class="o">.</span><span class="n">partInitCond</span> <span class="o">=</span> <span class="n">part</span>
 <span class="c1">#partTraj.allocate(npTraj)</span>
-<span class="n">partTraj</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">npTraj</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">allocate</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">npTraj</span></a><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Start Time for the calculation</span>
 <span class="c1">#partTraj.ctEnd = (numPer + 2)*per + magFldCnt.arMagFld[0].rz + magFldCnt.arMagFld[2].rz #End Time</span>
 <span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span> <span class="o">=</span> <span class="n">magFldCnt</span><span class="o">.</span><span class="n">arMagFld</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rz</span>
 
 <span class="c1">#**********************Calculation (SRWLIB function call)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Performing calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">partTraj</span> <span class="o">=</span> <span class="n">srwl</span><span class="o">.</span><span class="n">CalcPartTraj</span><span class="p">(</span><span class="n">partTraj</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <span class="n">arPrecPar</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Performing calculation ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">partTraj</span> <span class="o">=</span> <span class="n">srwl</span><span class="o">.</span><span class="n">CalcPartTraj</span><span class="p">(</span><span class="n">partTraj</span><span class="p">,</span> <span class="n">magFldCnt</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">arPrecPar</span></a><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 
 <span class="c1">#**********************Saving results to a file</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Saving trajectory data to a file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">partTraj</span><span class="o">.</span><span class="n">save_ascii</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">strExDataFolderName</span><span class="p">,</span> <span class="n">strTrajOutFileName</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Saving trajectory data to a file ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">partTraj</span><span class="o">.</span><span class="n">save_ascii</span><span class="p">(</span><a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="View documentation for os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/os.html#os.getcwd" title="View documentation for os.getcwd"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">(),</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strExDataFolderName</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="View documentation for builtins.str"><span class="n">strTrajOutFileName</span></a><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 
 <span class="c1">#**********************Plotting results</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;   Plotting the results (blocks script execution; close any graph windows to proceed) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">ctMesh</span> <span class="o">=</span> <span class="p">[</span><span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">):</span>
-    <span class="n">partTraj</span><span class="o">.</span><span class="n">arX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
-    <span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Plotting the results (blocks script execution; close any graph windows to proceed) ... &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">ctMesh</span></a> <span class="o">=</span> <span class="p">[</span><span class="n">partTraj</span><span class="o">.</span><span class="n">ctStart</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">ctEnd</span><span class="p">,</span> <span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">]</span>
+<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">np</span><span class="p">):</span>
+    <span class="n">partTraj</span><span class="o">.</span><span class="n">arX</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
+    <span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="View documentation for builtins.int"><span class="n">i</span></a><span class="p">]</span> <span class="o">*=</span> <span class="mi">1000</span>
 
-<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arX</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">])</span>
-<span class="n">uti_plot1d</span><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">,</span> <span class="n">ctMesh</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot1d</span></a><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arX</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">ctMesh</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Horizontal Position [mm]&#39;</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot1d</span></a><span class="p">(</span><span class="n">partTraj</span><span class="o">.</span><span class="n">arY</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="View documentation for builtins.list"><span class="n">ctMesh</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ct [m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Vertical Position [mm]&#39;</span><span class="p">])</span>
 
-<span class="n">uti_plot_show</span><span class="p">()</span> <span class="c1">#show all graphs (and block execution)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/functions.html#object" title="View documentation for builtins.object"><span class="n">uti_plot_show</span></a><span class="p">()</span> <span class="c1">#show all graphs (and block execution)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  1.870 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.390 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-cookbook-srwlib-example01-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/ab20c312547d75e53e6cc504fec44d6b/SRWLIB_Example01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example01.py</span></code></a></div>
-<div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../_downloads/954df3e2203ea5fa1ca278209b6de4d1/SRWLIB_Example01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example01.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../_downloads/33b8555ee26160a5ec2eb61d5621a6fc/SRWLIB_Example01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">SRWLIB_Example01.py</span></code></a></p>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/8e13b263734b7e801de6aa21c027b278/SRWLIB_Example01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">SRWLIB_Example01.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -355,7 +362,7 @@ done
         <a href="SRWLIB_Example01_kick_matr.html" class="btn btn-neutral float-right" title="SRW Example #1 (kick matrix)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Cookbook (Examples)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Cookbook (Examples)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -381,27 +388,16 @@ done
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-        <script type="text/javascript" src="../_static/copybutton.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
