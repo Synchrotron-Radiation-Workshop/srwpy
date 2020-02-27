@@ -43,7 +43,7 @@ if sys.platform == 'win32':
 else:
     srwlpy_kwargs['library_dirs'] = ['core/gcc']
 
-srwlpy = Extension('srwlpy', **srwlpy_kwargs)
+srwlpy = Extension('srwpy.srwlpy', **srwlpy_kwargs)
 
 
 setup(
