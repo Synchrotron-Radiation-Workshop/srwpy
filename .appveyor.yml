@@ -81,6 +81,8 @@ build_script:
 after_test:
   # If tests are successful, create binary packages for the project.
   - "%CMD_IN_ENV% python setup.py bdist_wheel"
+  - "for /r %%f in (dist/*.whl) do (%CMD_IN_ENV% pip install -v dist/%%~nxf)"
+  - "%CMD_IN_ENV% pytest -vvvv"
   - ps: "ls dist"
 
 artifacts:

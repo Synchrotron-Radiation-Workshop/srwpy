@@ -21,6 +21,7 @@ jobs:
         - NO_DOCKER=1
         - BUILD_DOCS=1
         - DEPLOY_DOCS=1
+        - UPLOAD_SDIST=1
     - os: osx
       language: generic
       env:
@@ -40,6 +41,7 @@ jobs:
         - PYTHON=3.8
 
 before_install:
+  - env | sort -u
   - |
     if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
         set -e
@@ -84,8 +86,11 @@ script:
         fi
         pip install -v .
     fi
+  - |
+    if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
+        pytest -vvvv
+    fi
   - ls -laF dist/
-  - pytest -vvvv
 # - coverage run -m pytest  # Run the tests and check for test coverage.
 # - coverage report -m  # Generate test coverage report.
 # - codecov  # Upload the report to codecov.
@@ -94,22 +99,24 @@ script:
     if [ "$BUILD_DOCS" ]; then
         set -e
         make -C docs html  # Build the documentation.
+    fi
+
+after_install:
+  - |
+    if [ ! -z "$TRAVIS_TAG" ]; then
+        # Build docs on tag only
         if [ "$DEPLOY_DOCS" ]; then
             pip install doctr
             doctr deploy --built-docs docs/build/html .
         fi
+        # Upload the content of dist/*.whl to a public wheelhouse
+        pip install twine
+        echo "[pypi]" > $HOME/.pypirc
+        echo "username: $TWINE_USERNAME" >> $HOME/.pypirc
+        echo "password: $TWINE_PASSWORD" >> $HOME/.pypirc
+        if [ ! -z "$UPLOAD_SDIST" ]; then
+            twine upload dist/*.tar.gz
+        else
+            twine upload dist/*.whl
+        fi
     fi
-
-before_deploy: "echo 'ready?'"
-
-deploy:
-  provider: pypi
-  username: mrakitin
-  password:
-    secure: JVIYW16ArcdWI8uh3VC550p1K+RIQsVk8LHJbNRYRhaGLd9qFM3IzfbTbTE+di2xAzjlNaQSnPPZPocBkb7g9BhM2ZobmTORqZTjKQIucxE8zelsKKD/jle/s9ZTk1aW11ZJ2paPDAZ5Vbj4h3fbDW233RmXf64+Gde4QB/+8TM1yIvM7pJWhsbTi12nhuMnTNpMtHZemTyt0yo2FvKAGPVEhI7hHx/6Vj4rUL9RvIpntrb0uRhc6mz+I6rjnUegBYuL1RivX3PeqWXSRE2Q4UP4/vfqmSPRxDd7QHcAnRZTKJLqKRZEMK5vW+O8LzX3qwsOQAwxQwMA8SA3TCWTTlLSo4lMHzTczvWVc9hEyZosHMselykRZT3ZmjgGSfpX70WBQw2YAvSvRzSEOEMcjlWe8+kRXy0KRxdBIoocx5mBZRG81KQvTUr9hsFHvaHv/AU6x275Or3JQDshFm0iCkpCDenHUVegJrIPE6a8miGY00LQ8Otw71T77u5zPCyvd0tXwC6fA6OaU287wmF6Xfto+B2KNb55jV9W4JU3JfUOgpUlT4ekJgIpD+kM0ApK65uc4/H20PEDxPO0A+bOt2YfwDQLZylBZZSmpgeWj79ooFNoPh1PDVnZSmHEnYYoXBE2t8wkPK4oGtDD5tRk3L1fvo1A+kD5aw6cKpBLXq0=
-  skip_cleanup: true
-  distributions: sdist
-  on:
-    tags: true
-
-after_deploy: "echo 'done!'"
