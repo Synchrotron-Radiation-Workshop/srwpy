@@ -54,7 +54,7 @@ Example Solution
     Simulating emission and propagation of Bending Magnet Synchrotron Radiaiton wavefront through a simple beamline
        Performing initial SR spectrum calculation ... done in 0 s
        Extracting intensity and saving it to a file ... done in 0 s
-       Performing initial electric field wavefront calculation ... done in 10 s
+       Performing initial electric field wavefront calculation ... done in 9 s
        Extracting intensity and saving it to a file ... done in 0 s
        Simulating single-electron electric field wavefront propagation ... done in 2 s
        Extracting intensity from calculated electric field and saving it to file(s) ... done in 0 s
@@ -241,7 +241,7 @@ Example Solution
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.137 seconds)
+   **Total running time of the script:** ( 0 minutes  12.963 seconds)
 
 
 .. _sphx_glr_download_cookbook_SRWLIB_Example13.py:

@@ -233,7 +233,7 @@ Example Solution
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.272 seconds)
+   **Total running time of the script:** ( 0 minutes  3.160 seconds)
 
 
 .. _sphx_glr_download_cookbook_SRWLIB_Example04.py:
