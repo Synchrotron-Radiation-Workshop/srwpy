@@ -100,8 +100,6 @@ script:
         set -e
         make -C docs html  # Build the documentation.
     fi
-
-after_install:
   - |
     if [ ! -z "$TRAVIS_TAG" ]; then
         # Build docs on tag only
