@@ -33,6 +33,7 @@ jobs:
       language: generic
       env:
         - PYTHON=3.7
+        - BUILD_DOCS=1
     - os: osx
       language: generic
       env:
@@ -74,7 +75,9 @@ script:
         pushd core/
         make all
         popd
+        pip install delocate
         python setup.py bdist_wheel
+        delocate-wheel dist/*.whl
         if [ ! -z "$NO_DOCKER" ]; then
             # Generate source distribution only once
             python setup.py sdist
