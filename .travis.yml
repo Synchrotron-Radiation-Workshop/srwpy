@@ -84,8 +84,11 @@ script:
         fi
         pip install -v .
     fi
+  - |
+    if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
+        pytest -vvvv
+    fi
   - ls -laF dist/
-  - pytest -vvvv
 # - coverage run -m pytest  # Run the tests and check for test coverage.
 # - coverage report -m  # Generate test coverage report.
 # - codecov  # Upload the report to codecov.
