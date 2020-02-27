@@ -79,12 +79,12 @@ script:
         popd
         pip install delocate
         python setup.py bdist_wheel
-        delocate-wheel -v dist/*.whl
+        delocate-listdeps dist/*.whl && delocate-wheel -v dist/*.whl
         if [ ! -z "$NO_DOCKER" ]; then
             # Generate source distribution only once
             python setup.py sdist
         fi
-        pip install -v .
+        python setup.py build_ext --inplace
     fi
   - |
     if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then

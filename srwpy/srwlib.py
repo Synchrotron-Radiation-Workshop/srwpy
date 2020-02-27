@@ -3,9 +3,7 @@
 #############################################################################
 
 from __future__ import print_function #Python 2.7 compatibility
-# MR20200225: this is a special case then the generated .so library is at the
-# same directory level as srwpy/ with .py files inside.
-import srwlpy as srwl
+import srwpy.srwlpy as srwl
 from array import *
 from math import *
 from copy import *
