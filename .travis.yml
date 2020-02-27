@@ -85,6 +85,7 @@ script:
             python setup.py sdist
         fi
         python setup.py build_ext --inplace
+        pip install -v .
     fi
   - |
     if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
