@@ -1,111 +1,21 @@
-os: linux
 language: python
-env:
-  global:
-  # Doctr deploy key for srwpy/srwpy
-    - secure: "txnT7cl2qdf513fHlAZ8/cQ013ZbNm+Xmjtg/FAJOTFQPR8V2J6lYkNbWr577YokoxDdwOn9ThY2b7GmtzWILs1RA8iK6Rj1g+hQZfbQArBSSqbfwZy/nYHNzDxvVZpmqE34EdtrVX+8rDEzt0cpY2uuLYY1CkygXpwAt5NcC8URfHbWoELTRDRQ0l09mVqmYc3v+7lOVvsiCVNnR5Z3mM9RHs587F2fsdYd+BwNdVal2w57/SgbW4+dsFHC1jr159kBHove7+LE2rTke/m3B15/yoxM69crRbQfhIsxciKWSsHP/7ouzNnd4QgJcwrLYq65uNguLv1ODgfAqhXN4QCA7OCqlDWqpRuuYSQZVXNjz2k+S5LTvuPm/lw1x7uzZNXnBVL3mUufV6uviK6q9+QHGGQR/OEIFtQ6czU9oScVG5w7y/L+Ckc6l9BTKiK/C4XQUpkxQ7P3Qv7Kr/GL5qXBcGXCdOChKll1f/QfrtAIYYcerK+GIf9hhv9SbBtS78xe3w9M/0c/LwnFUshNuyKy3XBrM2aiJCqb9qhBDlkZK/MRuk67Uht2YxqH7yAyp47Nne1G4ThDVWmjxUQ69E3gmZMaMg2yciYslfPUFlUBKPvxPrZ7PZOYMcS5ZWrpgxTt9uKjvK2MnLijGtTJx9bgug99/i1R3P6X4TiYVGc="
-
-cache:
-  directories:
-    - "$HOME/.cache/pip"
-    - "$HOME/.ccache"
-
-services: docker
-
 jobs:
   include:
-    - os: linux
-    - os: linux
-      python: "3.7"
-      env:
-        - NO_DOCKER=1
-        - BUILD_DOCS=1
-        - DEPLOY_DOCS=1
-    - os: osx
-      language: generic
-      env:
-        - PYTHON=3.5
-    - os: osx
-      language: generic
-      env:
-        - PYTHON=3.6
-    - os: osx
-      language: generic
-      env:
-        - PYTHON=3.7
-    - os: osx
-      language: generic
-      env:
-        - PYTHON=3.8
-
-before_install:
-  - |
-    if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
-        set -e
-        docker pull quay.io/pypa/manylinux1_x86_64
-        docker images
-        docker ps -a
-    fi
-  - |
-    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-        pushd ${HOME}
-        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-        bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${HOME}/conda
-        rm -fv Miniconda*.sh
-        popd
-        export PATH=${HOME}/conda/bin:$PATH
-        conda info
-        conda create -n py${PYTHON} python=${PYTHON} -y
-        conda env list
-        source activate py${PYTHON}
-        conda list
-    fi
-
+  - services: docker
+  - os: osx
+    language: shell
+  - os: windows
+    language: shell
+    before_install:
+    - choco install python --version 3.8.0
+    - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+env:
+  global:
+  - secure: J46vbryvhePxvnUcS4nEZos9mmFscJ80XLAiKIwUxVwR7nYDwoxIooWK+n2G+9surozu6CRhLtNDGih0iUEwK12S2+AMv6KLFTU9ZDDZkI3eKJsjUrBIME4hLf37UZhfw0qtdPApkdLLx761lxP1t2t9VNODQfyB92pUhf9WOh5e1jh6EuYT3ru4q3NsJYYILpIseBTGzF57jOxZK3bMqlt/CMk26XlmfnFf0obIF8zBmYzMhxRqFqkq37KnnYdOSOM9npxjiH14hkMUUuOGlR4waF1tD38amWaHf/LjWGoNf7vnP0RYeh2lBJgZDiR30S7JRjEaVDRAnt4gtplsSeM5bwQ2WMk4YsMaPDdlbNI2d8NKtJKk5NE0MATFJ/E4lltekT03OPnKkA0p8I98vkT7r+vvq5h0JAmeRltIz8+c78myNkNFLprG4vyur53NXsivgQLwYp2R9kxF2PDIoWypJ5vvruJmSB3dKYwVuwIJbpkfq38LjK/06TevKTh9aO8TfylvREXmGO2reWJEPKvfamJsb/vEDodeNibOPFQnAW/U/CW5f2KglGnuDnHGU0NyJP/t/UhvKxL/e2/8dtRFSAqaqkSY2sY4t/9rZ+FXEUTDfsPU17I9BVmQDkB5M5l+vN4JrEOU4K7DkI1jv2N/fi3bo88K3+O9TnVPEYs=
+  - secure: L7Px4PJUSmNKHVfcDdiOEh+rM8uf6/IV/RcIIkF7urisGXuMFHSUUViZN3hH7+qazGPBKed5uFyN3MgpMkjudvQVkGsNqTPbhNg8rCZycun3jUWiK479iRsARnXhTZZ3EnTIX0uvV/OeUJMDtf1vUOPGpTfVw1bcJt3/sKtunacXGL4sO01xq5ZRJHt5/ZQ2ZewmtosVnZPCH8UThnWm8TM0kcRlKPaamq0oUIkUVWIEMNNEpoD2x4R8K2dGJ+MgF5Lw7JiB6S3TD9Ilc8S76L4Z37KTrydXxVK8J1jOO6dQPBKVFUwxRSqueAabLsmLdQ6rYlPxq7I3deyU+DruGZaQO4GSeL6EJvSKJ6mq4q6IUc0eOkqLQ1Mtv6mZ8CQfPToyartqe0ec/5cpK+Tu4ItZbIOdnAsIJnrVCdKqxQDwIkF3uoqcZIsSEgefgK33ncLtz2ba+TK19H9vgFGt4xawsv7ngS1kUuyHgkrMamLEnWdNNCFhGxcuXfU+qCAlw84kldgnqRwzk1mUUdnChpCeGndOQtkKKRuS1WCc444pWwx3u0M9RUnYEYuJoeJi5g7XB2Z/nKZiRIj4sdhdVK/apehI8s7MVkNAkfJIbiBbVLUJbthhxKoaSC3Dv5KLfaiLLt3davYibs3Y0voAZVPqy0Onm9RItIrwK9/XCko=
+install:
+- python3 -m pip install twine cibuildwheel==1.1.0
 script:
-  - python --version
-  - python -m site
-  - pip install -r requirements-dev.txt
-  - |
-    if [ "$TRAVIS_OS_NAME" == "linux" -a -z "$NO_DOCKER" ]; then
-        docker run --rm -v `pwd`:/io quay.io/pypa/manylinux1_x86_64 /io/.travis/build-wheels.sh
-    fi
-  - |
-    if [ "$TRAVIS_OS_NAME" == "osx" -o ! -z "$NO_DOCKER" ]; then
-        pushd core/
-        make all
-        popd
-        python setup.py bdist_wheel
-        if [ ! -z "$NO_DOCKER" ]; then
-            # Generate source distribution only once
-            python setup.py sdist
-        fi
-        pip install -v .
-    fi
-  - ls -laF dist/
-# - coverage run -m pytest  # Run the tests and check for test coverage.
-# - coverage report -m  # Generate test coverage report.
-# - codecov  # Upload the report to codecov.
-# - flake8 --max-line-length=115  # Enforce code style (but relax line length limit a bit).
-  - |
-    if [ "$BUILD_DOCS" ]; then
-        set -e
-        make -C docs html  # Build the documentation.
-        if [ "$DEPLOY_DOCS" ]; then
-            pip install doctr
-            doctr deploy --built-docs docs/build/html .
-        fi
-    fi
-
-before_deploy: "echo 'ready?'"
-
-deploy:
-  provider: pypi
-  username: mrakitin
-  password:
-    secure: JVIYW16ArcdWI8uh3VC550p1K+RIQsVk8LHJbNRYRhaGLd9qFM3IzfbTbTE+di2xAzjlNaQSnPPZPocBkb7g9BhM2ZobmTORqZTjKQIucxE8zelsKKD/jle/s9ZTk1aW11ZJ2paPDAZ5Vbj4h3fbDW233RmXf64+Gde4QB/+8TM1yIvM7pJWhsbTi12nhuMnTNpMtHZemTyt0yo2FvKAGPVEhI7hHx/6Vj4rUL9RvIpntrb0uRhc6mz+I6rjnUegBYuL1RivX3PeqWXSRE2Q4UP4/vfqmSPRxDd7QHcAnRZTKJLqKRZEMK5vW+O8LzX3qwsOQAwxQwMA8SA3TCWTTlLSo4lMHzTczvWVc9hEyZosHMselykRZT3ZmjgGSfpX70WBQw2YAvSvRzSEOEMcjlWe8+kRXy0KRxdBIoocx5mBZRG81KQvTUr9hsFHvaHv/AU6x275Or3JQDshFm0iCkpCDenHUVegJrIPE6a8miGY00LQ8Otw71T77u5zPCyvd0tXwC6fA6OaU287wmF6Xfto+B2KNb55jV9W4JU3JfUOgpUlT4ekJgIpD+kM0ApK65uc4/H20PEDxPO0A+bOt2YfwDQLZylBZZSmpgeWj79ooFNoPh1PDVnZSmHEnYYoXBE2t8wkPK4oGtDD5tRk3L1fvo1A+kD5aw6cKpBLXq0=
-  skip_cleanup: true
-  distributions: bdist
-  on:
-    tags: true
-
-after_deploy: "echo 'done!'"
+- python3 -m cibuildwheel --output-dir wheelhouse
+after_success:
+- if [[ $TRAVIS_TAG ]]; then python3 -m twine upload wheelhouse/*.whl; fi
