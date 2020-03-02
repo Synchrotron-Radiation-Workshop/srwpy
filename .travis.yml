@@ -13,6 +13,7 @@ cache:
 services: docker
 
 jobs:
+  fast_finish: true
   include:
     - os: linux
     - os: linux
